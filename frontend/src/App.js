@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       {/* ㅜ 컴포넌트들 */}
       <Default />
-      
+      <Default/>
     </div>
   );
 }
