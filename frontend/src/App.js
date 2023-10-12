@@ -12,13 +12,13 @@ function App() {
   const set_vw_and_vh = () => {
     document.documentElement.style.setProperty('vw', `${window.innerWidth * 0.01}px`)
     document.documentElement.style.setProperty('vh', `${window.innerHeight * 0.01}px`)
-    console.log("App.js : vw와 vh 값을 재조정 한다.");
+    // console.log("App.js : vw와 vh 값을 재조정 한다.");
   };
 
 
   useEffect(() => {
     //
-    console.log("App.js : 딱 한 번만 실행된다.");
+    // console.log("App.js : 딱 한 번만 실행된다.");
 
     // 첫 렌더링 시에도 vw와 vh 값을 재조정 한다.
     set_vw_and_vh();

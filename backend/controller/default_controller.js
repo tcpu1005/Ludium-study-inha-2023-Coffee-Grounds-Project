@@ -7,15 +7,22 @@ const { Cafe } = require("../model");
 module.exports.default_fn = async (req, res) => {
     //
     // const { } = req.params;
+    const { front_text } = req.body;
+    console.log(`프론트에서 보내온 데이터 : ${front_text}`);
+
+
+    const res_back_data = "res_back_data";
+    res.send({ success: true, res_data: res_back_data, message: "무엇무엇에 성공하였습니다." });
+
 
     // 데이터 통신이 필요한 경우 무조건 예외 처리 적용하기
     try {
         //
         // DB 작업
         // ...
-        const defaultData = "defaultData";
+        // const res_back_data = "res_back_data";
 
-        res.send({ success: true, data: defaultData, message: "무엇무엇에 성공하였습니다." });
+        // res.send({ success: true, res_data: res_back_data, message: "무엇무엇에 성공하였습니다." });
         //
     } catch (err) {
         console.log(err);
