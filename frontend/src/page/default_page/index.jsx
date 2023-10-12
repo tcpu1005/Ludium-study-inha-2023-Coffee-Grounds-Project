@@ -1,7 +1,7 @@
 // ㅜ rafce 명령어로 컴포넌트 생성
 import React from 'react';
-import { Button_1, MAROON_COLOR_1, WHITE_COLOR_1 } from "../../baseStyle";
 import Default_component from "../../component/default_component";
+import { Button_1, MAROON_COLOR_1, WHITE_COLOR_1 } from "../../base_style";
 
 const Default_page = () => {
     return (
