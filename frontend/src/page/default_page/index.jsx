@@ -1,11 +1,17 @@
-// ㅜ rafce 명령어로 컴포넌트 생성
-import React from 'react';
+// ㅜ rafce 명령어로 컴포넌트 생성하면 된다.
+
+
 import Default_component from "../../component/default_component";
 import { Button_1, MAROON_COLOR_1, WHITE_COLOR_1 } from "../../base_style";
+import Footer from "../../layout/footer";
+import Top from "../../layout/top";
+import React from 'react';
+
 
 const Default_page = () => {
     return (
         <>
+            <Top />
             <div style={{ width: "100%", padding: "5vw 0", backgroundColor: WHITE_COLOR_1 }}>
                 <h1 style={{ color: MAROON_COLOR_1 }}>Default_page</h1>
                 <h1 style={{ color: MAROON_COLOR_1 }}>h1 style</h1>
@@ -17,9 +23,11 @@ const Default_page = () => {
                 <Button_1>버튼1 style</Button_1>
             </div>
             <Default_component />
+            <Footer />
         </>
     )
 }
+
 
 export default Default_page;
 

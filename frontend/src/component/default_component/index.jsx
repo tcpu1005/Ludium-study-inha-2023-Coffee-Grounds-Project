@@ -1,6 +1,6 @@
-// ㅜ rafce 명령어로 컴포넌트 생성
 import React from 'react';
 import { Button_1, MAROON_COLOR_1, BEIGE_COLOR_1 } from "../../base_style";
+
 
 const Default_component = () => {
     return (
@@ -11,5 +11,6 @@ const Default_component = () => {
         </div>
     )
 }
+
 
 export default Default_component;
