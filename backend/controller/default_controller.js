@@ -4,7 +4,7 @@ const { Cafe } = require("../model");
 
 // 컨트롤러 코드 예시
 // request 요청을 받아서 백단 작업 후 response 응답
-module.exports.defaultFn = async (req, res) => {
+module.exports.default_fn = async (req, res) => {
     //
     // const { } = req.params;
 
