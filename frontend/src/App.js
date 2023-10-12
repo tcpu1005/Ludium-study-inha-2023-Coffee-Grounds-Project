@@ -1,9 +1,8 @@
 import './App.css';
-import { useEffect, useState } from 'react';
+import Router from './router';
+import { useEffect } from 'react';
+import { BrowserRouter } from "react-router-dom";
 
-// ㅜ 컴포넌트 목록들 import 하기
-import Default_page from './page/default_page';
-// ...
 
 function App() {
   //
@@ -16,13 +15,14 @@ function App() {
     console.log("App.js : vw와 vh 값을 재조정 한다.");
   };
 
+
   useEffect(() => {
     //
     console.log("App.js : 딱 한 번만 실행된다.");
-    
+
     // 첫 렌더링 시에도 vw와 vh 값을 재조정 한다.
     set_vw_and_vh();
-    
+
     // 윈도우가 리사이즈 될 때마다 vw와 vh 값을 재조정 한다.
     window.addEventListener('resize', set_vw_and_vh);
     return () => {
@@ -30,13 +30,16 @@ function App() {
     }
   }, []);
 
+
   return (
     <div className="App">
-      {/* ㅜ 렌더링할 컴포넌트들 */}
-      <Default_page />
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
       {/* ... */}
     </div>
   );
 }
+
 
 export default App;
