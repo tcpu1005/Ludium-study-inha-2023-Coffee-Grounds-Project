@@ -5,7 +5,6 @@ import Default_component from "../../component/default_component";
 import { Button_1, MAROON_COLOR_1, WHITE_COLOR_1 } from "../../base_style";
 import Footer from "../../layout/footer";
 import Top from "../../layout/top";
-import React from 'react';
 
 
 const Default_page = () => {

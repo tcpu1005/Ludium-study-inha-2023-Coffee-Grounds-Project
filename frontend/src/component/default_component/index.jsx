@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button_1, MAROON_COLOR_1, BEIGE_COLOR_1 } from "../../base_style";
 
 
