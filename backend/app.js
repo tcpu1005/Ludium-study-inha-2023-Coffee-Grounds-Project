@@ -1,14 +1,26 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
-const PORT = 3000;
+const PORT = 8080;
 
-// 백 서버 시작
+
+// ㅜ 백 서버 시작
 app.listen(PORT, () => {
   console.log(`<<< PORT : ${PORT} >>>`);
 });
 
-const { sequelize } = require("./model");
 
+// ㅜ CORS 에러 해결
+const FRONT_SERVER_PATH = process.env.FRONT_SERVER_PATH || "http://localhost:3000";
+app.use(cors({
+  origin: [
+    FRONT_SERVER_PATH,
+  ]
+}));
+
+
+// ㅜ 시퀄라이즈 테이블 생성 (서버 실행 시마다 초기화됨)
+const { sequelize } = require("./model");
 sequelize.sync({ force: true })
   .then(() => {
     console.log("<<< DB is connected >>>");
@@ -16,6 +28,7 @@ sequelize.sync({ force: true })
     console.log(`<<< DB ERROR >>>\n${err}`);
   })
 
-// 라우터 사용 => 모든 API 함수는 라우터 폴더 내에 구현
+
+// ㅜ 라우터 사용 => 모든 API 함수는 라우터 폴더 내에 구현
 const router = require("./router");
 Object.values(router).forEach((rt) => app.use(rt));
