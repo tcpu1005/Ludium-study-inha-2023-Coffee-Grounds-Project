@@ -68,9 +68,9 @@ h6 {
 export const Button_1 = styled.button`
 background-color: ${MAROON_COLOR_1};
 border: 1px solid ${BEIGE_COLOR_1};
+padding: 1vw 2vw 1.5vw 2vw;
 color: ${BEIGE_COLOR_1};
 border-radius: 10px;
-padding: 1.5vw 2vw;
 font-size: 5vw;
 margin: 1vw;
 `;
