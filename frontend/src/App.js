@@ -1,6 +1,8 @@
 import './App.css';
 import Router from './router';
+import store from "./redux/store";
 import { useEffect } from 'react';
+import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 
 
@@ -33,9 +35,11 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <Router />
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Router />
+        </BrowserRouter>
+      </Provider>
       {/* ... */}
     </div>
   );

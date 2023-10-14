@@ -3,11 +3,27 @@
 
 import Default_component from "../../component/default_component";
 import { Button_1, MAROON_COLOR_1, WHITE_COLOR_1 } from "../../base_style";
+import { default_action_fn } from "../../redux/middleware";
+import { useDispatch, useSelector } from "react-redux";
 import Footer from "../../layout/footer";
 import Top from "../../layout/top";
 
 
 const Default_page = () => {
+    //
+
+    const dispatch = useDispatch();
+    const team_message = useSelector((state) => state.default_reducer.team_message);
+
+
+    const button_fn = () => {
+        //
+
+        dispatch(default_action_fn());
+        console.log(`team_message : ${team_message}`);
+    }
+
+
     return (
         <>
             <Top />
@@ -19,7 +35,8 @@ const Default_page = () => {
                 <h4 style={{ color: MAROON_COLOR_1 }}>h4 style</h4>
                 <h5 style={{ color: MAROON_COLOR_1 }}>h5 style</h5>
                 <h6 style={{ color: MAROON_COLOR_1 }}>h6 style</h6>
-                <Button_1>버튼1 style</Button_1>
+                <Button_1 onClick={button_fn}>버튼1 style</Button_1>
+                <h6>{team_message}</h6>
             </div>
             <Default_component />
             <Footer />
