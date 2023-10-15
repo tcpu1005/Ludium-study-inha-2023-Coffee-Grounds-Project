@@ -1,4 +1,3 @@
-// npm i dotenv
 require("dotenv").config();
 
 const config = {
@@ -8,6 +7,7 @@ const config = {
         database: process.env.MYSQL_DATABASE || "test",
         host: process.env.MYSQL_HOST || "127.0.0.1",
         dialect: "mysql",
+        logging: false,
         port: 3306,
     }
 }
@@ -16,6 +16,7 @@ const config = {
 // SequelizeConnectionRefusedError: connect ECONNREFUSED 127.0.0.1:3306
 
 // ㅜ 에러 발생 이유 : DB 생성 안 함
-// SequelizeConnectionError: Unknown database 'test0928'
+// SequelizeConnectionError: Unknown database 'test'
+// 해결 => 워크벤치에서 'test' 스키마 생성해놓기
 
 module.exports = config;

@@ -1,16 +1,15 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
-const PORT = 3000;
+const PORT = 8080;
 
-app.listen(PORT, () => {
-  console.log(`<<< PORT : ${PORT} >>>`);
-});
 
+// ㅜ 요 코드가 있어야 프론트에서 axios 요청으로 보내온 데이터를 받을 수 있다.
+app.use(express.json());
+
+
+// ㅜ 시퀄라이즈 테이블 생성 (서버 실행 시마다 초기화됨)
 const { sequelize } = require("./model");
-
-// ㅜ 라우터로 빠질 모델들
-const { Cafe } = require("./model");
-
 sequelize.sync({ force: true })
   .then(() => {
     console.log("<<< DB is connected >>>");
@@ -18,11 +17,22 @@ sequelize.sync({ force: true })
     console.log(`<<< DB ERROR >>>\n${err}`);
   })
 
-// app.get("/path", (req, res) => {
-//   // API 함수
-// })
 
-// app.post("/path/:params", (req, res) => {
-//   // API 함수
-//   // DB 로우 데이터 생성, 수정, 삭제, 조회
-// })
+// ㅜ CORS 에러 해결
+const FRONT_SERVER_PATH = process.env.FRONT_SERVER_PATH || "http://localhost:3000";
+app.use(cors({
+  origin: [
+    FRONT_SERVER_PATH,
+  ]
+}));
+
+
+// ㅜ 라우터 사용 => 모든 API 함수는 라우터 폴더 내에 구현
+const router = require("./router");
+Object.values(router).forEach((rt) => app.use(rt));
+
+
+// ㅜ 백 서버 시작
+app.listen(PORT, () => {
+  console.log(`<<< PORT : ${PORT} >>>`);
+});
