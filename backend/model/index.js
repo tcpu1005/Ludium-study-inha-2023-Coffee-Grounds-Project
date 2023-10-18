@@ -15,6 +15,6 @@ db.Cafe = Cafe;
 
 Cafe.init(sequelize);
 
-// Cafe.associate(db);
+Cafe.associate(db);
 
 module.exports = db;
