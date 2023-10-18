@@ -19,19 +19,19 @@ class CafeDetails extends Sequelize.Model {
           },
         },
         cafe_name: {
-          type: Sequelize.STRING(255),
+          type: Sequelize.STRING(10),
           allowNull: false,
         },
         address_si: {
-          type: Sequelize.STRING(500),
+          type: Sequelize.STRING(10),
           allowNull: false,
         },
         address_gu: {
-          type: Sequelize.STRING(500),
+          type: Sequelize.STRING(10),
           allowNull: false,
         },
         address_dong: {
-          type: Sequelize.STRING(500),
+          type: Sequelize.STRING(10),
           allowNull: false,
         },
         total_emissions: {
@@ -43,7 +43,7 @@ class CafeDetails extends Sequelize.Model {
       {
         sequelize,
         underscored: true,
-        timestamps: true,
+        timestamps: false,
         modelName: "CafeDetail",
         tableName: "CafeDetails",
         charset: "utf8",
