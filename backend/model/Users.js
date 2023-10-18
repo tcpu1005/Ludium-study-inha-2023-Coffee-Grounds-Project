@@ -25,21 +25,21 @@ class Users extends Sequelize.Model {
         },
         user_type: {
           type: Sequelize.ENUM("Cafe", "Collector"),
-          allowNull: false,
+          allowNull: true, //임시 True 원래는 false
         },
         wallet_address: {
           type: Sequelize.STRING(255),
-          allowNull: false,
+          allowNull: true, //임시 True 원래는 false
           unique: true,
         },
         wallet_privatekey: {
           type: Sequelize.STRING(255),
-          allowNull: false,
+          allowNull: true, //임시 True 원래는 false
           unique: true,
         },
         created_at: {
           type: Sequelize.DATE,
-          allowNull: false,
+          allowNull: true,
           defaultValue: Sequelize.NOW,
         },
       },

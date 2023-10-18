@@ -1,38 +1,46 @@
 const Users = require("../model/Users");
 
-const register_user_controller = async (req, res) => {
+module.exports.register_user_controller = async (req, res) => {
   const {
     login_id,
     login_password,
     user_name,
-    cafe_name,
+    user_type,
+    wallet_address,
+    wallet_privatekey,
     address_si,
     address_gu,
     address_dong,
   } = req.body;
+  console.log("hello");
   try {
-    const existingUser = await Users.findOne({ login_id });
+    if (!login_id) {
+      console.log("if!");
+      return res
+        .status(400)
+        .send({ message: "login_id 값이 유효하지 않습니다." });
+    }
+    const existingUser = await Users.findOne({ where: { login_id } });
+    console.log("if!");
     if (existingUser) {
       return res.status(409).send({ message: "이미 존재하는 ID입니다." });
     }
-    const newUser = new Users({
+    console.log("if!");
+    const createdUser = await Users.create({
       login_id,
-      login_password, // TODO: 비밀번호 해시화 필요
+      login_password,
       user_name,
-      cafe_name,
+      user_type,
+      wallet_address,
+      wallet_privatekey,
       address_si,
       address_gu,
       address_dong,
     });
-
-    await newUser.save();
-    res.status(201).send({ message: "회원 가입에 성공하였습니다." });
+    console.log("if!");
+    console.log({ message: "회원 가입에 성공하였습니다." });
   } catch (error) {
     console.error(error);
-    res.status(500).send({ message: "회원 가입에 실패하였습니다." });
+    console.log({ message: "회원 가입에 실패하였습니다." });
   }
-};
-
-module.exports = {
-  register_user_controller,
 };
