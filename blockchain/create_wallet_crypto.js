@@ -1,8 +1,9 @@
 const { randomBytes } = require("crypto");
+
+
 const elliptic = require("elliptic");
-
-
 const ec = new elliptic.ec("secp256k1");
+
 
 // 256자리의 2진수 랜덤 값 생성 후 16진수로 변환
 const get_private_key = () => randomBytes(32).toString("hex");
