@@ -1,5 +1,5 @@
 import './App.css';
-import Router from './router'
+import Router from './router';
 import store from "./redux/store";
 import { useEffect } from 'react';
 import { Provider } from "react-redux";
@@ -40,7 +40,6 @@ function App() {
           <Router />
         </BrowserRouter>
       </Provider>
-      {/* ... */}
     </div>
   );
 }

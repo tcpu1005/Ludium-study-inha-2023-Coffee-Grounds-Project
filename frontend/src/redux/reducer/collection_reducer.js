@@ -4,7 +4,7 @@ const initialState = {
     totalPages: 1
 };
 
-const collectionReducer = (state = initialState, action) => {
+const collection_reducer = (state = initialState, action) => {
     switch(action.type) {
         case 'SET_COLLECTIONS':
             return {
@@ -22,4 +22,4 @@ const collectionReducer = (state = initialState, action) => {
     }
 };
 
-export default collectionReducer;
+export default collection_reducer;
