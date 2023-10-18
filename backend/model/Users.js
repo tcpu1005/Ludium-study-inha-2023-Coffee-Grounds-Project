@@ -11,16 +11,16 @@ class Users extends Sequelize.Model {
           allowNull: false,
         },
         login_id: {
-          type: Sequelize.STRING(255),
+          type: Sequelize.STRING(50),
           allowNull: false,
           unique: true,
         },
         login_password: {
-          type: Sequelize.STRING(255),
+          type: Sequelize.STRING(50),
           allowNull: false,
         },
         user_name: {
-          type: Sequelize.STRING(255),
+          type: Sequelize.STRING(10),
           allowNull: false,
         },
         user_type: {
@@ -37,11 +37,16 @@ class Users extends Sequelize.Model {
           allowNull: false,
           unique: true,
         },
+        created_at: {
+          type: Sequelize.DATE,
+          allowNull: false,
+          defaultValue: Sequelize.NOW,
+        },
       },
       {
         sequelize,
         underscored: true,
-        timestamps: true,
+        timestamps: false,
         modelName: "User",
         tableName: "Users",
         charset: "utf8",

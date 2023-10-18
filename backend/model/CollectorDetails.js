@@ -19,14 +19,14 @@ class CollectorDetails extends Sequelize.Model {
           },
         },
         company_name: {
-          type: Sequelize.STRING(255),
+          type: Sequelize.STRING(10),
           allowNull: false,
         },
       },
       {
         sequelize,
         underscored: true,
-        timestamps: true,
+        timestamps: false,
         modelName: "CollectorDetail",
         tableName: "CollectorDetails",
         charset: "utf8",
