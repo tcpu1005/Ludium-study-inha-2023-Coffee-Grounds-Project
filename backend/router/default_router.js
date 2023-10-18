@@ -1,7 +1,7 @@
 const router = require("express").Router();
 
 // 사용할 컨트롤러들 불러오기
-const { default_controller, default_action_fn } = require("../controller");
+const { default_controller } = require("../controller");
 // ...
 
 // 라우터 코드 예시
