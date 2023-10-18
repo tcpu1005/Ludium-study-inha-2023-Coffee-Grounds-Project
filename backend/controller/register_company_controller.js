@@ -1,6 +1,6 @@
 const Users = require("../model/Users");
 
-const register_company_controller = async (req, res) => {
+module.exports.register_company_controller = async (req, res) => {
   const { login_id, login_password, user_name, company_name } = req.body;
 
   try {
@@ -21,8 +21,4 @@ const register_company_controller = async (req, res) => {
     console.error(error);
     res.status(500).send({ message: "회원 가입에 실패하였습니다." });
   }
-};
-
-module.exports = {
-  register_company_controller,
 };

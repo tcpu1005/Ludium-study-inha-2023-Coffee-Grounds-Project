@@ -3,10 +3,21 @@
 import Default_component from "../../component/default_component";
 import { Button_1, MAROON_COLOR_1, WHITE_COLOR_1 } from "../../base_style";
 import { default_action_fn } from "../../redux/middleware";
+import { register_cafe_user } from "../../redux/middleware";
 import { useDispatch, useSelector } from "react-redux";
 import Footer from "../../layout/footer";
 import Top from "../../layout/top";
-
+const userData = {
+  login_id: "hello123",
+  login_password: "1234",
+  user_name: "김지훈",
+  user_type: null,
+  wallet_address: null,
+  wallet_privatekey: null,
+  address_si: "인천광역시",
+  address_gu: "미추홀구",
+  address_dong: "용현동",
+};
 const Default_page = () => {
   //
 
@@ -44,6 +55,8 @@ const Default_page = () => {
         <h6>{team_message}</h6>
       </div>
       <Default_component />
+      <Button_1 onClick={() => register_cafe_user(userData)}>회원등록</Button_1>
+
       <Footer />
     </>
   );
