@@ -1,15 +1,8 @@
 const Users = require("../model/Users");
 
-const registerUser = async (req, res) => {
-  const {
-    login_id,
-    login_password,
-    user_name,
-    cafe_name,
-    address_si,
-    address_gu,
-    address_dong,
-  } = req.body;
+const register_company_controller = async (req, res) => {
+  const { login_id, login_password, user_name, company_name } = req.body;
+
   try {
     const existingUser = await Users.findOne({ login_id });
     if (existingUser) {
@@ -19,10 +12,7 @@ const registerUser = async (req, res) => {
       login_id,
       login_password, // TODO: 비밀번호 해시화 필요
       user_name,
-      cafe_name,
-      address_si,
-      address_gu,
-      address_dong,
+      company_name,
     });
 
     await newUser.save();
@@ -34,5 +24,5 @@ const registerUser = async (req, res) => {
 };
 
 module.exports = {
-  registerUser,
+  register_company_controller,
 };
