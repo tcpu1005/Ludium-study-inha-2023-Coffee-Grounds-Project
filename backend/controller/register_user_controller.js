@@ -1,4 +1,5 @@
-const Users = require("../model/Users");
+const { CafeDetails } = require("../model");
+const { Users } = require("../model");
 
 module.exports.register_user_controller = async (req, res) => {
   const {
@@ -8,10 +9,13 @@ module.exports.register_user_controller = async (req, res) => {
     user_type,
     wallet_address,
     wallet_privatekey,
+    cafe_name,
     address_si,
     address_gu,
     address_dong,
+    total_emissions,
   } = req.body;
+
   console.log("hello");
   try {
     if (!login_id) {
@@ -33,9 +37,14 @@ module.exports.register_user_controller = async (req, res) => {
       user_type,
       wallet_address,
       wallet_privatekey,
+    });
+
+    const created_cafeDetails = await CafeDetails.create({
+      cafe_name,
       address_si,
       address_gu,
       address_dong,
+      total_emissions,
     });
     console.log("if!");
     console.log({ message: "회원 가입에 성공하였습니다." });
