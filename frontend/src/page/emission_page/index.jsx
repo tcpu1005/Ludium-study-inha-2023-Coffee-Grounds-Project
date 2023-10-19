@@ -13,7 +13,6 @@ const Emission_page = () => {
 
     return (
         <>
-dsdfsdf
         </>
     );
 };

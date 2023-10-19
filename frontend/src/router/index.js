@@ -2,6 +2,9 @@ import { useRoutes } from "react-router-dom";
 
 
 // 화면에 렌더링할 페이지 컴포넌트들 가져오기
+import Collection_input_page from "../page/collection_input_page";
+import Emission_input_page from "../page/emission_input_page";
+import Collection_page from "../page/collection_page";
 import Header_layout from "../layout/header_layout";
 import Emission_page from '../page/emission_page';
 import Default_page from "../page/default_page";
@@ -49,7 +52,7 @@ const Router = () => {
         {
           // 7_MY_PAGE_CAFE_COFFEE_IINPUT
           path: "/emission/input",
-          element: <>7_MY_PAGE_CAFE_COFFEE_IINPUT</>,
+          element: <Emission_input_page />,
         },
         {
           // 8_MY_PAGE_CAFE_TOKEN
@@ -69,12 +72,12 @@ const Router = () => {
         {
           // 11_MY_PAGE_COLLECTOR
           path: "/collection",
-          element: <>11_MY_PAGE_COLLECTOR</>,
+          element: <Collection_page />,
         },
         {
           // 12_MY_PAGE_COLLECTOR_INPUT
           path: "/collection/input",
-          element: <>12_MY_PAGE_COLLECTOR_INPUT</>,
+          element: <Collection_input_page />,
         },
         {
           path: "/default",
