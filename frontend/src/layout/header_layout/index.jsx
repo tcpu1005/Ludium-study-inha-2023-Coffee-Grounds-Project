@@ -3,17 +3,18 @@
 
 import { Outlet } from 'react-router-dom';
 import { HeaderStyle } from './style';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 const Header_layout = () => {
     //
 
+    const nav = useNavigate();
     const location = useLocation();
     const current_path = location.pathname;
 
 
-    const header_title = () => {
+    const get_header_title_fn = () => {
         switch (current_path) {
             //
 
@@ -74,8 +75,8 @@ const Header_layout = () => {
     return (
         <>
             <HeaderStyle>
-                <button>←</button>
-                <header>{header_title()}</header>
+                <button onClick={() => nav("/")}>←</button>
+                <header>{get_header_title_fn()}</header>
                 <button>☰</button>
             </HeaderStyle>
             <Outlet />
