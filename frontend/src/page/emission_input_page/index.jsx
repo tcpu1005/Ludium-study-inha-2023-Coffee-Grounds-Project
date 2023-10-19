@@ -64,7 +64,7 @@ const Emission_input_page = () => {
 
 
             <legend htmlFor="coffee_status">커피박 상태</legend>
-            <select name="" id="" ref={coffee_status_ref}>
+            <select name="" id="" ref={coffee_status_ref} defaultValue={"moisture"}>
                 <option value="drying">건조</option>
                 <option value="moisture">습기</option>
                 <option value="mold">곰팡이</option>
