@@ -17,37 +17,74 @@ const Router = () => {
       element: <Header />,
       children: [
         {
+          // 1_MAIN
           path: "/",
           element: <Main_page />,
-          children: [
-            {}
-          ]
+        },
+        {
+          // 2_JOIN_CHOICE
+          path: "/join/choice",
+          element: <>2_JOIN_CHOICE</>,
+        },
+        {
+          // 3_JOIN_CAFE
+          path: "/join/cafe",
+          element: <>3_JOIN_CAFE</>,
+        },
+        {
+          // 4_JOIN_COLLECTOR
+          path: "/join/collector",
+          element: <>4_JOIN_COLLECTOR</>,
+        },
+        {
+          // 5_LOGIN
+          path: "/login",
+          element: <Login_page />,
+        },
+        {
+          // 6_MY_PAGE_CAFE_COFFEE
+          path: "/emission",
+          element: <Emission_page />,
+        },
+        {
+          // 7_MY_PAGE_CAFE_COFFEE_IINPUT
+          path: "/emission/input",
+          element: <>7_MY_PAGE_CAFE_COFFEE_IINPUT</>,
+        },
+        {
+          // 8_MY_PAGE_CAFE_TOKEN
+          path: "/token",
+          element: <>8_MY_PAGE_CAFE_TOKEN</>,
+        },
+        {
+          // 9_MY_PAGE_CAFE_TOKEN_INFO
+          path: "/token/transaction",
+          element: <>9_MY_PAGE_CAFE_TOKEN_INFO</>,
+        },
+        {
+          // 10_MY_PAGE_CAFE_TOKEN_EXCHANGE
+          path: "/token/exchange",
+          element: <>10_MY_PAGE_CAFE_TOKEN_EXCHANGE</>,
+        },
+        {
+          // 11_MY_PAGE_COLLECTOR
+          path: "/collection",
+          element: <>11_MY_PAGE_COLLECTOR</>,
+        },
+        {
+          // 12_MY_PAGE_COLLECTOR_INPUT
+          path: "/collection/input",
+          element: <>12_MY_PAGE_COLLECTOR_INPUT</>,
         },
         {
           path: "/default",
           element: <Default_page />,
-          children: [
-            {}
-          ]
-        },
-        {
-          path: "/login",
-          element: <Login_page />,
-          children: [
-            {}
-          ]
-        },
-        {
-          path: "/emission",
-          element: <Emission_page />,
-          children: [
-            {}
-          ]
         },
       ]
     },
 
   ])
 }
+
 
 export default Router;
