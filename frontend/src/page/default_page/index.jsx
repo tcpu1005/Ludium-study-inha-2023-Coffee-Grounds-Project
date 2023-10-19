@@ -1,11 +1,11 @@
 // ㅜ rafce 명령어로 컴포넌트 생성하면 된다.
 
-import Default_component from "../../component/default_component";
 import { Button_1, MAROON_COLOR_1, WHITE_COLOR_1 } from "../../base_style";
+import Default_component from "../../component/default_component";
 import { default_action_fn } from "../../redux/middleware";
 import { useDispatch, useSelector } from "react-redux";
-import Footer from "../../layout/footer";
-import Top from "../../layout/top";
+import Footer_layout from "../../layout/footer_layout";
+import Top_layout from "../../layout/top_layout";
 
 const Default_page = () => {
   //
@@ -25,7 +25,7 @@ const Default_page = () => {
 
   return (
     <>
-      <Top />
+      <Top_layout />
       <div
         style={{
           width: "100%",
@@ -44,7 +44,7 @@ const Default_page = () => {
         <h6>{team_message}</h6>
       </div>
       <Default_component />
-      <Footer />
+      <Footer_layout />
     </>
   );
 };
