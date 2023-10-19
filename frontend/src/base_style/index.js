@@ -74,4 +74,28 @@ border-radius: 10px;
 font-size: 5vw;
 margin: 1vw;
 `;
+
+
+// 화면 아래에 베이지 버튼이라 가정
+export const Button_2 = styled.button`
+background-color: ${MAROON_COLOR_1};
+border: 1px solid ${BEIGE_COLOR_1};
+padding: 1vw 2vw 1.5vw 2vw;
+color: ${BEIGE_COLOR_1};
+border-radius: 10px;
+font-size: 5vw;
+margin: 1vw;
+`;
+
+
+// 화면 아래에 초록 버튼이라 가정
+export const Button_3 = styled.button`
+background-color: ${MAROON_COLOR_1};
+border: 1px solid ${BEIGE_COLOR_1};
+padding: 1vw 2vw 1.5vw 2vw;
+color: ${BEIGE_COLOR_1};
+border-radius: 10px;
+font-size: 5vw;
+margin: 1vw;
+`;
 // ...

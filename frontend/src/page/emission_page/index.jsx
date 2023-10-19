@@ -3,8 +3,10 @@
 
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import ListItem from '../../component/list_item_component';
+import List_component from '../../component/list_component';
 import Pagination from '../../component/pagination_component';
+
+import Big_title_component from '../../component/big_title_component';
 
 
 const Emission_page = () => {
@@ -13,6 +15,8 @@ const Emission_page = () => {
 
     return (
         <>
+            <Big_title_component title="배출하기" />
+            <List_component/>
         </>
     );
 };
