@@ -28,7 +28,7 @@ const Collection_input_page = () => {
 
 
     const coffee_status_value = get_coffee_status_value_fn("습기");
-    const coffee_amount_value = "100";
+    const coffee_amount_value = 100;
 
 
     const coffee_status_ref = useRef();
