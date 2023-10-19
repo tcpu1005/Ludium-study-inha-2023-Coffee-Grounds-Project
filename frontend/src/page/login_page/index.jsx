@@ -1,8 +1,8 @@
-
 const Login_page = () => {
   return (
     <div>Login_page</div>
   )
 }
 
-export default Login_page
+
+export default Login_page;

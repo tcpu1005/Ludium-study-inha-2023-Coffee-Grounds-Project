@@ -1,5 +1,5 @@
 import React from 'react';
-import { PaginationStyle } from '../../page/collection_page/style';
+import { PaginationStyle } from '../../page/emission_page/style';
 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
     return (

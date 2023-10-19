@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListItemStyle } from '../../page/collection_page/style';
+import { ListItemStyle } from '../../page/emission_page/style';
 
 const ListItem = ({ status, cafeName, weight }) => {
     return (

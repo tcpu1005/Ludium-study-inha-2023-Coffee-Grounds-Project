@@ -1,10 +1,10 @@
 // 우리 프로젝트의 표준 컬러라던지 여러 화면에서 같은 css를 사용해야 할 내용 적기
 
+
 // 크롬 기준 iPhone SE 기준으로 작업 요망
 
 
 import styled, { createGlobalStyle } from "styled-components";
-
 
 
 // 우리 프로젝트 표준 컬러들
@@ -19,10 +19,7 @@ export const SAGE_COLOR_1 = "#D6D46D";
 
 // 프로젝트 css 디폴트 값 설정 (index.js에서 사용됨)
 // 전체 폰트와 h1~h5 폰트의 디폴트 사이즈를 상대 크기로 설정함
-export const GlobalStyle = createGlobalStyle
-`
-
-
+export const GlobalStyle = createGlobalStyle`
 * {
     text-align: center;
     font-size: 7vw;
