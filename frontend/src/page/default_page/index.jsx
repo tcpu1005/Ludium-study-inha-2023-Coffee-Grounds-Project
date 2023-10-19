@@ -9,19 +9,22 @@ import { useDispatch, useSelector } from "react-redux";
 import Footer from "../../layout/footer";
 import Top from "../../layout/top";
 
-const cafe_user_data = {
-  login_id: "hello123",
-  login_password: "1234",
-  user_name: "김지훈",
-  user_type: null,
-  wallet_address: null,
-  wallet_privatekey: null,
-  address_si: "인천광역시",
-  address_gu: "미추홀구",
-  address_dong: "용현동",
-};
-
 const Default_page = () => {
+  const cafe_user_data = {
+    login_id: "hello1223",
+    login_password: "12324",
+    user_name: "김지훈2",
+    user_type: null,
+    wallet_address: null,
+    wallet_privatekey: null,
+    cafe_name: "메가커피1",
+    address_si: "인천광역시1",
+    address_gu: "미추홀구1",
+    address_dong: "용현동1",
+    total_emissions: null,
+  };
+  const company_user_data = {};
+
   //
 
   const dispatch = useDispatch();
