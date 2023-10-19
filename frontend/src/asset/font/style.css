@@ -1,0 +1,593 @@
+/* Welcome 및 회원 아이디*/
+/* top에서 두 번째 상자에 들어가는 글자*/
+
+sectopbannercha{
+
+font-family: 'Gowun Batang';
+font-style: normal;
+font-weight: 700;
+font-size: 5.63vw;
+line-height: 8.13vw;
+text-align: center;
+
+color: #623817;
+}
+
+
+/* 메뉴 페이지 */
+
+ /* MENU */
+ me_nu{
+
+ font-family: 'Gowun Batang';
+ font-style: normal;
+ font-weight: 700;
+ font-size: 5.63vw;
+ line-height: 7.81vw;
+ text-align: center;
+ letter-spacing: 0.85em;
+
+ color: #6F6F4B;
+
+ }
+
+ /* 주메뉴 */
+ /* 소개글 */
+ firstmenu{
+
+ font-family: 'Gowun Batang';
+ font-style: normal;
+ font-weight: 700;
+ font-size: 5.63vw;
+ line-height: 8.13vw;
+ /* identical to box height */
+ display: flex;
+ align-items: center;
+ text-align: center;
+ letter-spacing: 0.11em;
+
+ color: #6F6F4B;
+
+ }
+
+ /* 소메뉴 */
+ /* 목표 */
+ secmenu{
+
+ font-family: 'Arita-dotum4.0(OTF)';
+ font-style: normal;
+ font-weight: 400;
+ font-size: 4.38vw;
+ line-height: 4.38vw;
+ display: flex;
+ align-items: center;
+ text-align: center;
+ letter-spacing: 0.1em;
+
+ color: #6F6F4B;
+
+ }
+
+ /* 소메뉴 중에서 밑줄 그어진 것 */
+ /* 카페 */
+ secmenuwunderline{
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 4.38vw;
+line-height: 4.38vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.1em;
+text-decoration-line: underline;
+
+color: #6F6F4B;
+
+ }
+
+ /* 로그아웃 */
+logout{
+
+font-family: 'Gowun Batang';
+font-style: normal;
+font-weight: 700;
+font-size: 5.63vw;
+line-height: 8.13vw;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.11em;
+
+color: #D64B34;
+
+}
+
+/* 마이페이지(수거) */
+    /* 맨 위 배너 글자 */
+    /* 카페 마이페이지 */
+    topcha{
+    
+    font-family: 'Gowun Batang';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 6.25vw;
+    line-height: 9.06vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.12em;
+
+    color: #623817;
+
+    }
+
+    /* 토큰 잔액 */
+    /* 530 토큰 */
+    tokencha{
+
+    font-family: 'Arita-dotum4.0(OTF)';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 5vw;
+    line-height: 5vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.11em;
+
+    color: #67493F;
+    }
+
+    /* 토큰 상세내역 및 환전하기 */
+    tokeninfo{
+
+    font-family: 'Arita-dotum4.0(OTF)';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.13vw;
+    line-height: 3.13vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.11em;
+    text-decoration-line: underline;
+
+    color: #67493F;
+    }
+
+/* 토큰페이지 */
+    /* 환전하기 */
+    exchangelink{
+    
+    font-family: 'Gowun Batang';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 7.5vw;
+    line-height: 8.75vw;
+    text-align: center;
+    letter-spacing: 0.55em;
+    text-decoration-line: underline;
+
+    color: #E8D4B9;
+    }
+
+    /* 토큰 잔액 */
+    /* 000 TOKEN */
+    remaintoken{
+    
+    font-family: 'Gowun Batang';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 5vw;
+    line-height: 3.445.3%;
+    /* or 5.63vw */
+    text-align: center;
+    letter-spacing: 0.55em;
+
+    color: #6F6F4B;
+
+    }
+
+    /* 토큰 거래내역 */
+    tokenhistory{
+    
+    font-family: 'Gowun Batang';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 5vw;
+    line-height: 7.19vw;
+    text-align: center;
+    letter-spacing: 0.55em;
+
+    color: #67493F;
+
+    }
+
+    /* 거래내역 목록 */
+    /* 입금 */
+    tokenin{
+
+    font-family: 'Arita-dotum4.0(OTF)';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.44vw;
+    line-height: 181.3%;
+    /* or 6.25vw */
+    letter-spacing: 0.125em;
+
+    color: #0F52BA;
+    }
+
+    /* 출금 */
+    tokenout{
+        
+    font-family: 'Arita-dotum4.0(OTF)';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.44vw;
+    line-height: 181.3%;
+    /* or 6.25vw */
+    letter-spacing: 0.125em;
+
+    color: #C00A0A;
+
+    }
+
+    /* 그 외 */
+    tokencontext{
+
+    font-family: 'Arita-dotum4.0(OTF)';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.44vw;
+    line-height: 181.3%;
+    /* or 6.25vw */
+    letter-spacing: 0.125em;
+
+    color: #67493F;
+
+    }
+
+    /* 리스트 숫자 */
+    listnum{
+
+    font-family: 'Arita-dotum4.0(OTF)';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 4.38vw;
+    line-height: 4.38vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.55em;
+
+    color: #67493F;
+
+    }
+
+/* 배출 */
+    /* 배출하기 */
+    wastebutton{
+
+    font-family: 'Gowun Batang';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 10vw;
+    line-height: 53.5%;
+    /* or 5.31vw */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.03em;
+
+    color: #E8D4B9;
+    }
+
+    /* 배출 목록 */
+    /*수거요청 */
+    request{
+
+    font-family: 'Arita-dotum4.0(OTF)';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.44vw;
+    line-height: 6.25vw;
+    /* or 182% */
+    letter-spacing: -0.05em;
+
+    color: #0F52BA;
+
+    }
+
+    /*수거완료*/
+    complete{
+
+    font-family: 'Arita-dotum4.0(OTF)';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.44vw;
+    line-height: 6.25vw;
+    /* or 182% */
+    letter-spacing: -0.05em;
+
+    color: #C00A0A;
+
+    }
+
+    /*보상완료*/
+    tokenpaid{
+
+    font-family: 'Arita-dotum4.0(OTF)';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.44vw;
+    line-height: 6.25vw;
+    /* or 182% */
+    letter-spacing: -0.05em;
+
+    color: #09C3.44B;
+
+    }
+
+    /*목록 그외*/
+    wastelist{
+
+    font-family: 'Arita-dotum4.0(OTF)';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.44vw;
+    line-height: 6.25vw;
+    /* or 182% */
+    letter-spacing: -0.05em;
+
+    color: #67493F;
+
+    }
+    /*총 배출량*/
+    totalwaste{
+
+    font-family: 'Arita-dotum4.0(OTF)';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 4.38vw;
+    line-height: 181.3%;
+    /* identical to box height, or 7.81vw */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.005em;
+
+    color: #67493F;
+
+    }
+
+/* 배출입력 */
+    /* 내용 제목 */
+    mainmenu{
+        /* 배출 데이터 입력 */
+
+    font-family: 'Gowun Batang';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 6.25vw;
+    line-height: 9.06vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.01em;
+
+    color: #67493F;
+
+    }
+
+    /* 소제목 */
+    submenu{
+        /* 카페명 */
+
+    font-family: 'Arita-dotum4.0(OTF)';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 5vw;
+    line-height: 5vw;
+    letter-spacing: 0.11em;
+
+    color: #67493F;
+
+    }
+
+    /* 빈칸 내용 */
+    context{
+        /* 00000 카페 */
+
+    font-family: 'Arita-dotum4.0(OTF)';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 5vw;
+    line-height: 5vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.11em;
+
+    color: #67493F;
+
+    }
+
+    /* 입력 버튼 */
+    inputButton {
+        /* 데이터 입력 */
+
+    font-family: 'Gowun Batang';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 6.25vw;
+    line-height: 9.06vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.015em;
+
+    color: #67493F;
+
+    }
+
+    /* 상태창 */
+    statusBox {
+        /* 건조 */
+
+    font-family: 'Arita-dotum4.0(OTF)';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 6.25vw;
+    line-height: 6.25vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.11em;
+
+    color: #623817;
+
+    }
+
+/* 마이페이지(수거 */
+    /* 수거요청 */
+    requestWaste{
+
+    font-family: 'Arita-dotum4.0(OTF)';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.44vw;
+    line-height: 264.8%;
+    /* or 9.06vw */
+    text-align: center;
+    letter-spacing: 0.095em;
+
+    color: #0F52BA;
+
+    }
+
+    /* 수거 완료 */
+    completeWaste{
+
+    font-family: 'Arita-dotum4.0(OTF)';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.44vw;
+    line-height: 264.8%;
+    /* or 9.06vw */
+    text-align: center;
+    letter-spacing: 0.095em;
+
+    color: #C00A0A;
+
+    }
+
+    /* 그외 */
+    otherWaste{
+
+    font-family: 'Arita-dotum4.0(OTF)';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.44vw;
+    line-height: 264.8%;
+    /* or 9.06vw */
+    text-align: center;
+    letter-spacing: 0.095em;
+
+    color: #000000;
+
+    }
+
+    /*수거하기 버튼*/
+    buttoncha {
+
+    font-family: 'Gowun Batang';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 6.25vw;
+    line-height: 6.25vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.01em;
+
+    color: #E8D4B9;
+
+    }
+
+/*회원가입*/
+    /*선택*/
+    select_member {
+    /* 카페 */
+
+    font-family: 'Gowun Batang';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 6.25vw;
+    line-height: 53.5%;
+    /* or 3.44vw */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.03em;
+
+    color: #6F6F4B;
+
+    }
+
+/*카페 회원가입*/
+    /*정보입력*/
+    input_info{
+
+    font-family: 'Gowun Batang';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 6.25vw;
+    line-height: 9.06vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.035em;
+
+    color: #67493F;
+
+    }
+
+    /*질문*/
+    question{
+        /* 이름 */
+
+    font-family: 'Arita-dotum4.0(OTF)';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 5vw;
+    line-height: 5vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.05em;
+
+    color: #6F6F4B;
+
+    }
+
+    /*주소*/
+    addressq{
+        /* 시 */
+
+    font-family: 'Arita-dotum4.0(OTF)';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.44vw;
+    line-height: 3.44vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.11em;
+
+    color: #6F6F4B;
+
+    }
