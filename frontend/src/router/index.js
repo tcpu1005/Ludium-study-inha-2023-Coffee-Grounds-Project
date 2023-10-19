@@ -2,7 +2,7 @@ import { useRoutes } from "react-router-dom";
 
 
 // 화면에 렌더링할 페이지 컴포넌트들 가져오기
-import header_layout from "../layout/header_layout";
+import Header_layout from "../layout/header_layout";
 import Emission_page from '../page/emission_page';
 import Default_page from "../page/default_page";
 import Login_page from '../page/login_page';
@@ -14,7 +14,7 @@ const Router = () => {
   return useRoutes([
     {
       path: "/",
-      element: <header_layout />,
+      element: <Header_layout />,
       children: [
         {
           // 1_MAIN
