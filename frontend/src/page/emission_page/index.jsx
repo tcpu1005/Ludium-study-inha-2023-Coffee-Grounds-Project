@@ -138,7 +138,7 @@ const Emission_page = () => {
                     const default_style = {};
 
 
-                    return <span key={`pagination-${page_number}`} style={is_current_page ? current_page_style : default_style}> {page_number} </span>;
+                    return <span key={`pagination-${page_number}`} onClick={() => set_current_page_number(page_number)} style={is_current_page ? current_page_style : default_style}> {page_number} </span>;
                 })}
 
 
