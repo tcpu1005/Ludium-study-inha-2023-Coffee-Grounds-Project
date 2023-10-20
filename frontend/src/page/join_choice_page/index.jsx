@@ -12,7 +12,7 @@ const Join_choice_page = () => {
     const nav = useNavigate();
     return (
         <>
-            <Big_title_component title="회원가입" />
+            <Big_title_component title="회원 유형" />
             <div>
                 <Button_2 onClick={() => nav("/join/cafe")}>카페</Button_2>
             </div>
