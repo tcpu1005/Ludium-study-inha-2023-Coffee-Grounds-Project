@@ -19,4 +19,5 @@ const Pagination_component = ({ currentPage, totalPages, onPageChange }) => {
     );
 };
 
+
 export default Pagination_component;
