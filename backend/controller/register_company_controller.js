@@ -1,4 +1,5 @@
-const Users = require("../model/Users");
+const { CollectorDetails } = require("../model");
+const { Users } = require("../model");
 
 module.exports.register_company_controller = async (req, res) => {
   const {
@@ -27,10 +28,18 @@ module.exports.register_company_controller = async (req, res) => {
     console.log("if!");
     const createdUser = await Users.create({
       login_id,
-      login_password, // TODO: 비밀번호 해시화 필요
+      login_password,
       user_name,
+      user_type,
+      wallet_address,
+      wallet_privatekey,
+    });
+
+    const created_CollectorDetails = await CollectorDetails.create({
+      user_id: createdUser.user_id,
       company_name,
     });
+
     console.log("if!");
     console.log({ message: "회원 가입에 성공하였습니다." });
   } catch (error) {

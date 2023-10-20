@@ -48,13 +48,15 @@ class CollectionRecords extends Sequelize.Model {
           allowNull: true,
         },
         updated_at: {
+          //임시 True 원래는 false
           type: Sequelize.DATE,
-          allowNull: false,
+          allowNull: true,
           defaultValue: Sequelize.NOW,
         },
         created_at: {
+          //임시 True 원래는 false
           type: Sequelize.DATE,
-          allowNull: false,
+          allowNull: true,
           defaultValue: Sequelize.NOW,
         },
       },
@@ -63,7 +65,7 @@ class CollectionRecords extends Sequelize.Model {
         underscored: true,
         timestamps: false,
         modelName: "CollectionRecord",
-        tableName: "CollectionRecords",
+        tableName: "collectionRecords",
         charset: "utf8",
         collate: "utf8_general_ci",
       }

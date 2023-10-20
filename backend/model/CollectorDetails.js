@@ -28,7 +28,7 @@ class CollectorDetails extends Sequelize.Model {
         underscored: true,
         timestamps: false,
         modelName: "CollectorDetail",
-        tableName: "CollectorDetails",
+        tableName: "collectorDetails",
         charset: "utf8",
         collate: "utf8_general_ci",
       }
