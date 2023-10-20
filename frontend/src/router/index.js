@@ -7,6 +7,7 @@ import Collection_input_page from "../page/collection_input_page";
 import Emission_input_page from "../page/emission_input_page";
 import Join_choice_page from "../page/join_choice_page";
 import Collection_page from "../page/collection_page";
+import Main_page_figma from "../page/main_page_figma";
 import Header_layout from "../layout/header_layout";
 import Emission_page from '../page/emission_page';
 import Default_page from "../page/default_page";
@@ -82,8 +83,16 @@ const Router = () => {
           element: <Collection_input_page />,
         },
         {
+          // 팀원들을 위한 예시 코드
           path: "/default",
           element: <Default_page />,
+        },
+        //
+
+        // ㅜ 여기서부터는 피그마 적용 페이지
+        {
+          path: "/figma",
+          element: <Main_page_figma />,
         },
         {
           path: "/join/choice/figma",
