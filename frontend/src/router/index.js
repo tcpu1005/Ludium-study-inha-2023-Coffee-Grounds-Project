@@ -2,8 +2,10 @@ import { useRoutes } from "react-router-dom";
 
 
 // 화면에 렌더링할 페이지 컴포넌트들 가져오기
+import Join_choice_page_figma from "../page/join_choice_page_figma";
 import Collection_input_page from "../page/collection_input_page";
 import Emission_input_page from "../page/emission_input_page";
+import Join_choice_page from "../page/join_choice_page";
 import Collection_page from "../page/collection_page";
 import Header_layout from "../layout/header_layout";
 import Emission_page from '../page/emission_page';
@@ -27,7 +29,7 @@ const Router = () => {
         {
           // 2_JOIN_CHOICE
           path: "/join/choice",
-          element: <>2_JOIN_CHOICE</>,
+          element: <Join_choice_page />,
         },
         {
           // 3_JOIN_CAFE
@@ -82,6 +84,10 @@ const Router = () => {
         {
           path: "/default",
           element: <Default_page />,
+        },
+        {
+          path: "/join/choice/figma",
+          element: <Join_choice_page_figma />,
         },
       ]
     },
