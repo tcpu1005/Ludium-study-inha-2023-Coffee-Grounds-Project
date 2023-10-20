@@ -16,7 +16,7 @@ const Default_page = () => {
     login_id: "hello1223",
     login_password: "12324",
     user_name: "김지훈2",
-    user_type: null,
+    user_type: "Cafe",
     wallet_address: null,
     wallet_privatekey: null,
     cafe_name: "메가커피1",
@@ -25,11 +25,12 @@ const Default_page = () => {
     address_dong: "용현동1",
     total_emissions: null,
   };
+
   const company_user_data = {
     login_id: "imcompany",
     login_password: "1234",
     user_name: "나수거",
-    user_type: null,
+    user_type: "Collector",
     wallet_address: null,
     wallet_privatekey: null,
     company_name: "나수거업체명",
@@ -39,7 +40,7 @@ const Default_page = () => {
     login_password: "12324",
   };
   const members_cafe_collection_data = {
-    coffee_amount: "20kg",
+    coffee_amount: 20,
     coffee_status: "건조",
     updated_at: null,
   };
@@ -78,7 +79,9 @@ const Default_page = () => {
         <h6>{team_message}</h6>
       </div>
       <Default_component />
-      <Button_1 onClick={() => login_user(login_user_data)}>로그인</Button_1>
+      <Button_1 onClick={() => dispatch(login_user(login_user_data))}>
+        로그인
+      </Button_1>
       <Button_1 onClick={() => register_cafe_user(cafe_user_data)}>
         카페유저등록
       </Button_1>
@@ -86,7 +89,9 @@ const Default_page = () => {
         수거자등록
       </Button_1>
       <Button_1
-        onClick={() => members_cafe_collection(members_cafe_collection_data)}
+        onClick={() =>
+          dispatch(members_cafe_collection(members_cafe_collection_data))
+        }
       >
         카페배출입력(카페유저입장)
       </Button_1>

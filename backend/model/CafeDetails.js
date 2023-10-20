@@ -36,7 +36,7 @@ class CafeDetails extends Sequelize.Model {
         },
         total_emissions: {
           type: Sequelize.INTEGER,
-          allowNull: false,
+          allowNull: true, //임시 null true
           defaultValue: 0,
         },
       },
@@ -45,7 +45,7 @@ class CafeDetails extends Sequelize.Model {
         underscored: true,
         timestamps: false,
         modelName: "CafeDetail",
-        tableName: "CafeDetails",
+        tableName: "cafeDetails",
         charset: "utf8",
         collate: "utf8_general_ci",
       }
