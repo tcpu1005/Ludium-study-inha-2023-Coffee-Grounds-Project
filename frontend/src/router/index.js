@@ -2,6 +2,7 @@ import { useRoutes } from "react-router-dom";
 
 
 // 화면에 렌더링할 페이지 컴포넌트들 가져오기
+import Insentive_visualization_page from "../page/insentive_visualization_page";
 import Join_choice_page_figma from "../page/join_choice_page_figma";
 import Collection_input_page from "../page/collection_input_page";
 import Emission_input_page from "../page/emission_input_page";
@@ -60,7 +61,7 @@ const Router = () => {
         {
           // 8_MY_PAGE_CAFE_TOKEN
           path: "/token",
-          element: <>8_MY_PAGE_CAFE_TOKEN</>,
+          element: <Insentive_visualization_page />,
         },
         {
           // 9_MY_PAGE_CAFE_TOKEN_INFO
