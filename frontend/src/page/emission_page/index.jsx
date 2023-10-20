@@ -1,5 +1,7 @@
 // 6_MY_PAGE_CAFE_COFFEE
 
+
+import { useNavigate } from 'react-router';
 import { Button_3 } from '../../base_style';
 import { useState, useEffect } from 'react';
 import { MAROON_COLOR_1 } from "../../base_style";
@@ -9,6 +11,9 @@ import Small_title_component from "../../component/small_title_component";
 
 const Emission_page = () => {
     //
+
+    const nav = useNavigate();
+
 
     // 10개씩 보여주기
     const page_unit = 10;
@@ -95,6 +100,8 @@ const Emission_page = () => {
 
             <div>
                 <span onClick={minus_current_page_number_button_fn}>{"<"}</span>
+
+                
                 {Array.from({ length: page_number_unit }, (v, i) => i).map((v, i) => {
                     //
 
@@ -133,11 +140,13 @@ const Emission_page = () => {
 
                     return <span key={`pagination-${page_number}`} style={is_current_page ? current_page_style : default_style}> {page_number} </span>;
                 })}
+
+
                 <span onClick={plus_current_page_number_button_fn}>{">"}</span>
             </div>
 
 
-            <Button_3>배출하기</Button_3>
+            <Button_3 onClick={() => nav("/emission/input")}>배출하기</Button_3>
         </>
     );
 };
