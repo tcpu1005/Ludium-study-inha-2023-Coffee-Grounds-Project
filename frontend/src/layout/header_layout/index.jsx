@@ -46,16 +46,16 @@ const Header_layout = () => {
             case "/emission/input":
                 return "배출 입력";
 
-            // 8_MY_PAGE_CAFE_TOKEN
-            case "/token":
-                return "토큰";
+            // 8_MY_PAGE_CAFE_INSENTIVE
+            case "/insentive":
+                return "배출 성과";
 
-            // 9_MY_PAGE_CAFE_TOKEN_INFO
-            case "/token/transaction":
+            // 9_MY_PAGE_CAFE_TOKEN
+            case "/insentive/token":
                 return "토큰 상세";
 
             // 10_MY_PAGE_CAFE_TOKEN_EXCHANGE
-            case "/token/exchange":
+            case "/insentive/token/exchange":
                 return "환전";
 
             // 11_MY_PAGE_COLLECTOR

@@ -54,23 +54,23 @@ const Router = () => {
           element: <Emission_page />,
         },
         {
-          // 7_MY_PAGE_CAFE_COFFEE_IINPUT
+          // 7_MY_PAGE_CAFE_COFFEE_INPUT
           path: "/emission/input",
           element: <Emission_input_page />,
         },
         {
-          // 8_MY_PAGE_CAFE_TOKEN
-          path: "/token",
+          // 8_MY_PAGE_CAFE_INSENTIVE
+          path: "/insentive",
           element: <Insentive_visualization_page />,
         },
         {
-          // 9_MY_PAGE_CAFE_TOKEN_INFO
-          path: "/token/transaction",
-          element: <>9_MY_PAGE_CAFE_TOKEN_INFO</>,
+          // 9_MY_PAGE_CAFE_TOKEN
+          path: "/insentive/token",
+          element: <>9_MY_PAGE_CAFE_TOKEN</>,
         },
         {
           // 10_MY_PAGE_CAFE_TOKEN_EXCHANGE
-          path: "/token/exchange",
+          path: "/insentive/token/exchange",
           element: <>10_MY_PAGE_CAFE_TOKEN_EXCHANGE</>,
         },
         {

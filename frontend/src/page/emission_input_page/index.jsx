@@ -1,4 +1,4 @@
-// 7_MY_PAGE_CAFE_COFFEE_IINPUT
+// 7_MY_PAGE_CAFE_COFFEE_INPUT
 
 
 import Big_title_component from "../../component/big_title_component";

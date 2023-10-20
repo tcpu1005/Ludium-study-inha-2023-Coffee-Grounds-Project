@@ -1,6 +1,7 @@
-// 8_MY_PAGE_CAFE_TOKEN
+// 8_MY_PAGE_CAFE_INSENTIVE
 
 
+import Small_title_component from "../../component/small_title_component";
 import { useNavigate } from "react-router";
 
 
@@ -20,9 +21,13 @@ const Insentive_visualization_page = () => {
 
     return (
         <>
-            <div onClick={() => nav("/token/transaction")}>
+            <Small_title_component title="나의 배출 성과" />
+
+
+            <div onClick={() => nav("/insentive/token")}>
                 <span>지급된 토큰 총량</span>
                 <span>{total_token_amount}token</span>
+                <div>잔액 확인하기</div>
             </div>
 
 
