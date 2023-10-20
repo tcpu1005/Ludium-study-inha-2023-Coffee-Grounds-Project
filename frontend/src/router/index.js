@@ -5,11 +5,13 @@ import { useRoutes } from "react-router-dom";
 import Insentive_visualization_page from "../page/insentive_visualization_page";
 import Join_choice_page_figma from "../page/join_choice_page_figma";
 import Collection_input_page from "../page/collection_input_page";
+import Join_cafe_page_figma from "../page/join_cafe_page_figma";
 import Emission_input_page from "../page/emission_input_page";
 import Join_choice_page from "../page/join_choice_page";
 import Collection_page from "../page/collection_page";
 import Main_page_figma from "../page/main_page_figma";
 import Header_layout from "../layout/header_layout";
+import Join_cafe_page from "../page/join_cafe_page";
 import Emission_page from '../page/emission_page';
 import Default_page from "../page/default_page";
 import Login_page from '../page/login_page';
@@ -36,7 +38,7 @@ const Router = () => {
         {
           // 3_JOIN_CAFE
           path: "/join/cafe",
-          element: <>3_JOIN_CAFE</>,
+          element: <Join_cafe_page/>,
         },
         {
           // 4_JOIN_COLLECTOR
@@ -98,6 +100,10 @@ const Router = () => {
         {
           path: "/join/choice/figma",
           element: <Join_choice_page_figma />,
+        },
+        {
+          path: "/join/cafe/figma",
+          element: <Join_cafe_page_figma />,
         },
       ]
     },
