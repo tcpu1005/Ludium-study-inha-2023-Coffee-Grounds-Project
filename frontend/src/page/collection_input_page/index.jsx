@@ -3,13 +3,22 @@
 
 import Big_title_component from "../../component/big_title_component";
 import { Button_2 } from "../../base_style";
+import { useLocation } from "react-router";
 import { useRef } from "react";
 
 
 const Collection_input_page = () => {
     //
 
-    // 수거업체명, 커피박 상태, 커피박 양은 리덕스에서 가져올 예정
+    const location = useLocation();
+    
+
+    // 수거 목록 페이지에서 선택한 수거 목록의 데이터가 여기에 들어있다.
+    const {collection_choice_data} = location.state;
+    console.log(collection_choice_data);
+
+
+    // 수거업체명은 리덕스에서 가져올 예정
     const company_name = "카페인 중독";
 
 
@@ -27,10 +36,10 @@ const Collection_input_page = () => {
     };
 
 
-    const coffee_status_value = get_coffee_status_value_fn("습기");
-    const coffee_amount_value = 100;
+    const coffee_status_value = get_coffee_status_value_fn(collection_choice_data.coffee_status);
+    const coffee_amount_value = collection_choice_data.coffee_amount;
 
-
+    
     const coffee_status_ref = useRef();
     const coffee_amount_ref = useRef();
     const collection_date_ref = useRef();

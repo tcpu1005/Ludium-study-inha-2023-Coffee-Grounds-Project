@@ -1,24 +1,40 @@
 import { Span_el } from "./style";
 
 
-const List_component = ({ current_list, total_amount }) => {
+const List_component = ({ current_list, total_amount, set_collection_choice }) => {
     //
+
+
+    // 라디오 선택 시 선택한 수거 데이터의 UUID 값 저장
+    const select_radio_fn = (e) => {
+        const idx = e.target.value;
+        set_collection_choice(current_list[idx].record_id);
+    };
+
 
     return (
         <div>
             {current_list.map((v, i) => {
                 return (
                     <div key={`list-${i}`}>
-                        <Span_el key={`list-status-${i}`}>{v.status} | </Span_el>
-                        <Span_el key={`list-date-${i}`}>{`${new Date(v.date).getMonth() + 1}월 ${new Date(v.date).getDate()}일`} | </Span_el>
-                        <Span_el key={`list-amount-${i}`}>{v.amount}kg | </Span_el>
+                        {
+                            set_collection_choice &&
+                                v.reward_process !== "수거 요청"
+                                ?
+                                <input type="radio" name="collection_choice" value={`${i}`} disabled/>
+                                :
+                                <input type="radio" name="collection_choice" value={`${i}`} onChange={(e) => select_radio_fn(e)} />
+                        }
+                        <Span_el key={`list-reward-process-${i}`}>{v.reward_process} | </Span_el>
+                        <Span_el key={`list-updated-at-${i}`}>{`${new Date(v.updated_at).getMonth() + 1}월 ${new Date(v.updated_at).getDate()}일`} | </Span_el>
+                        <Span_el key={`list-coffee-amount-${i}`}>{v.coffee_amount}kg | </Span_el>
                         <Span_el key={`list-token-${i}`}>{v.token}token</Span_el>
                     </div>
                 )
             })}
 
 
-            {total_amount ? <div>총 배출량 : {total_amount}kg</div> : <></>}
+            {total_amount && <div>총 배출량 : {total_amount}kg</div>}
         </div>
     );
 };

@@ -21,9 +21,9 @@ const Emission_page = () => {
 
     // 페이지네이션 넘버는 5개만 보여주기
     const page_number_unit = 5;
-    const [current_page_number, set_current_page_number] = useState(0);
-    const [emission_list, set_emission_list] = useState(new Array());
     const [total_page_count, set_total_page_count] = useState(0);
+    const [emission_list, set_emission_list] = useState(new Array());
+    const [current_page_number, set_current_page_number] = useState(0);
 
 
     // 총 배출 양은 리덕스에서 가져오기
@@ -37,7 +37,7 @@ const Emission_page = () => {
         // 백 응답 결과 (리덕스 X)
         // 여기에 액션 날리면 됩니다.
         const new_emission_list = Array.from({ length: 131 }, (i, v) => {
-            return { status: "보상 완료", date: Date(), amount: 100, token: 100 };
+            return { reward_process: "보상 완료", updated_at: Date(), coffee_amount: 100, token: 100 };
         })
 
 
@@ -101,7 +101,7 @@ const Emission_page = () => {
             <div>
                 <span onClick={minus_current_page_number_button_fn}>{"<"}</span>
 
-                
+
                 {Array.from({ length: page_number_unit }, (v, i) => i).map((v, i) => {
                     //
 
