@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { MAROON_COLOR_1 } from "../../base_style";
 import List_component from "../../component/list_component";
 import Small_title_component from "../../component/small_title_component";
+import { fetch_collections } from "../../redux/middleware";
 
 const Collection_page = () => {
   //
@@ -25,16 +26,19 @@ const Collection_page = () => {
   // 수거 페이지 접속 시 백과 통신하여 수거 목록 조회
   useEffect(() => {
     //
-    const fetchData = async () => {
+    const fetch_data = async () => {
       try {
-        const result = await fetch_collections(); // 이 부분에서 백과 통신하고 결과를 가져옵니다.
+        console.log("실행됨");
+        const result = await fetch_collections(1); // 이 부분에서 백과 통신하고 결과를 가져옵니다.
+        console.log(result);
         set_collection_list(result); // 가져온 결과로 상태를 업데이트합니다.
+        console.log(result);
       } catch (error) {
         console.error("Error fetching collector collections:", error);
       }
     };
 
-    fetchData();
+    fetch_data();
     // 백 응답 결과 (리덕스 X)
     // 여기에 액션 날리면 됩니다.
     const new_collection_list = Array.from({ length: 131 }, (v, i) => {
