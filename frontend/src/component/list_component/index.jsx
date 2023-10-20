@@ -18,12 +18,16 @@ const List_component = ({ current_list, total_amount, set_collection_choice }) =
                 return (
                     <div key={`list-${i}`}>
                         {
+                            // 배출 목록 페이지가 아닌 수거 목록 페이지일 때
                             set_collection_choice &&
+                            (
+                                // 수거 완료 상태일 경우 선택 불가
                                 v.reward_process !== "수거 요청"
-                                ?
-                                <input type="radio" name="collection_choice" value={`${i}`} disabled/>
-                                :
-                                <input type="radio" name="collection_choice" value={`${i}`} onChange={(e) => select_radio_fn(e)} />
+                                    ?
+                                    <input type="radio" name="collection_choice" value={`${i}`} disabled />
+                                    :
+                                    <input type="radio" name="collection_choice" value={`${i}`} onChange={(e) => select_radio_fn(e)} />
+                            )
                         }
                         <Span_el key={`list-reward-process-${i}`}>{v.reward_process} | </Span_el>
                         <Span_el key={`list-updated-at-${i}`}>{`${new Date(v.updated_at).getMonth() + 1}월 ${new Date(v.updated_at).getDate()}일`} | </Span_el>
