@@ -3,7 +3,7 @@ const { CafeDetails } = require("../model");
 const { CollectorDetails } = require("../model");
 
 module.exports.members_cafe_collection_controller = async (req, res) => {
-  const { coffee_amount, coffee_status, cafe_id } = req.body;
+  const { coffee_amount, coffee_status, cafe_id, cafe_name } = req.body;
 
   console.log(req.body);
 
@@ -16,6 +16,7 @@ module.exports.members_cafe_collection_controller = async (req, res) => {
     } else {
       const created_coffee = await CollectionRecords.create({
         cafe_id,
+        cafe_name,
         coffee_amount,
         coffee_status,
         reward_status: "수거 요청",

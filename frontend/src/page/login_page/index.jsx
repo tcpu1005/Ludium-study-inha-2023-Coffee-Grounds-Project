@@ -1,21 +1,18 @@
 // 5_LOGIN
 
-
 import Big_title_component from "../../component/big_title_component";
 import { Button_3 } from "../../base_style";
 import { useRef } from "react";
-import {
-  Input_container,
-  Input_el,
-} from "./style";
-
-
+import { Input_container, Input_el } from "./style";
+import { login_user } from "../../redux/middleware";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 const Login_page = () => {
   //
-
+  const nav = useNavigate();
   const login_id_ref = useRef();
   const login_password_ref = useRef();
-
+  const dispatch = useDispatch();
 
   const login_button_fn = () => {
     //
@@ -24,37 +21,38 @@ const Login_page = () => {
     const password = login_password_ref.current.value;
     console.log(id, password);
 
-
     // 빈 값에 대한 예외 처리
     if (!id || !password) {
       alert("값을 입력해주세요.");
       return;
     }
-
+    const login_user_data = { login_id: id, login_password: password };
+    dispatch(login_user(login_user_data));
+    nav("/emission/input");
     // 여기서 디스패치 날리면 됩니다.
   };
-
 
   return (
     <>
       <Big_title_component title="로그인" />
 
-
       <Input_container>
-        <label htmlFor="login_id" >아이디</label>
+        <label htmlFor="login_id">아이디</label>
         <Input_el id="login_id" ref={login_id_ref} />
       </Input_container>
 
-
       <Input_container>
         <label htmlFor="login_password">비밀번호</label>
-        <Input_el id="login_password" ref={login_password_ref} type="password" />
+        <Input_el
+          id="login_password"
+          ref={login_password_ref}
+          type="password"
+        />
       </Input_container>
-
 
       <Button_3 onClick={login_button_fn}>로그인</Button_3>
     </>
-  )
-}
+  );
+};
 
 export default Login_page;
