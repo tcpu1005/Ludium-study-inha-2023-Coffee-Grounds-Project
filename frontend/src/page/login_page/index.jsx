@@ -42,7 +42,7 @@ const Login_page = () => {
 
       <Input_container>
         <label htmlFor="login_id" >아이디</label>
-        <Input_el id="login_id" ref={login_id_ref} />
+        <Input_el id="login_id" ref={login_id_ref} autoComplete="off" />
       </Input_container>
 
 

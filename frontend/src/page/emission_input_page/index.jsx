@@ -10,7 +10,7 @@ const Emission_input_page = () => {
     //
 
     // 카페명은 리덕스에서 가져올 예정
-    const cafe_name = "카페인 중독"; 
+    const cafe_name = "카페인 중독";
     const coffee_status_ref = useRef();
     const coffee_amount_ref = useRef();
 
@@ -42,12 +42,12 @@ const Emission_input_page = () => {
 
 
         // 커피박 양 과도하게 입력하지 못하도록 예외 처리
-        if (isNaN(coffee_amount) || coffee_amount <= 0 ) {
+        if (isNaN(coffee_amount) || coffee_amount <= 0) {
             alert("입력된 커피박 양이 올바르지 못합니다.");
             return;
         }
 
-        
+
         // 여기서 디스패치 날리면 됩니다.
     }
 
@@ -59,7 +59,7 @@ const Emission_input_page = () => {
 
             <div>
                 <label htmlFor="cafe_name">카페명</label>
-                <input id="cafe_name" value={cafe_name} disabled />
+                <input id="cafe_name" value={cafe_name} disabled autoComplete="off" />
             </div>
 
 
@@ -73,7 +73,7 @@ const Emission_input_page = () => {
 
             <div>
                 <label htmlFor="coffee_amount">커피박 양</label>
-                <input id="coffee_amount" ref={coffee_amount_ref} />kg
+                <input id="coffee_amount" ref={coffee_amount_ref} autoComplete="off" />kg
             </div>
 
 

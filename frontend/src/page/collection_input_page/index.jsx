@@ -11,10 +11,10 @@ const Collection_input_page = () => {
     //
 
     const location = useLocation();
-    
+
 
     // 수거 목록 페이지에서 선택한 수거 목록의 데이터가 여기에 들어있다.
-    const {collection_choice_data} = location.state;
+    const { collection_choice_data } = location.state;
     console.log(collection_choice_data);
 
 
@@ -39,7 +39,7 @@ const Collection_input_page = () => {
     const coffee_status_value = get_coffee_status_value_fn(collection_choice_data.coffee_status);
     const coffee_amount_value = collection_choice_data.coffee_amount;
 
-    
+
     const coffee_status_ref = useRef();
     const coffee_amount_ref = useRef();
     const collection_date_ref = useRef();
@@ -93,7 +93,7 @@ const Collection_input_page = () => {
 
             <div>
                 <label htmlFor="company_name">수거업체명</label>
-                <input id="company_name" value={company_name} disabled />
+                <input id="company_name" value={company_name} disabled autoComplete="off" />
             </div>
 
 
@@ -108,7 +108,7 @@ const Collection_input_page = () => {
 
             <div>
                 <label htmlFor="coffee_amount">커피박 양</label>
-                <input id="coffee_amount" ref={coffee_amount_ref} defaultValue={coffee_amount_value} />kg
+                <input id="coffee_amount" ref={coffee_amount_ref} defaultValue={coffee_amount_value} autoComplete="off" />kg
             </div>
 
 
