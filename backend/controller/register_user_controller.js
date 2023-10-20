@@ -40,6 +40,7 @@ module.exports.register_user_controller = async (req, res) => {
     });
 
     const created_cafeDetails = await CafeDetails.create({
+      user_id: createdUser.user_id,
       cafe_name,
       address_si,
       address_gu,
