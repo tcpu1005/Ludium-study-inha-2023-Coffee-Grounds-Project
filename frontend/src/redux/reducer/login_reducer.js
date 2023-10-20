@@ -23,6 +23,7 @@ function reducer(state = init, action) {
     case "LOGIN_USER_SUCCESS":
       // ㅜ 리렌더링을 위해 스프레드 연산자 사용
       //   console.log(payload);
+      console.log(payload.login_info.user_name);
       return {
         ...state,
         user_name: payload.login_info.user_name,

@@ -7,7 +7,12 @@ const members_cafe_collection = (members_cafe_collection_data) => {
   return async (dispatch, getState) => {
     console.log("hello");
     const cafe_id = getState().login_reducer.cafe_id;
-    members_cafe_collection_data = { ...members_cafe_collection_data, cafe_id };
+    const cafe_name = getState().login_reducer.cafe_name;
+    members_cafe_collection_data = {
+      ...members_cafe_collection_data,
+      cafe_id,
+      cafe_name,
+    };
     console.log(members_cafe_collection_data);
     await axios({
       url: `${BACK_SERVER_PATH}/api/v1/members/cafe/collection`,
