@@ -1,0 +1,263 @@
+/* 토글 메뉴 */
+Toggle_menu{
+
+/* 위치 및 크기, 글씨체, 색깔 */
+position: absolute;
+width: 37.5vw;
+height: 8.13vw;
+left: calc(50% - 37.5vw/2 - 17.81vw);
+top: calc(50% - 8.13vw/2 - 70vw);
+
+font-family: 'Gowun Batang';
+font-style: normal;
+font-weight: 700;
+font-size: 5.63vw;
+line-height: 7.81vw;
+text-align: center;
+letter-spacing: 0.85em;
+
+color: #6F6F4B;
+
+}
+
+/* 토글 큰 메뉴- 소개글 */
+Bigtitle_intro{
+
+position: absolute;
+width: 24.69vw;
+height: 8.13vw;
+left: calc(50% - 8.13vw/2 - 22.66vw);
+top: 33.44vw;
+
+font-family: 'Gowun Batang';
+font-style: normal;
+font-weight: 700;
+font-size: 5.63vw;
+line-height: 8.13vw;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.11em;
+
+color: #6F6F4B;
+
+}
+
+/* 토글 큰 메뉴- 마이페이지 */
+Bigtitle_mypage{
+
+position: absolute;
+width: 37.5vw;
+height: 8.13vw;
+left: calc(50% - 37.5vw/2 - 17.5vw);
+top: 80.31vw;
+
+font-family: 'Gowun Batang';
+font-style: normal;
+font-weight: 700;
+font-size: 5.63vw;
+line-height: 8.13vw;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.11em;
+
+color: #6F6F4B;
+
+}
+
+/* 토글 큰 메뉴- 회원가입 */
+Bigtitle_signup{
+
+position: absolute;
+width: 29.69vw;
+height: 8.13vw;
+left: calc(50% - 29.69vw/2 - 20.47vw);
+top: 145.63vw;
+
+font-family: 'Gowun Batang';
+font-style: normal;
+font-weight: 700;
+font-size: 5.63vw;
+line-height: 8.13vw;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.11em;
+
+color: #6F6F4B;
+
+}
+
+/* 토글 큰 메뉴- 로그인 */
+Bigtitle_login{
+
+position: absolute;
+width: 24.06vw;
+height: 8.13vw;
+left: calc(50% - 24.06vw/2 - 22.97vw);
+top: calc(50% - 8.13vw/2 + 80vw);
+
+font-family: 'Gowun Batang';
+font-style: normal;
+font-weight: 700;
+font-size: 5.63vw;
+line-height: 8.13vw;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.11em;
+
+color: #6F6F4B;
+
+}
+
+/* 토글 큰 메뉴- 로그아웃 */
+Bigtitle_logout{
+
+position: absolute;
+width: 32.19vw;
+height: 8.13vw;
+left: calc(50% - 32.19vw/2 - 19.84vw);
+top: calc(50% - 8.13vw/2 + 65.94vw);
+
+font-family: 'Gowun Batang';
+font-style: normal;
+font-weight: 700;
+font-size: 5.63vw;
+line-height: 8.13vw;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.11em;
+
+color: #D64B34;
+
+}
+
+/* 토글 큰 메뉴 앞 이미지 */
+Bigimage{
+
+/* 이미지 */
+.image_ref{
+position: absolute;
+width: 6.25vw;
+height: 6.25vw;
+
+background: url(image.png);
+}
+
+/* 색깔 */
+.color{
+position: absolute;
+width: 7.47vw;
+height: 7.08vw;
+
+background: #6F6F4B;
+}
+
+}
+/* 배출&수거 데이터 입력+ 회원가입+ 로그인 big title */
+Datainput{
+
+/* 그룹위치 및 크기 */
+.group{
+position: absolute;
+width: 57.81vw;
+height: 15vw;
+left: calc(50% - 57.81vw/2 - 0.16vw);
+top: 33.44vw;
+}
+
+/* 글상자 위치, 크기& 글씨체, 색깔, 크기 */
+.text{
+position: absolute;
+width: 43.44vw;
+height: 10.94vw;
+left: calc(50% - 43.44vw/2 - 0.47vw);
+top: calc(50% - 10.94vw/2 - 47.97vw);
+
+font-family: 'Gowun Batang';
+font-style: normal;
+font-weight: 700;
+font-size: 6.25vw;
+line-height: 9.06vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.01em;
+
+color: #67493F;
+}
+
+/* 테두리 */
+.borderline{
+box-sizing: border-box;
+
+position: absolute;
+width: 57.81vw;
+height: 15vw;
+left: 20.94vw;
+top: 33.44vw;
+
+
+border: 0.63vw solid #67493F;
+border-radius: 18.75vw;
+}
+
+}
+
+/* 회원가입 정보입력 big title */
+Memberdata{
+
+/* 크기 및 위치 */
+.total{
+position: absolute;
+width: 37.81vw;
+height: 9.69vw;
+left: 31.88vw;
+top: 32.5vw;
+}
+
+/* 글상자 위치, 크기& 글씨체, 크기, 색깔 */
+.text{
+position: absolute;
+width: 35.31vw;
+height: 7.19vw;
+left: calc(50% - 35.31vw/2 + 0.78vw);
+top: calc(50% - 7.19vw/2 - 51.41vw);
+
+font-family: 'Gowun Batang';
+font-style: normal;
+font-weight: 700;
+font-size: 6.25vw;
+line-height: 9.06vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.035em;
+
+color: #67493F;
+}
+
+/* 글상자 색깔 및 윤곽선 */
+.textbox{
+box-sizing: border-box;
+
+position: absolute;
+width: 37.81vw;
+height: 9.69vw;
+left: calc(50% - 37.81vw/2 + 0.78vw);
+top: 32.5vw;
+
+border: 2vw solid #67493F;
+border-radius: 18.75vw;
+}
+
+}
+
