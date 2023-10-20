@@ -70,7 +70,7 @@ const Emission_input_page = () => {
 
       <div>
         <label htmlFor="cafe_name">카페명</label>
-        <input id="cafe_name" value={cafe_name} disabled autoComplete="off" />
+        <input id="cafe_name" value={cafe_name || "카페인 중독"} disabled autoComplete="off" />
       </div>
 
 
