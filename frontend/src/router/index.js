@@ -3,10 +3,12 @@ import { useRoutes } from "react-router-dom";
 
 // 화면에 렌더링할 페이지 컴포넌트들 가져오기
 import Insentive_visualization_page from "../page/insentive_visualization_page";
+import Join_collector_page_figma from "../page/join_collector_page_figma";
 import Join_choice_page_figma from "../page/join_choice_page_figma";
 import Collection_input_page from "../page/collection_input_page";
 import Join_cafe_page_figma from "../page/join_cafe_page_figma";
 import Emission_input_page from "../page/emission_input_page";
+import Join_collector_page from "../page/join_collector_page";
 import Join_choice_page from "../page/join_choice_page";
 import Collection_page from "../page/collection_page";
 import Main_page_figma from "../page/main_page_figma";
@@ -38,12 +40,12 @@ const Router = () => {
         {
           // 3_JOIN_CAFE
           path: "/join/cafe",
-          element: <Join_cafe_page/>,
+          element: <Join_cafe_page />,
         },
         {
           // 4_JOIN_COLLECTOR
           path: "/join/collector",
-          element: <>4_JOIN_COLLECTOR</>,
+          element: <Join_collector_page />,
         },
         {
           // 5_LOGIN
@@ -104,6 +106,10 @@ const Router = () => {
         {
           path: "/join/cafe/figma",
           element: <Join_cafe_page_figma />,
+        },
+        {
+          path: "/join/collector/figma",
+          element: <Join_collector_page_figma />,
         },
       ]
     },
