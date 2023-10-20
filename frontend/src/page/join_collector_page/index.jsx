@@ -1,4 +1,4 @@
-// 3_JOIN_CAFE
+// 4_JOIN_COLLECTOR
 
 
 import Small_title_component from "../../component/small_title_component";
