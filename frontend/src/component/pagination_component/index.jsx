@@ -1,9 +1,9 @@
-import React from 'react';
-import { PaginationStyle } from '../../page/emission_page/style';
+import { Pagination_style } from './style';
 
-const Pagination = ({ currentPage, totalPages, onPageChange }) => {
+
+const Pagination_component = ({ currentPage, totalPages, onPageChange }) => {
     return (
-        <PaginationStyle>
+        <Pagination_style>
             <button 
                 onClick={() => onPageChange(currentPage - 1)}
                 disabled={currentPage === 1}>
@@ -15,8 +15,8 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
                 disabled={currentPage === totalPages}>
                 →
             </button>
-        </PaginationStyle>
+        </Pagination_style>
     );
 };
 
-export default Pagination;
+export default Pagination_component;
