@@ -1,0 +1,239 @@
+/* 토글 메뉴 소제목 1 */
+
+Firstsmalltitle{
+
+/* 목표 */
+.first_goal {
+position: absolute;
+width: 19.69vw;
+height: 8344vw;
+left: 14.06vw;
+top: 47.19vw;
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 4.38vw;
+line-height: 4.38vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.1em;
+
+color: #6F6F4B;
+}
+
+/* 플랫폼 운영 과정 */
+.platform_process {
+
+position: absolute;
+width: 46.88vw;
+height: 8.44vw;
+left: 13.44vw;
+top: 56.56vw;
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 4.38vw;
+line-height: 4.38vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.1em;
+
+color: #6F6F4B;
+}
+
+/* 보상기준 */
+.reward_criteria {
+
+position: absolute;
+width: 29.38vw;
+height: 8.44vw;
+left: 13.44vw;
+top: 69.06vw;
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 4.38vw;
+line-height: 4.38vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.1em;
+
+color: #6F6F4B;
+
+}
+
+/* 카페 */
+.cafe {
+
+position: absolute;
+width: 18.13vw;
+height: 8.44vw;
+left: 15vw;
+top: 94.38vw;
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 4.38vw;
+line-height: 4.38vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.1em;
+text-decoration-line: underline;
+
+color: #6F6F4B;
+
+}
+
+/* 수거업체(카페 소메뉴 눌러서 밑으로 내려갈 때) */
+.garbage_company {
+
+position: absolute;
+width: 30.31vw;
+height: 8.44vw;
+left: 13.13vw;
+top: 120.94vw;
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 4.38vw;
+line-height: 4.38vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.1em;
+text-decoration-line: underline;
+
+color: #6F6F4B;
+
+}
+
+/* 수거업체(카페 소메뉴 바로 밑에 뜨는 경우) */
+.garbage_company2 {
+
+position: absolute;
+width: 28.44vw;
+height: 8.44vw;
+left: 14.06vw;
+top: 102.5vw;
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 4.38vw;
+line-height: 4.38vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.1em;
+text-decoration-line: underline;
+
+color: #6F6F4B;
+
+}
+
+}
+
+/* 토글 메뉴 소제목 2 */
+Secsmalltitle2 {
+/* 카페- 토큰 */
+.Cafe_token{
+
+position: absolute;
+width: 18.44vw;
+height: 8.44vw;
+left: 19.69vw;
+top: 103.13vw;
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 4.38vw;
+line-height: 4.38vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.1em;
+
+color: #6F6F4B;
+
+}
+
+/* 카페- 배출 */
+.cafeoutput{
+
+position: absolute;
+width: 18.44vw;
+height: 8.44vw;
+left: 19.69vw;
+top: 112.19vw;
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 4.38vw;
+line-height: 4.38vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.1em;
+
+color: #6F6F4B;
+
+}
+
+/* 수거업체-수거예정(카페 소메뉴 눌렸을 시) */
+.garbage_company{
+
+position: absolute;
+width: 28.75vw;
+height: 8.44vw;
+left: 19.06vw;
+top: 130.31vw;
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 4.38vw;
+line-height: 4.38vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.1em;
+
+color: #6F6F4B;
+
+}
+
+/* 수거업체-수거예정(카페 소메뉴 안 눌렸을 시) */
+.garbage_company2{
+
+position: absolute;
+width: 28.75vw;
+height: 8.44vw;
+left: 19.06vw;
+top: 111.88vw;
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 4.38vw;
+line-height: 4.38vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.1em;
+
+color: #6F6F4B;
+
+}
+
+}
