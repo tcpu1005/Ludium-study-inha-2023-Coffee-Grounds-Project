@@ -4,9 +4,9 @@ import { useNavigate } from "react-router";
 import { Button_3 } from "../../base_style";
 import { useState, useEffect } from "react";
 import { MAROON_COLOR_1 } from "../../base_style";
+import { fetch_collections } from "../../redux/middleware";
 import List_component from "../../component/list_component";
 import Small_title_component from "../../component/small_title_component";
-import { fetch_collections } from "../../redux/middleware";
 
 const Collection_page = () => {
   //
@@ -26,33 +26,9 @@ const Collection_page = () => {
   // 수거 페이지 접속 시 백과 통신하여 수거 목록 조회
   useEffect(() => {
     //
-    const fetch_data = async () => {
-      try {
-        console.log("실행됨");
-        const result = await fetch_collections(1); // 이 부분에서 백과 통신하고 결과를 가져옵니다.
-        console.log(result);
-        set_collection_list(result); // 가져온 결과로 상태를 업데이트합니다.
-        console.log(result);
-      } catch (error) {
-        console.error("Error fetching collector collections:", error);
-      }
-    };
 
-    fetch_data();
-    // 백 응답 결과 (리덕스 X)
-    // 여기에 액션 날리면 됩니다.
-    const new_collection_list = Array.from({ length: 131 }, (v, i) => {
-      return {
-        record_id: `UUID_CAFFEINE_ADDICTION_${i}`,
-        reward_process: "수거 요청",
-        updated_at: new Date(),
-        coffee_amount: 100,
-        coffee_status: "곰팡이",
-      };
-    });
-
-    // 목록 개수가 131개일 경우 14개
-    const get_new_total_page_count_fn = () => {
+    // 총 페이지 수를 구하는 함수 (데이터가 131개일 경우 14 페이지)
+    const get_new_total_page_count_fn = (new_collection_list) => {
       //
 
       const page_count_temp = new_collection_list.length / page_unit;
@@ -64,9 +40,52 @@ const Collection_page = () => {
       return page_count_temp;
     };
 
-    set_current_page_number(1);
-    set_collection_list(new_collection_list);
-    set_total_page_count(get_new_total_page_count_fn());
+    // 백 연결 전 더미 데이터를 형성하는 함수
+    const use_dummy_data_fn = () => {
+
+      // 백 응답 결과 (리덕스 X)
+      // 여기에 액션 날리면 됩니다.
+      const new_collection_list = Array.from({ length: 131 }, (v, i) => {
+        return {
+          record_id: `UUID_CAFFEINE_ADDICTION_${i}`,
+          reward_process: "수거 요청",
+          updated_at: new Date(),
+          coffee_amount: 100,
+          coffee_status: "곰팡이",
+        };
+      });
+
+      set_current_page_number(1);
+      set_collection_list(new_collection_list);
+      set_total_page_count(get_new_total_page_count_fn(new_collection_list));
+    }
+
+    // 백 통신 함수
+    const fetch_data = async () => {
+      try {
+        console.log("실행됨");
+        const result = await fetch_collections(1); // 이 부분에서 백과 통신하고 결과를 가져옵니다.
+        console.log(result);
+
+        // 지훈아 예외 처리의 중요성
+        // 백에 데이터가 없을 경우 null이 반환될 수 있음
+        // 이러한 예외 처리는 백에서 해주는 것도 좋겠지?
+        if (!result.data) {
+          use_dummy_data_fn();
+          return;
+        };
+
+        set_current_page_number(1);
+        set_collection_list(result.data); // 가져온 결과로 상태를 업데이트합니다.\
+        set_total_page_count(get_new_total_page_count_fn(result.data));
+      } catch (error) {
+        console.error("Error fetching collector collections:", error);
+        use_dummy_data_fn();
+      }
+    };
+
+    fetch_data();
+
   }, []);
 
   const plus_current_page_number_button_fn = () => {

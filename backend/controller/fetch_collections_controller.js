@@ -1,4 +1,4 @@
-const CollectionRecords = require("../model");
+const { CollectionRecords } = require("../model");
 
 module.exports.fetch_collections_controller = async (req, res) => {
   try {
