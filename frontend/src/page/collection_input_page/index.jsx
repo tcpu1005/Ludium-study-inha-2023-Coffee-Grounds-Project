@@ -102,6 +102,7 @@ const Collection_input_page = () => {
                 <option value="drying">건조</option>
                 <option value="moisture">습기</option>
                 <option value="mold">곰팡이</option>
+                <option value="impossible">수거 불가</option>
             </select>
 
 
