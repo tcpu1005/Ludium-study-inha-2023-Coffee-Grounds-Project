@@ -41,7 +41,7 @@ const Default_page = () => {
   };
   const members_cafe_collection_data = {
     coffee_amount: 20,
-    coffee_status: "건조",
+    coffee_status: "drying",
     updated_at: null,
   };
   //
