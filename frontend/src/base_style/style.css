@@ -7,8 +7,6 @@ height: 14.69vw;
 left: calc(50% - 39.06vw/2 - 0.156vw);
 top: 150vw;
 
-
-
 /* 버튼 크기 및 위치 */
 
 position: absolute;
@@ -20,7 +18,7 @@ top: 150vw;
 /* 버튼 바탕 색 및 그림자 */
 background: #E8D4B9;
 box-shadow: 1.25vw 2.5vw 1.25vw rgba(0, 0, 0, 0.3);
-border-radius: 18.75vw;
+border-radius: 60px;
 
 
 /* 글자 상자 위치 및 글꼴과 색깔 */
@@ -65,7 +63,7 @@ top: calc(50% - 12.81vw/2 + 66.41vw);
 /* 버튼 색깔 및 그림자 */
 background: #6F6F4B;
 box-shadow: 1.25vw 2.5vw 1.25vw rgba(0, 0, 0, 0.3);
-border-radius: 18.75vw;
+border-radius: 60px;
 
 
 /* 글상자 위치, 크기 및 글씨체, 색깔, 크기 */

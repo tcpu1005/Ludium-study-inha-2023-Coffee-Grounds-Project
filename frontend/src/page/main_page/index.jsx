@@ -1,9 +1,10 @@
 // 1_MAIN
-
+import React from "react";
 
 const Main_page = () => {
     return (
-        <div>Main_page</div>
+<div>
+            Main_page</div>
     )
 }
 

@@ -1,9 +1,7 @@
 /* 토글 메뉴 소제목 1 */
 
-Firstsmalltitle{
-
 /* 목표 */
-.first_goal {
+.First_goal {
 position: absolute;
 width: 19.69vw;
 height: 8344vw;
@@ -24,7 +22,7 @@ color: #6F6F4B;
 }
 
 /* 플랫폼 운영 과정 */
-.platform_process {
+.Platform_process {
 
 position: absolute;
 width: 46.88vw;
@@ -46,7 +44,7 @@ color: #6F6F4B;
 }
 
 /* 보상기준 */
-.reward_criteria {
+.Reward_criteria {
 
 position: absolute;
 width: 29.38vw;
@@ -69,7 +67,7 @@ color: #6F6F4B;
 }
 
 /* 카페 */
-.cafe {
+.Cafe {
 
 position: absolute;
 width: 18.13vw;
@@ -93,7 +91,7 @@ color: #6F6F4B;
 }
 
 /* 수거업체(카페 소메뉴 눌러서 밑으로 내려갈 때) */
-.garbage_company {
+.Garbage_company {
 
 position: absolute;
 width: 30.31vw;
@@ -117,7 +115,7 @@ color: #6F6F4B;
 }
 
 /* 수거업체(카페 소메뉴 바로 밑에 뜨는 경우) */
-.garbage_company2 {
+.Garbage_company2 {
 
 position: absolute;
 width: 28.44vw;
@@ -140,10 +138,8 @@ color: #6F6F4B;
 
 }
 
-}
-
 /* 토글 메뉴 소제목 2 */
-Secsmalltitle2 {
+
 /* 카페- 토큰 */
 .Cafe_token{
 
@@ -197,7 +193,7 @@ position: absolute;
 width: 28.75vw;
 height: 8.44vw;
 left: 19.06vw;
-top: 130.31vw;
+top: 19.38.31vw;
 
 font-family: 'Arita-dotum4.0(OTF)';
 font-style: normal;
@@ -236,4 +232,173 @@ color: #6F6F4B;
 
 }
 
+/* 토큰 거래내역&수거 목록&배출 목록 */
+.Tokengarbage_list{
+position: absolute;
+width: 42.81vw;
+height: 9.38vw;
+left: calc(50% - 42.81vw/2 - 0.5vw);
+top: 37.5vw;
+
+font-family: 'Gowun Batang';
+font-style: normal;
+font-weight: 700;
+font-size: 5vw;
+line-height: 7.19vw;
+text-align: center;
+letter-spacing: 0.55em;
+
+color: #67493F;
+
 }
+
+/* 배출 데이터 입력 페이지 소제목들*/
+.Emissiondata_cafename{
+    /* 카페명 */
+
+position: absolute;
+width: 46.88vw;
+height: 9.38vw;
+left: 9.38vw;
+top: 52.5vw;
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 5vw;
+line-height: 5vw;
+letter-spacing: 0.11em;
+
+color: #67493F;
+
+}
+
+.Emission_coffeestatus{
+    /* 커피박 상태 */
+
+position: absolute;
+width: 46.88vw;
+height: 9.69vw;
+left: 9.38vw;
+top: 80.31vw;
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 5vw;
+line-height: 5vw;
+letter-spacing: 0.11em;
+
+color: #67493F;
+
+}
+
+.Emission_coffeeweight{
+    /* 커피박 무게 */
+
+position: absolute;
+width: 46.88vw;
+height: 9.38vw;
+left: 9.38vw;
+top: 109.06vw;
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 5vw;
+line-height: 5vw;
+letter-spacing: 0.11em;
+
+color: #67493F;
+
+}
+
+/* 수거 입력 페이지 소제목들 */
+.Collection_cafename{
+/* 수거 카페명 */
+
+position: absolute;
+width: 46.88vw;
+height: 9.38vw;
+left: 9.38vw;
+top: 52.19vw;
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 5vw;
+line-height: 5vw;
+display: flex;
+align-items: center;
+letter-spacing: 0.11em;
+
+color: #67493F;
+
+}
+
+.Collection_coffeestatus{
+    /* 커피박 상태 */
+
+position: absolute;
+width: 46.88vw;
+height: 9.38vw;
+left: 9.38vw;
+top: 75.31vw;
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 5vw;
+line-height: 5vw;
+display: flex;
+align-items: center;
+letter-spacing: 0.11em;
+
+color: #67493F;
+
+}
+
+.Collection_coffeeweight{
+/* 수거 커피박 무게 */
+
+position: absolute;
+width: 46.88vw;
+height: 9.38vw;
+left: 9.38vw;
+top: 9.388vw;
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 5vw;
+line-height: 5vw;
+display: flex;
+align-items: center;
+letter-spacing: 0.11em;
+
+color: #67493F;
+
+}
+
+.Collection_date{
+    /* 수거 일시 */
+
+position: absolute;
+width: 46.88vw;
+height: 9.38vw;
+left: 9.38vw;
+top: 117.81vw;
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 5vw;
+line-height: 5vw;
+display: flex;
+align-items: center;
+letter-spacing: 0.11em;
+
+color: #67493F;
+
+}
+

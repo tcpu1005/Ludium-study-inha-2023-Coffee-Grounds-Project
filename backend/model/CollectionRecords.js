@@ -31,9 +31,9 @@ class CollectionRecords extends Sequelize.Model {
           allowNull: false,
         },
         coffee_status: {
-          type: Sequelize.ENUM("건조", "습기", "곰팡이", "불가"),
+          type: Sequelize.ENUM("drying", "moisture", "mold", "impossible"),
           allowNull: false,
-          defaultValue: "습기",
+          defaultValue: "moisture",
         },
         collection_date: {
           type: Sequelize.DATE,

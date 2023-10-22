@@ -18,9 +18,11 @@ const Collection_page = () => {
 
   // 페이지네이션 넘버는 5개만 보여주기
   const page_number_unit = 5;
+
   const [total_page_count, set_total_page_count] = useState(0);
   const [collection_choice, set_collection_choice] = useState();
   const [current_page_number, set_current_page_number] = useState(0);
+
   const [collection_list, set_collection_list] = useState(new Array());
 
   // 수거 페이지 접속 시 백과 통신하여 수거 목록 조회
@@ -42,13 +44,13 @@ const Collection_page = () => {
 
     // 백 연결 전 더미 데이터를 형성하는 함수
     const use_dummy_data_fn = () => {
-
       // 백 응답 결과 (리덕스 X)
+
       // 여기에 액션 날리면 됩니다.
       const new_collection_list = Array.from({ length: 131 }, (v, i) => {
         return {
           record_id: `UUID_CAFFEINE_ADDICTION_${i}`,
-          reward_process: "수거 요청",
+          reward_process: "수거요청",
           updated_at: new Date(),
           coffee_amount: 100,
           coffee_status: "곰팡이",
@@ -58,14 +60,15 @@ const Collection_page = () => {
       set_current_page_number(1);
       set_collection_list(new_collection_list);
       set_total_page_count(get_new_total_page_count_fn(new_collection_list));
-    }
+    };
 
     // 백 통신 함수
+
     const fetch_data = async () => {
       try {
-        console.log("실행됨");
-        const result = await fetch_collections(1); // 이 부분에서 백과 통신하고 결과를 가져옵니다.
-        console.log(result);
+        console.log("실행됨1");
+        const result = await fetch_collections(); // 이 부분에서 백과 통신하고 결과를 가져옵니다.
+        console.log(result.data);
 
         // 지훈아 예외 처리의 중요성
         // 백에 데이터가 없을 경우 null이 반환될 수 있음
@@ -73,11 +76,12 @@ const Collection_page = () => {
         if (!result.data) {
           use_dummy_data_fn();
           return;
-        };
+        }
 
         set_current_page_number(1);
         set_collection_list(result.data); // 가져온 결과로 상태를 업데이트합니다.\
         set_total_page_count(get_new_total_page_count_fn(result.data));
+        console.log(collection_list);
       } catch (error) {
         console.error("Error fetching collector collections:", error);
         use_dummy_data_fn();
@@ -85,7 +89,6 @@ const Collection_page = () => {
     };
 
     fetch_data();
-
   }, []);
 
   const plus_current_page_number_button_fn = () => {

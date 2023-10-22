@@ -77,7 +77,7 @@ const Header_layout = () => {
             <HeaderStyle>
                 <button onClick={() => nav("/")}>←</button>
                 <header>{get_header_title_fn()}</header>
-                <button onClick={() => nav("/gnb/temp")}>☰</button>
+                <button>☰</button>
             </HeaderStyle>
             <Outlet />
         </>
