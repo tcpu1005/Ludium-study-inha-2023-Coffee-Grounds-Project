@@ -8,15 +8,17 @@ import { login_user } from "../../redux/middleware";
 import { useNavigate } from "react-router-dom";
 import { Button_3 } from "../../base_style";
 import { useRef } from "react";
+import {
+  Input_container,
+  Input_el,
+} from "./style";
 
 
 const Login_page = () => {
   //
 
-  const nav = useNavigate();
   const login_id_ref = useRef();
   const login_password_ref = useRef();
-  const dispatch = useDispatch();
 
 
   const login_button_fn = () => {
@@ -33,11 +35,7 @@ const Login_page = () => {
       return;
     }
 
-
     // 여기서 디스패치 날리면 됩니다.
-    const login_user_data = { login_id: id, login_password: password };
-    dispatch(login_user(login_user_data));
-    nav("/emission/input");
   };
 
 
@@ -61,11 +59,30 @@ const Login_page = () => {
               type="password"/><br/>
           </Input_container>
 
+<<<<<<< HEAD
           <Button_3 onClick={login_button_fn}>로그인</Button_3>
         </div>
       </Login_container>
     </>
   );
 };
+=======
+      <Input_container>
+        <label htmlFor="login_id" >아이디</label>
+        <Input_el id="login_id" ref={login_id_ref} autoComplete="off" />
+      </Input_container>
+
+
+      <Input_container>
+        <label htmlFor="login_password">비밀번호</label>
+        <Input_el id="login_password" ref={login_password_ref} type="password" />
+      </Input_container>
+
+
+      <Button_3 onClick={login_button_fn}>로그인</Button_3>
+    </>
+  )
+}
+>>>>>>> f4746e7c3a31ff6a9a30b0b7d078643099e251ef
 
 export default Login_page;
