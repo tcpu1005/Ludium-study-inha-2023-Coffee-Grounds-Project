@@ -4,7 +4,7 @@ import { register_cafe_user } from "./register_cafe_user";
 import { register_company_user } from "./register_company_user";
 import { login_user } from "./login_user";
 import { members_cafe_collection } from "./members_cafe_collection";
-import { fetch_collections } from "./fetch_collections";
+
 // ...
 
 export {
@@ -13,6 +13,5 @@ export {
   register_company_user,
   login_user,
   members_cafe_collection,
-  fetch_collections,
   // ...
 };
