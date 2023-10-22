@@ -1,5 +1,6 @@
 // 4_JOIN_COLLECTOR
 
+import { register_company_user } from "../../redux/middleware";
 import Small_title_component from "../../component/small_title_component";
 import { Button_3 } from "../../base_style";
 import { useRef } from "react";
