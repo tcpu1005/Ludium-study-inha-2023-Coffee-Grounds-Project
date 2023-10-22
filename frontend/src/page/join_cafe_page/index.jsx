@@ -78,7 +78,7 @@ const Join_cafe_page = () => {
 
   return (
     <>
-      <Small_title_component title="카페" />
+      <Small_title_component title="정보입력" />
 
       <Flex_body_container>
 

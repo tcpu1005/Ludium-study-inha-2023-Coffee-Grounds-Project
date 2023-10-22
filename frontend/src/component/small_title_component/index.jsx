@@ -1,12 +1,16 @@
+import React from "react";
+import { Outline_container2, Inside_character2 } from "./style";
+
 const Small_title_component = ({ title }) => {
     return (
-        <div>
-            <div className='Tokengarbage_list'>
-               
+        <Outline_container2>
+            <Inside_character2>
                 {title}
-                </div> 
-                </div>
-    )
+            </Inside_character2>
+
+
+        </Outline_container2>
+    );
 }
 
 
