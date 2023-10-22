@@ -1,6 +1,11 @@
 const Small_title_component = ({ title }) => {
     return (
-        <div>{title}</div>
+        <div>
+            <div className='Tokengarbage_list'>
+               
+                {title}
+                </div> 
+                </div>
     )
 }
 
