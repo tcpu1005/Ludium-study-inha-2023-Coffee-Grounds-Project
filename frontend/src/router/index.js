@@ -14,6 +14,7 @@ import Collection_page from "../page/collection_page";
 import Main_page_figma from "../page/main_page_figma";
 import Header_layout from "../layout/header_layout";
 import Join_cafe_page from "../page/join_cafe_page";
+import Gnb_page_temp from "../page/gnb_page_temp";
 import Emission_page from '../page/emission_page';
 import Default_page from "../page/default_page";
 import Login_page from '../page/login_page';
@@ -91,6 +92,11 @@ const Router = () => {
           // 팀원들을 위한 예시 코드
           path: "/default",
           element: <Default_page />,
+        },
+        {
+          // 팀원들을 위한 임시 GNB
+          path: "/gnb/temp",
+          element: <Gnb_page_temp />,
         },
         //
 
