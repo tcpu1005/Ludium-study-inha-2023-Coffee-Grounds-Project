@@ -22,11 +22,11 @@ const List_component = ({ current_list, total_amount, set_collection_choice }) =
                             set_collection_choice &&
                             (
                                 // 수거 완료 상태일 경우 선택 불가
-                                v.reward_process !== "수거 요청"
+                                v.reward_process !== "수거요청"
                                     ?
                                     <input type="radio" name="collection_choice" value={`${i}`} disabled />
                                     :
-                                    <input type="radio" name="collection_choice" value={`${i}`} onChange={(e) => select_radio_fn(e)} />
+                                    <input defaultChecked type="radio" name="collection_choice" value={`${i}`} onChange={(e) => select_radio_fn(e)} />
                             )
                         }
                         <Span_el key={`list-reward-process-${i}`}>{v.reward_process} | </Span_el>

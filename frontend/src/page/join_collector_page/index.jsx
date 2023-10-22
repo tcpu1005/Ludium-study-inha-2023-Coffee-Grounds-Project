@@ -1,9 +1,10 @@
 // 4_JOIN_COLLECTOR
 
+import { Input_container, Input_el, Input_container2, Flex_body_container } from "../join_cafe_page/style";
 import Small_title_component from "../../component/small_title_component";
+import { register_company_user } from "../../redux/middleware";
 import { Button_3 } from "../../base_style";
 import { useRef } from "react";
-import { Input_container, Input_el, Input_container2, Flex_body_container } from "../join_cafe_page/style";
 
 
 const Join_collector_page = () => {
