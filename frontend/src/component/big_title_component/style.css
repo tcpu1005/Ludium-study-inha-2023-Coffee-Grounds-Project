@@ -1,5 +1,5 @@
 /* 토글 메뉴 */
-Toggle_menu{
+.Toggle_menu{
 
 /* 위치 및 크기, 글씨체, 색깔 */
 position: absolute;
@@ -21,7 +21,7 @@ color: #6F6F4B;
 }
 
 /* 토글 큰 메뉴- 소개글 */
-Bigtitle_intro{
+.Bigtitle_intro{
 
 position: absolute;
 width: 24.69vw;
@@ -45,7 +45,7 @@ color: #6F6F4B;
 }
 
 /* 토글 큰 메뉴- 마이페이지 */
-Bigtitle_mypage{
+.Bigtitle_mypage{
 
 position: absolute;
 width: 37.5vw;
@@ -69,7 +69,7 @@ color: #6F6F4B;
 }
 
 /* 토글 큰 메뉴- 회원가입 */
-Bigtitle_signup{
+.Bigtitle_signup{
 
 position: absolute;
 width: 29.69vw;
@@ -93,7 +93,7 @@ color: #6F6F4B;
 }
 
 /* 토글 큰 메뉴- 로그인 */
-Bigtitle_login{
+.Bigtitle_login{
 
 position: absolute;
 width: 24.06vw;
@@ -114,10 +114,18 @@ letter-spacing: 0.11em;
 
 color: #6F6F4B;
 
+/* Mask group */
+
+position: absolute;
+width: 20px;
+height: 20px;
+left: 35px;
+top: 110px;
+
 }
 
 /* 토글 큰 메뉴- 로그아웃 */
-Bigtitle_logout{
+.Bigtitle_logout{
 
 position: absolute;
 width: 32.19vw;
@@ -140,42 +148,17 @@ color: #D64B34;
 
 }
 
-/* 토글 큰 메뉴 앞 이미지 */
-Bigimage{
-
-/* 이미지 */
-.image_ref{
-position: absolute;
-width: 6.25vw;
-height: 6.25vw;
-
-background: url(image.png);
-}
-
-/* 색깔 */
-.color{
-position: absolute;
-width: 7.47vw;
-height: 7.08vw;
-
-background: #6F6F4B;
-}
-
-}
 /* 배출&수거 데이터 입력+ 회원가입+ 로그인 big title */
-Datainput{
-
-/* 그룹위치 및 크기 */
-.group{
-position: absolute;
+.Datainput_container{
+    position: absolute;
 width: 57.81vw;
 height: 15vw;
-left: calc(50% - 57.81vw/2 - 0.16vw);
-top: 33.44vw;
-}
+left: calc(50% - 57.81vw/2 + 0.16vw);
+top: 33.13vw;
 
+}
 /* 글상자 위치, 크기& 글씨체, 색깔, 크기 */
-.text{
+.Datainput_text{
 position: absolute;
 width: 43.44vw;
 height: 10.94vw;
@@ -193,10 +176,9 @@ text-align: center;
 letter-spacing: -0.01em;
 
 color: #67493F;
-}
 
 /* 테두리 */
-.borderline{
+
 box-sizing: border-box;
 
 position: absolute;
@@ -207,13 +189,12 @@ top: 33.44vw;
 
 
 border: 0.63vw solid #67493F;
-border-radius: 18.75vw;
-}
+border-radius: 60px;
 
 }
 
 /* 회원가입 정보입력 big title */
-Memberdata{
+.Memberdata{
 
 /* 크기 및 위치 */
 .total{

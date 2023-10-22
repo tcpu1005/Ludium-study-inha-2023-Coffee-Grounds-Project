@@ -14,6 +14,9 @@ export const ORANGE_COLOR_1 = "#DE8F5F";
 export const BEIGE_COLOR_1 = "#F4DFB6";
 export const WHITE_COLOR_1 = "#FFFFFF";
 export const SAGE_COLOR_1 = "#D6D46D";
+export const WHITEBEIGE_COLOR_1= "#E8D4B9";
+export const BROWN_COLOR_1= "#67493F";
+export const GREEN_COLOR_1= "#6F6F4B";
 // ...
 
 
@@ -78,24 +81,24 @@ margin: 1vw;
 
 // 화면 아래에 베이지 버튼이라 가정
 export const Button_2 = styled.button`
-background-color: ${BEIGE_COLOR_1};
-border: 1px solid ${MAROON_COLOR_1};
-padding: 1vw 2vw 1.5vw 2vw;
-color: ${MAROON_COLOR_1};
-border-radius: 10px;
-font-size: 5vw;
-margin: 1vw;
+background-color: ${WHITEBEIGE_COLOR_1};
+box-shadow: 1.25vw 2.5vw 1.25vw rgba(0, 0, 0, 0.3);
+padding: 5.31vw 8.13vw;
+color: ${BROWN_COLOR_1};
+border-radius: 60px;
+font-size: 6.25vw;
+margin: 17.5vw;
 `;
 
 
 // 화면 아래에 초록 버튼이라 가정
 export const Button_3 = styled.button`
-background-color: ${MAROON_COLOR_1};
-border: 1px solid ${BEIGE_COLOR_1};
-padding: 1vw 2vw 1.5vw 2vw;
-color: ${BEIGE_COLOR_1};
-border-radius: 10px;
-font-size: 5vw;
-margin: 1vw;
+background-color: ${GREEN_COLOR_1};
+box-shadow: 1.25vw 2.5vw 1.25vw rgba(0, 0, 0, 0.3);
+padding: 3.75vw 15.02vw;
+color: ${WHITEBEIGE_COLOR_1};
+border-radius: 60px;
+font-size: 6.25vw;
+margin: 17.5vw;
 `;
 // ...
