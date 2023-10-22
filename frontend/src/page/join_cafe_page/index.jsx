@@ -58,7 +58,7 @@ const Join_cafe_page = () => {
 
             <Flex_body_container>
             
-            <div>
+            <div >
                 <input_container>
                 <label htmlFor="login_id" style={{ fontSize: '60%' }}>아이디</label> <br/>
                 <label htmlFor="login_password"  style={{ fontSize: '60%' }}> 비밀번호</label><br/>
@@ -69,17 +69,17 @@ const Join_cafe_page = () => {
             
             <div>
                 <Input_container2>
-                <Input_el id="login_id"  style={{ fontSize: '60%' }}ref={login_id_ref} autoComplete="off" />
-                <Input_el id="login_password"  style={{ fontSize: '60%' }} type="password" ref={login_password_ref} autoComplete="off" />
-                <Input_el id="user_name"  style={{ fontSize: '60%' }}ref={user_name_ref} autoComplete="off" />
-                <Input_el id="cafe_name"  style={{ fontSize: '60%' }}ref={cafe_name_ref} autoComplete="off" />
+                <Input_el id="login_id"  style={{ fontSize: '60%' }}ref={login_id_ref} autoComplete="off" /> <br/>
+                <Input_el id="login_password"  style={{ fontSize: '60%' }} type="password" ref={login_password_ref} autoComplete="off" /> <br/>
+                <Input_el id="user_name"  style={{ fontSize: '60%' }}ref={user_name_ref} autoComplete="off" /> <br/>
+                <Input_el id="cafe_name"  style={{ fontSize: '60%' }}ref={cafe_name_ref} autoComplete="off" /> <br/>
                 </Input_container2>
             </div>
 
 
-            </Flex_body_container>
+            </Flex_body_container>  
 
-
+            <div>
             <label style={{ fontSize: '60%' }} >카페 주소</label>
             <Input_container>
                 <Select_el  style={{ fontSize: '60%' }} name="" id="" ref={address_si_ref} disabled>
@@ -98,7 +98,7 @@ const Join_cafe_page = () => {
                     })}
                 </Select_el >
             </Input_container>
-
+            </div>    
 
 
             <Button_3 onClick={join_button_fn}>가입하기</Button_3>

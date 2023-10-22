@@ -3,7 +3,7 @@
 
 import Big_title_component from "../../component/big_title_component";
 import { useDispatch, useSelector } from "react-redux";
-import { Input_container, Input_el } from "./style";
+import { Input_container, Input_el, Login_container } from "./style";
 import { login_user } from "../../redux/middleware";
 import { useNavigate } from "react-router-dom";
 import { Button_3 } from "../../base_style";
@@ -44,28 +44,28 @@ const Login_page = () => {
   return (
     <>
       <Big_title_component title="로그인" />
+      
+      
+      <Login_container>
+        <div> 
+          <Input_container>
+            <label htmlFor="login_id" style={{ fontSize: '60%' }} >아이디</label>
+            <Input_el id="login_id" ref={login_id_ref} autoComplete="off" /><br/>
+          </Input_container>
 
+          <Input_container>
+            <label htmlFor="login_password" style={{ fontSize: '60%' }}>비밀번호</label>
+            <Input_el
+              id="login_password"
+              ref={login_password_ref}
+              type="password"/><br/>
+          </Input_container>
 
-      <Input_container>
-        <label htmlFor="login_id" >아이디</label>
-        <Input_el id="login_id" ref={login_id_ref} autoComplete="off" />
-      </Input_container>
-
-
-      <Input_container>
-        <label htmlFor="login_password">비밀번호</label>
-        <Input_el
-          id="login_password"
-          ref={login_password_ref}
-          type="password"
-        />
-      </Input_container>
-
-
-      <Button_3 onClick={login_button_fn}>로그인</Button_3>
+          <Button_3 onClick={login_button_fn}>로그인</Button_3>
+        </div>
+      </Login_container>
     </>
   );
 };
-
 
 export default Login_page;

@@ -96,6 +96,6 @@ padding: 1vw 2vw 1.5vw 2vw;
 color: ${BEIGE_COLOR_1};
 border-radius: 10px;
 font-size: 5vw;
-margin: 1vw;
+margin-top: 6vw;
 `;
 // ...
