@@ -3,15 +3,13 @@ import styled from "styled-components";
 
 export const Flex_body_container = styled.div`
  display : flex;
- justify-content : space-between; 
+ align-items: center;
  justify-content: center;
 `;
 
 export const Input_container = styled.div`
-margin-top: 10%;
+margin-top: 5%;
 margin-bottom : 10%;
-margin-top: 35%;
-
 `;
 
 export const Input_container2 = styled.div`
