@@ -3,12 +3,12 @@ import styled from "styled-components";
 export const Outline_container = styled.div`
     
 box-sizing: border-box;
-    margin: 17.81vw 20.94vw 16.25vw;
+    margin: 17.81vw 20.94vw 8.91vw;
     width: 57.81vw;
     height: 15vw;
     border: 0.63vw solid #67493F;
     border-radius: 60px;
-    
+
 `;
 
 export const Inside_character = styled.p`

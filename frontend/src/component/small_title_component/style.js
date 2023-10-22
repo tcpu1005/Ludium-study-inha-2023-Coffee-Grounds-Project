@@ -1,39 +1,35 @@
 import styled from "styled-components";
 
-export const Outline_container2= styled.div`
-margin-top: 7.19vw;
-    margin-bottom: vw;
+export const Outline_container2 = styled.div`
 
 box-sizing: border-box;
-
-position: absolute;
-width: 121px;
-height: 31px;
-left: calc(50% - 121px/2 + 0.5px);
-top: 105px;
-
-border: 2px solid #67493F;
+width: 37.81vw;
+height: 9.69vw;
+left: calc(50% - 37.81vw/2 + 0.16vw);
+top: 32.81vw;
+border: 0.63vw solid #67493F;
 border-radius: 60px;
+margin: 17.19vw 31.25vw;
 
 `;
 
-export const Inside_character2= styled.p`
-position: absolute;
-width: 113px;
-height: 23px;
-left: calc(50% - 113px/2 + 0.5px);
-top: calc(50% - 23px/2 - 163.5px);
+export const Inside_character2 = styled.p`
 
-font-family: 'Gowun Batang';
-font-style: normal;
-font-weight: 700;
-font-size: 20px;
-line-height: 29px;
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: -0.035em;
-
-color: #67493F;
+width: 35.31vw;
+    height: 7.19vw;
+    left: calc(50% - 35.31vw/2 + 0.16vw);
+    top: calc(50% - 7.19vw/2 - 51.09vw);
+    font-family: 'Gowun Batang';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 6.25vw;
+    line-height: 9.06vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.035em;
+    color: #67493F;
+    justify-content: center;
+    margin: 1.25vw;
 
 `;
