@@ -1,14 +1,16 @@
 import React from "react";
-import "./style.css";
+import{ Outline_container, Inside_character} from "./style";
 
 const Big_title_component = ({ title }) => {
     return (
-        <div className=".Datainput_container">
-            <div className= ".Datainput_text">
-           {title}
-        </div>
-        </div>
-    )
-}
+
+            <Outline_container>
+                <Inside_character>{title}</Inside_character>
+                
+               
+            </Outline_container>
+    );
+
+};
 
 export default Big_title_component;
