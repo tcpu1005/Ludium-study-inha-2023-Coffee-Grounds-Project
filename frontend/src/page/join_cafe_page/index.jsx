@@ -8,6 +8,8 @@ import {
     Input_container,
     Select_el,
     Input_el,
+    Flex_body_container,
+    Input_container2
 } from "./style";
 
 
@@ -54,49 +56,49 @@ const Join_cafe_page = () => {
         <>
             <Small_title_component title="카페" />
 
+            <Flex_body_container>
+            
+            <div>
+                <input_container>
+                <label htmlFor="login_id" style={{ fontSize: '60%' }}>아이디</label> <br/>
+                <label htmlFor="login_password"  style={{ fontSize: '60%' }}> 비밀번호</label><br/>
+                <label htmlFor="user_name" style={{ fontSize: '60%' }}>이름</label><br/>
+                <label htmlFor="cafe_name" style={{ fontSize: '60%' }}>카페명</label>
+                </input_container>
+            </div>
+            
+            <div>
+                <Input_container2>
+                <Input_el id="login_id"  style={{ fontSize: '60%' }}ref={login_id_ref} autoComplete="off" />
+                <Input_el id="login_password"  style={{ fontSize: '60%' }} type="password" ref={login_password_ref} autoComplete="off" />
+                <Input_el id="user_name"  style={{ fontSize: '60%' }}ref={user_name_ref} autoComplete="off" />
+                <Input_el id="cafe_name"  style={{ fontSize: '60%' }}ref={cafe_name_ref} autoComplete="off" />
+                </Input_container2>
+            </div>
 
+
+            </Flex_body_container>
+
+
+            <label style={{ fontSize: '60%' }} >카페 주소</label>
             <Input_container>
-                <label htmlFor="user_name">이름</label>
-                <Input_el id="user_name" ref={user_name_ref} autoComplete="off" />
-            </Input_container>
-
-
-            <Input_container>
-                <label htmlFor="cafe_name">카페명</label>
-                <Input_el id="cafe_name" ref={cafe_name_ref} autoComplete="off" />
-            </Input_container>
-
-
-            <label>카페 주소</label>
-            <Input_container>
-                <Select_el name="" id="" ref={address_si_ref} disabled>
+                <Select_el  style={{ fontSize: '60%' }} name="" id="" ref={address_si_ref} disabled>
                     {address_si_array.map((v, i) => {
                         return <option key={`address-si-${i}`} value={`${v}`} > {v}</option>;
                     })}
                 </Select_el >
-                <Select_el name="" id="" ref={address_gu_ref} disabled>
+                <Select_el  style={{ fontSize: '60%' }} name="" id="" ref={address_gu_ref} disabled>
                     {address_gu_array.map((v, i) => {
                         return <option key={`address-gu-${i}`} value={`${v}`}> {v}</option>;
                     })}
                 </Select_el >
-                <Select_el name="" id="" ref={address_dong_ref}>
+                <Select_el  style={{ fontSize: '60%' }} name="" id="" ref={address_dong_ref}>
                     {address_dong_array.map((v, i) => {
                         return <option key={`address-dong-${i}`} value={`${v}`}> {v}</option>;
                     })}
                 </Select_el >
             </Input_container>
 
-
-            <Input_container>
-                <label htmlFor="login_id">아이디</label>
-                <Input_el id="login_id" ref={login_id_ref} autoComplete="off" />
-            </Input_container>
-
-
-            <Input_container>
-                <label htmlFor="login_password">비밀번호</label>
-                <Input_el id="login_password" type="password" ref={login_password_ref} autoComplete="off" />
-            </Input_container>
 
 
             <Button_3 onClick={join_button_fn}>가입하기</Button_3>
