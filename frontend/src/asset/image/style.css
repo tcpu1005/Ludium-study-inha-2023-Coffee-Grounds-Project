@@ -1,5 +1,5 @@
 /* 토글 메뉴 아이콘 이미지 */
-
+import 
 .toggle_icon {
 
 position: absolute;
@@ -21,14 +21,3 @@ background: url('스크린샷 2023-10-14 145002.png');
 
 }
 
-/* 배경화면 무늬 */
-
-.bodything{
-
-position: absolute;
-width: 116.48vw;
-height: 103.13vw;
-
-background: #FFFFFF;
-
-}

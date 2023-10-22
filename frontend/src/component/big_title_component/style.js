@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Outline_container = styled.div`
     
 box-sizing: border-box;
-    margin: 17.81vw 20.94vw 8.91vw;
+    margin: 5.63vw 21.25vw 4.06vw;
     width: 57.81vw;
     height: 15vw;
     border: 0.63vw solid #67493F;
@@ -13,7 +13,7 @@ box-sizing: border-box;
 
 export const Inside_character = styled.p`
 
-margin: 2.19vw 6.33vw;
+margin: 1.88vw 6.33vw;
     font-family: 'Gowun Batang';
     font-style: normal;
     font-weight: 700;
