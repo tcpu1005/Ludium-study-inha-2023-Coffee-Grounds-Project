@@ -7,6 +7,7 @@ import { MAROON_COLOR_1 } from "../../base_style";
 import { fetch_collections } from "../../redux/middleware";
 import List_component from "../../component/list_component";
 import Small_title_component from "../../component/small_title_component";
+import {Span_pageNumDirectionBtn, Span_pageNumBtn} from "./style";
 
 const Collection_page = () => {
   //
@@ -128,7 +129,7 @@ const Collection_page = () => {
       />
 
       <div>
-        <span onClick={minus_current_page_number_button_fn}>{"<"}</span>
+        <Span_pageNumDirectionBtn onClick={minus_current_page_number_button_fn}>{"<"}</Span_pageNumDirectionBtn>
 
         {/* ㅜ total_page_count가 0이 아닐 때 */}
         {total_page_count &&
@@ -162,18 +163,18 @@ const Collection_page = () => {
             const default_style = {};
 
             return (
-              <span
+              <Span_pageNumBtn
                 key={`pagination-${page_number}`}
                 onClick={() => set_current_page_number(page_number)}
                 style={is_current_page ? current_page_style : default_style}
               >
                 {" "}
                 {page_number}{" "}
-              </span>
+              </Span_pageNumBtn>
             );
           })}
 
-        <span onClick={plus_current_page_number_button_fn}>{">"}</span>
+        <Span_pageNumDirectionBtn onClick={plus_current_page_number_button_fn}>{">"}</Span_pageNumDirectionBtn>
       </div>
 
       <Button_3
