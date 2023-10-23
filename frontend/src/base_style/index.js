@@ -119,13 +119,23 @@ border: none;
 // 화면 아래에 초록 버튼이라 가정
 export const Button_3 = styled.button`
 box-shadow: 1.25vw 2.5vw 1.25vw rgba(0, 0, 0, 0.3);
-background-color: ${GREEN_COLOR_1};
-color: ${WHITEBEIGE_COLOR_1};
-padding: 3.75vw 15.02vw;
+background-color: #6F6F4B;
+color: #E8D4B9;
+padding: 3.75vw 6.02vw;
 border-radius: 60px;
 font-size: 6.25vw;
 margin: 17.5vw;
 border: none;
+/* display: flex; */
+position: absolute;
+width: 38.75vw;
+height: 12.81vw;
+left: calc(50% - 37.81vw/2 + -15.84vw);
+top: 129.69vw;
+display: flex;
+justify-content: center;
+align-items: center;
+
 `;
 
 
