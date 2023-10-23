@@ -2,10 +2,10 @@
 
 
 import Small_title_component from "../../component/small_title_component";
+import { Button_1, Button_5 } from "../../base_style";
 import { useNavigate } from "react-router";
 import { Button_choice } from "./style";
-import { Button_1, Button_5 } from "../../base_style";
-import Background_image3 from "./style.css";
+// import Background_image3 from "./style.css";
 
 
 const Join_choice_page = () => {
