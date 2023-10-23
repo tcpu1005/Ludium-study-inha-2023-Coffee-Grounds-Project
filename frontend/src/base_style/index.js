@@ -38,6 +38,7 @@ body, #root {
     height: 100%;
     width: 100%;
 }
+
 h1 {
     font-size: 10vw;
     margin: 0.5vw;
@@ -68,15 +69,38 @@ h6 {
 // 우리 프로젝트의 표준 버튼들
 // 여러 화면에서 같은 스타일로 통일시킬 거라면 여기에 정의하기
 // 변수명은 "Button_넘버링"으로 정의하기 (컴포넌트이므로 첫글자는 대문자, 스네이크 타입)
+
+// 회원 유형 선택 버튼 중 위에거
 export const Button_1 = styled.button`
-background-color: ${MAROON_COLOR_1};
-border: 1px solid ${BEIGE_COLOR_1};
-padding: 1vw 2vw 1.5vw 2vw;
-color: ${BEIGE_COLOR_1};
-border-radius: 10px;
-font-size: 5vw;
-margin: 1vw;
+background-color: #E8D4B9;
+padding: 3.28vw 3.28vw 3.28vw 3.28vw
+vw
+;
+color: #6F6F4B;
+border: none;
+border-radius: 60px;
+font-size: 6.25vw;
+box-shadow: 1.25vw 2.5vw 1.25vw rgba(0, 0, 0, 0.3);
+width: 33.75vw;
+height: 14.69vw;
+margin: 32.81vw 31.88vw 0vw;
+
 `;
+
+//회원 유형 버튼 중 아래거
+export const Button_5 = styled.button`
+background-color: #E8D4B9;
+    padding: 3.28vw 3.28vw 3.28vw 3.28vw;
+    color: #6F6F4B;
+    border-radius: 60px;
+    border: none;
+    font-size: 6.25vw;
+    box-shadow: 1.25vw 2.5vw 1.25vw rgba(0, 0, 0, 0.3);
+    width: 33.75vw;
+    height: 14.69vw;
+    margin: 13.44vw;
+
+`
 
 
 // 화면 아래에 베이지 버튼이라 가정
@@ -101,4 +125,20 @@ border-radius: 60px;
 font-size: 6.25vw;
 margin: 17.5vw;
 `;
-// ...
+// GNB 메뉴 버튼
+
+export const Button_4= styled.button`
+width: 77.19vw;
+height: 10.94vw;
+
+background-color: ${WHITEBEIGE_COLOR_1};
+border-radius: 60px;
+
+padding: 6.09vw 1.88vw;
+color: ${GREEN_COLOR_1};
+font-size: 3.7vw;
+
+display: block;
+
+`
+
