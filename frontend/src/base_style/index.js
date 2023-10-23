@@ -112,6 +112,7 @@ padding: 5.31vw 8.13vw;
 border-radius: 60px;
 font-size: 6.25vw;
 margin: 17.5vw;
+border: none;
 `;
 
 
@@ -124,6 +125,7 @@ padding: 3.75vw 15.02vw;
 border-radius: 60px;
 font-size: 6.25vw;
 margin: 17.5vw;
+border: none;
 `;
 
 
@@ -134,10 +136,11 @@ color: ${GREEN_COLOR_1};
 border-radius: 60px;
 text-align: center;
 font-size: 3.7vw;
-margin: 0.5vw;
 font-weight: 900;
 height: 10.94vw;
 width: 77.19vw;
+margin: 0.5vw;
+margin: 0.5vw;
 border: 0;
 `
 
