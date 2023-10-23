@@ -15,15 +15,14 @@ const Join_choice_page = () => {
     return (
         <>
             <Small_title_component title="회원 유형" />
-            <Background_image3>
-                <div>
-                    <Button_1 onClick={() => nav("/join/cafe")}>카페</Button_1>
-                </div>
+            <div>
+                <Button_1 onClick={() => nav("/join/cafe")}>카페</Button_1>
+            </div>
 
-                <div>
-                    <Button_5 onClick={() => nav("/join/collector")}>수거업체</Button_5>
-                </div>
-            </Background_image3>
+            <div>
+                <Button_5 onClick={() => nav("/join/collector")}>수거업체</Button_5>
+            </div>
+            <Background_image3 />
         </>
     );
 
