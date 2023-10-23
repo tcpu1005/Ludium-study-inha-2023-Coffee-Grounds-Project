@@ -131,10 +131,11 @@ margin: 17.5vw;
 export const Button_4= styled.button`
 background-color: ${WHITEBEIGE_COLOR_1};
 color: ${GREEN_COLOR_1};
-font-weight: 900;
 border-radius: 60px;
 text-align: center;
 font-size: 3.7vw;
+margin: 0.5vw;
+font-weight: 900;
 height: 10.94vw;
 width: 77.19vw;
 border: 0;
