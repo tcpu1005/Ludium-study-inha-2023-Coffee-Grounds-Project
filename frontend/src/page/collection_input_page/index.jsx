@@ -14,7 +14,8 @@ const Collection_input_page = () => {
 
 
     // 수거 목록 페이지에서 선택한 수거 목록의 데이터가 여기에 들어있다.
-    const { collection_choice_data } = location.state;
+    // const { collection_choice_data } = location.state;
+    const collection_choice_data = { coffee_status: "습기", coffee_amount: 100 };
     console.log(collection_choice_data);
 
 
