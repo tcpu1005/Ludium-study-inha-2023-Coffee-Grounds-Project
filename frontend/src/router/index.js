@@ -18,6 +18,7 @@ import Emission_page from '../page/emission_page';
 import Default_page from "../page/default_page";
 import Login_page from '../page/login_page';
 import Main_page from "../page/main_page";
+import Gnb_page from "../page/gnb_page";
 // ...
 
 
@@ -91,6 +92,11 @@ const Router = () => {
           // 팀원들을 위한 예시 코드
           path: "/default",
           element: <Default_page />,
+        },
+        {
+          // 팀원들을 위한 임시 GNB
+          path: "/gnb/temp",
+          element: <Gnb_page />,
         },
         //
 
