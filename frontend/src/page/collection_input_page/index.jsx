@@ -1,6 +1,6 @@
 // 12_MY_PAGE_COLLECTOR_INPUT
 
-
+import { StyledContainer, StyledInputContainer, StyledLabel, StyledInput, StyledSelect, StyledButton } from "./style";
 import Big_title_component from "../../component/big_title_component";
 import { Button_2 } from "../../base_style";
 import { useLocation } from "react-router";
@@ -14,7 +14,8 @@ const Collection_input_page = () => {
 
 
     // 수거 목록 페이지에서 선택한 수거 목록의 데이터가 여기에 들어있다.
-    const { collection_choice_data } = location.state;
+      // const { collection_choice_data } = location.state;
+      const collection_choice_data = { coffee_status: "습기", coffee_amount: 100 };
     console.log(collection_choice_data);
 
 
@@ -87,43 +88,37 @@ const Collection_input_page = () => {
 
 
     return (
-        <>
+        <StyledContainer>
             <Big_title_component title="수거 데이터 입력" />
 
+            <StyledInputContainer>
+                <StyledLabel htmlFor="company_name">수거업체명</StyledLabel>
+                <StyledInput id="company_name" value={company_name} disabled autoComplete="off" />
+            </StyledInputContainer>
 
-            <div>
-                <label htmlFor="company_name">수거업체명</label>
-                <input id="company_name" value={company_name} disabled autoComplete="off" />
-            </div>
+            <StyledInputContainer>
+                <StyledLabel htmlFor="coffee_status"style={{ fontSize: '60%' }}>커피박 상태</StyledLabel>
+                <StyledSelect name="" id="" ref={coffee_status_ref} defaultValue={coffee_status_value}>
+                    <option value="drying">건조</option>
+                    <option value="moisture">습기</option>
+                    <option value="mold">곰팡이</option>
+                    <option value="impossible">수거 불가</option>
+                </StyledSelect>
+            </StyledInputContainer>
 
+            <StyledInputContainer>
+                <StyledLabel htmlFor="coffee_amount" style={{ fontSize: '60%' }}>커피박 양 (기준 : kg)</StyledLabel>
+                <StyledInput id="coffee_amount" ref={coffee_amount_ref} defaultValue={coffee_amount_value} autoComplete="off" />
+            </StyledInputContainer>
 
-            <legend htmlFor="coffee_status">커피박 상태</legend>
-            <select name="" id="" ref={coffee_status_ref} defaultValue={coffee_status_value}>
-                <option value="drying">건조</option>
-                <option value="moisture">습기</option>
-                <option value="mold">곰팡이</option>
-                <option value="impossible">수거 불가</option>
-            </select>
-
-
-            <div>
-                <label htmlFor="coffee_amount">커피박 양</label>
-                <input id="coffee_amount" ref={coffee_amount_ref} defaultValue={coffee_amount_value} autoComplete="off" />kg
-            </div>
-
-
-            <div>
-                <div>
-                    <label htmlFor="collection_date">수거날짜</label>
-                </div>
-                <input id="collection_date" type={"date"} ref={collection_date_ref} />
-            </div>
-
+            <StyledInputContainer>
+                <StyledLabel htmlFor="collection_date" style={{ fontSize: '60%' }}>수거날짜</StyledLabel>
+                <StyledInput id="collection_date" type={"date"} ref={collection_date_ref} />
+            </StyledInputContainer>
 
             <Button_2 onClick={collection_button_fn}>데이터 입력</Button_2>
-        </>
+        </StyledContainer>
     )
 }
-
 
 export default Collection_input_page;

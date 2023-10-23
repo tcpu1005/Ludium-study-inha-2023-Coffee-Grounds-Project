@@ -85,6 +85,7 @@ const Emission_input_page = () => {
           <InputDiv>
             <label htmlFor="coffee_amount"style={{ fontSize: '60%' }}>커피박 양 (단위 : kg)</label>
             <input id="coffee_amount" style={{ fontSize: '60%' }} ref={coffee_amount_ref} autoComplete="off" />
+            
           </InputDiv>
 
          
