@@ -112,6 +112,7 @@ color: ${BROWN_COLOR_1};
 border-radius: 60px;
 font-size: 6.25vw;
 margin: 17.5vw;
+border: none;
 `;
 
 
@@ -124,6 +125,7 @@ color: ${WHITEBEIGE_COLOR_1};
 border-radius: 60px;
 font-size: 6.25vw;
 margin: 17.5vw;
+border: none;
 `;
 // GNB 메뉴 버튼
 
@@ -139,6 +141,7 @@ color: ${GREEN_COLOR_1};
 font-size: 3.7vw;
 
 display: block;
+border: none;
 
 `
 
