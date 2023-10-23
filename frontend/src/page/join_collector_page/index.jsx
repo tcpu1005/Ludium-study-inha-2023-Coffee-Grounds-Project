@@ -4,7 +4,10 @@
 import Small_title_component from "../../component/small_title_component";
 import { Button_3 } from "../../base_style";
 import { useRef } from "react";
-import { Input_container, Input_el, Input_container2,Flex_body_container} from "./style";
+import { Input_container, Input_el, Input_container2,Flex_body_container, Left_name, Left_company, Left_id, Left_password,
+        Right_name, Right_company, Right_id, Right_password
+
+} from "./style";
 
 
 const Join_collector_page = () => {
@@ -44,20 +47,20 @@ const Join_collector_page = () => {
 
             <div>
                 <Input_container>
-                <label htmlFor="user_name" style={{ fontSize: '60%' }}>이름</label><br />
-                <label htmlFor="company_name" style={{ fontSize: '60%' }}>수거업체명</label><br />
-                <label htmlFor="login_id" style={{ fontSize: '60%' }}>아이디</label><br />
-                <label htmlFor="login_password" style={{ fontSize: '60%' }}>비밀번호</label><br />
+                <Left_name htmlFor="user_name">이름</Left_name><br />
+                <Left_company htmlFor="company_name">수거업체명</Left_company><br />
+                <Left_id htmlFor="login_id">아이디</Left_id><br />
+                <Left_password htmlFor="login_password">비밀번호</Left_password><br />
                 </Input_container>
             </div>
 
 
             <div>
                 <Input_container2>
-                <Input_el id="user_name" style={{ fontSize: '60%' }} ref={user_name_ref} autoComplete="off" /><br />
-                <Input_el id="user_name" style={{ fontSize: '60%' }} ref={user_name_ref} autoComplete="off" /><br />
-                <Input_el id="login_id" style={{ fontSize: '60%' }} ref={login_id_ref} autoComplete="off" /><br />
-                <Input_el id="login_password" style={{ fontSize: '60%' }} type="password" ref={login_password_ref} autoComplete="off" /><br />
+                <Right_name Input_el id="user_name" ref={user_name_ref} autoComplete="off" /><br />
+                <Right_company Input_el id="user_name" ref={user_name_ref} autoComplete="off" /><br />
+                <Right_id id="login_id" ref={login_id_ref} autoComplete="off" /><br />
+                <Right_password id="login_password" type="password" ref={login_password_ref} autoComplete="off" /><br />
                 </Input_container2>
             </div>
 

@@ -3,8 +3,8 @@ require("dotenv").config();
 
 
 // 지갑 생성 성공
-// const wallet = ethers.Wallet.createRandom();
-// console.log(wallet);
+const new_wallet = ethers.Wallet.createRandom();
+console.log(new_wallet);
 // HDNodeWallet {
 //     provider: null,
 //     address: '0x7c564eBD81307509daa2Ea46A64b1F179fe6B1Bc',
@@ -41,36 +41,36 @@ require("dotenv").config();
 
 // 메타마스크에서 개인키로 계정 가져오기 가능
 // 0x12a3fd1fb9c45b3aef6b37e4d1056d691aeb374b7631487bbc912de68bcec3ce
-// console.log(wallet.privateKey);
+console.log(`new_wallet.privateKey : ${new_wallet.privateKey}`);
 
 
 // 메타마스크 주소랑 동일
-// console.log(wallet.address);
+console.log(`new_wallet.address : ${new_wallet.address}`);
 
 
-// provider 가져오는 방법1
-(async () => {
-    //
-    // ㅜ 폴리곤 공식 문서의 RPC 엔드포인트 사용 시 에러 발생
-    // https://wiki.polygon.technology/docs/pos/reference/rpc-endpoints/#rpc-api-methods
-    // JsonRpcProvider가 네트워크를 감지하지 못해 시작할 수 없습니다. 1초 후에 다시 시도하세요(URL이 잘못되었거나 노드가 시작되지 않았을 수 있음)
-    // JsonRpcProvider failed to detect network and cannot start up; retry in 1s (perhaps the URL is wrong or the node is not started) 
-    // const provider = new ethers.JsonRpcProvider("https://rpc-mumbai.matic.today");
+// // provider 가져오는 방법1
+// (async () => {
+//     //
+//     // ㅜ 폴리곤 공식 문서의 RPC 엔드포인트 사용 시 에러 발생
+//     // https://wiki.polygon.technology/docs/pos/reference/rpc-endpoints/#rpc-api-methods
+//     // JsonRpcProvider가 네트워크를 감지하지 못해 시작할 수 없습니다. 1초 후에 다시 시도하세요(URL이 잘못되었거나 노드가 시작되지 않았을 수 있음)
+//     // JsonRpcProvider failed to detect network and cannot start up; retry in 1s (perhaps the URL is wrong or the node is not started) 
+//     // const provider = new ethers.JsonRpcProvider("https://rpc-mumbai.matic.today");
 
 
-    // JsonRpcProvider {}
-    const provider = new ethers.JsonRpcProvider("https://rpc.ankr.com/polygon_mumbai");
-    console.log(provider);
+//     // JsonRpcProvider {}
+//     const provider = new ethers.JsonRpcProvider("https://rpc.ankr.com/polygon_mumbai");
+//     console.log(provider);
 
 
-    const private_key = process.env.JIWON_PRIVATE_KEY;
-    const wallet = new ethers.Wallet(private_key, provider);
-    console.log(wallet);
+//     const my_private_key = process.env.JIWON_PRIVATE_KEY;
+//     const my_wallet = new ethers.Wallet(my_private_key, provider);
+//     console.log(my_wallet);
 
 
-    const wallet_balance = await provider.getBalance(wallet.address);
-    console.log(wallet_balance);
-})();
+//     const my_wallet_balance = await provider.getBalance(my_wallet.address);
+//     console.log(`my_wallet_balance : ${my_wallet_balance}`);
+// })();
 
 
 // provider 가져오는 방법2
@@ -81,11 +81,28 @@ require("dotenv").config();
     console.log(provider);
 
 
-    const private_key = process.env.JIWON_PRIVATE_KEY || ethers.Wallet.createRandom(provider);
-    const wallet = new ethers.Wallet(private_key, provider);
-    console.log(wallet);
+    const my_private_key = process.env.JIWON_PRIVATE_KEY || ethers.Wallet.createRandom(provider);
+    const my_wallet = new ethers.Wallet(my_private_key, provider);
+    console.log(my_wallet);
 
 
-    const wallet_balance = await provider.getBalance(wallet.address);
-    console.log(wallet_balance);
+    const my_wallet_balance = await provider.getBalance(my_wallet.address);
+    console.log(`my_wallet_balance : ${my_wallet_balance}`);
+    console.log(ethers.formatEther(my_wallet_balance));
+
+
+    const tx = {
+        to: new_wallet.address,
+        value: 1,
+    }
+
+
+    // 트랜잭션 전송
+    const tx_res = await my_wallet.sendTransaction(tx);
+    console.log(tx_res);
+
+
+    // 마이닝?
+    const receipt = await tx_res.wait();
+    console.log(receipt);
 })();

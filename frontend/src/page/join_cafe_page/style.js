@@ -26,3 +26,110 @@ export const Select_el = styled.select`
 height: 50%;
 width: 25%;
 `;
+
+export const left_id= styled.div`
+
+position: absolute;
+width: 23.75vw;
+height: 7.5vw;
+left: calc(50% - 23.75vw/2 - 34.06vw);
+top: calc(50% - 7.5vw/2 - 16.88vw);
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 5vw;
+line-height: 5vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.05em;
+
+color: #6F6F4B;
+
+`
+
+export const left_password= styled.div`
+
+position: absolute;
+width: 23.78vw;
+height: 7.5vw;
+left: calc(50% - 23.75vw/2 - 32.19vw);
+top: calc(50% - 7.5vw/2 + 5.63vw);
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 5vw;
+line-height: 5vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.05em;
+
+color: #6F6F4B;
+
+`
+
+export const left_name= styled.div`
+
+position: absolute;
+width: 23.75vw;
+height: 7.5vw;
+left: calc(50% - 23.75vw/2 - 35vw);
+top: calc(50% - 7.5vw/2 + 26.56vw);
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 5vw;
+line-height: 5vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.05em;
+
+color: #6F6F4B;
+
+`
+
+export const left_address= styled.div`
+
+position: absolute;
+width: 23.75vw;
+height: 7.5vw;
+left: calc(50% - 23.75vw/2 - 31.25vw);
+top: calc(50% - 7.5vw/2 + 44.06vw);
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 5vw;
+line-height: 5vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.05em;
+
+color: #6F6F4B;
+
+`
+
+export const left_cafename=styled.div`
+position: absolute;
+width: 23.75vw;
+height: 7.5vw;
+left: calc(50% - 23.75vw/2 - 31.25vw);
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 5vw;
+line-height: 5vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.05em;
+
+color: #6F6F4B;
+`
