@@ -105,10 +105,10 @@ background-color: #E8D4B9;
 
 // 화면 아래에 베이지 버튼이라 가정
 export const Button_2 = styled.button`
-background-color: ${WHITEBEIGE_COLOR_1};
 box-shadow: 1.25vw 2.5vw 1.25vw rgba(0, 0, 0, 0.3);
-padding: 5.31vw 8.13vw;
+background-color: ${WHITEBEIGE_COLOR_1};
 color: ${BROWN_COLOR_1};
+padding: 5.31vw 8.13vw;
 border-radius: 60px;
 font-size: 6.25vw;
 margin: 17.5vw;
@@ -118,30 +118,28 @@ border: none;
 
 // 화면 아래에 초록 버튼이라 가정
 export const Button_3 = styled.button`
-background-color: ${GREEN_COLOR_1};
 box-shadow: 1.25vw 2.5vw 1.25vw rgba(0, 0, 0, 0.3);
-padding: 3.75vw 15.02vw;
+background-color: ${GREEN_COLOR_1};
 color: ${WHITEBEIGE_COLOR_1};
+padding: 3.75vw 15.02vw;
 border-radius: 60px;
 font-size: 6.25vw;
 margin: 17.5vw;
 border: none;
 `;
+
+
 // GNB 메뉴 버튼
-
 export const Button_4= styled.button`
-width: 77.19vw;
-height: 10.94vw;
-
 background-color: ${WHITEBEIGE_COLOR_1};
-border-radius: 60px;
-
-padding: 6.09vw 1.88vw;
 color: ${GREEN_COLOR_1};
+border-radius: 60px;
+text-align: center;
 font-size: 3.7vw;
-
-display: block;
-border: none;
-
+font-weight: 900;
+height: 10.94vw;
+width: 77.19vw;
+margin: 0.5vw;
+border: 0;
 `
 
