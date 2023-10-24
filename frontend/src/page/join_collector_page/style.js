@@ -116,7 +116,7 @@ export const Left_password = styled.div`
 
 `
 
-export const Right_name= styled.div`
+export const Right_name = styled.input`
 
 
 width: 71.88vw;
@@ -131,9 +131,24 @@ position: absolute;
 left: 28.13vw;
 top: 41.94vw;
 
+&::placeholder,
+&::-webkit-input-placeholder,
+&::-moz-placeholder,
+&::-ms-input-placeholder {
+    transform: rotate(180deg); 
+    font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 5vw;
+line-height: 5vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.05em;
+}
 `
 
-export const Right_company= styled.div`
+export const Right_company = styled.input`
 
     width: 62.5vw;
     height: 11.56vw;
@@ -148,9 +163,25 @@ export const Right_company= styled.div`
 left: 37.5vw;
 top: 52.06vw;
 
+&::placeholder,
+&::-webkit-input-placeholder,
+&::-moz-placeholder,
+&::-ms-input-placeholder {
+    transform: rotate(180deg); 
+    font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 5vw;
+line-height: 5vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.05em;
+}
+
 `
 
-export const Right_id= styled.div`
+export const Right_id = styled.input`
 
 
 width: 71.88vw;
@@ -165,9 +196,24 @@ position: absolute;
 left: 28.13vw;
 top: 90.5vw;
 
+&::placeholder,
+&::-webkit-input-placeholder,
+&::-moz-placeholder,
+&::-ms-input-placeholder {
+    transform: rotate(180deg); 
+    font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 5vw;
+line-height: 5vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.05em;
+}
 `
 
-export const Right_password= styled.div`
+export const Right_password = styled.input`
 
 
 width: 71.88vw;
@@ -181,5 +227,21 @@ border: none;
 position: absolute;
 left: 28.13vw;
 top:118.63vw;
+
+&::placeholder,
+&::-webkit-input-placeholder,
+&::-moz-placeholder,
+&::-ms-input-placeholder {
+    transform: rotate(180deg); 
+    font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 5vw;
+line-height: 5vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.05em;
+  }
 
 `
