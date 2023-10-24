@@ -1,4 +1,4 @@
-// ethers 6.8.0
+// ethers 5.7.2
 
 
 const { ethers } = require("ethers");
@@ -6,7 +6,7 @@ require("dotenv").config();
 
 
 // 지갑 생성 성공
-// const new_wallet = ethers.Wallet.createRandom();
+const new_wallet = ethers.Wallet.createRandom();
 // console.log(new_wallet);
 // // HDNodeWallet {
 // //     provider: null,
@@ -115,13 +115,13 @@ module.exports.get_new_wallet_fn = (provider) => ethers.Wallet.createRandom(prov
 module.exports.get_wallet_fn = (private_key, provider) => new ethers.Wallet(private_key, provider);
 
 
-// solc v0.8.19로 낮춰도 해당 provider로 배포 시 에러 발생...
+// solc v0.8.19 기준 provider 배포 이슈...
 
 
-// Error: server response 301 Moved Permanently (request={  }, response={  }, error=null, code=SERVER_ERROR, version=6.8.0)
-module.exports.get_polygon_provider_fn = () => new ethers.JsonRpcProvider("https://rpc-mumbai.matic.today");
+// Error: could not detect network (event="noNetwork", code=NETWORK_ERROR, version=providers/5.7.2)
+module.exports.get_polygon_provider_fn = () => new ethers.providers.JsonRpcProvider("https://rpc-mumbai.matic.today");
 
 
-// TypeError: contract.deploymentTransaction.wait is not a function
-module.exports.get_etherscan_provider_fn = () => new ethers.EtherscanProvider("maticmum");
-module.exports.get_ankr_provider_fn = () => new ethers.JsonRpcProvider("https://rpc.ankr.com/polygon_mumbai");
+module.exports.get_etherscan_provider_fn = () => new ethers.providers.EtherscanProvider("maticmum");
+module.exports.get_ankr_provider_fn = () => new ethers.providers.JsonRpcProvider("https://rpc.ankr.com/polygon_mumbai");
+module.exports.get_infura_provider_fn = () => new ethers.providers.JsonRpcProvider(`https://polygon-mumbai.infura.io/v3/${JIWON_API_KEY}`);

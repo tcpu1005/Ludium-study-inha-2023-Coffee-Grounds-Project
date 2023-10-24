@@ -6,7 +6,8 @@ const fs = require("fs");
 const path = require("path");
 const ethers = require("ethers");
 const abi = require("../compile/default_contract_abi.json");
-const { get_ankr_provider_fn, get_wallet_fn } = require("../create_wallet_ethers_v6.8");
+// const { get_polygon_provider_fn, get_wallet_fn } = require("../create_wallet_ethers_v6.8");
+const { get_infura_provider_fn, get_wallet_fn } = require("../create_wallet_ethers_v5.7.2");
 
 
 const folderName = "compile";
@@ -18,17 +19,17 @@ const private_key = process.env.JIWON_PRIVATE_KEY;
 
 // ethers
 (async () => {
-    const signer = get_wallet_fn(private_key, get_ankr_provider_fn());
+    const signer = get_wallet_fn(private_key, get_infura_provider_fn());
     const factory = new ethers.ContractFactory(abi, bytecode, signer);
 
     
-    // 에러 발생
+    // solc 버전, ethers 버전에 따라 이슈 발생 (해결 완)
     const contract = await factory.deploy();
     console.log('contract address', contract.address);
 
 
     // wait for contract creation transaction to be mined
-    await contract.deploymentTransaction.wait();
+    await contract.deployTransaction.wait();
 })();
 
 
