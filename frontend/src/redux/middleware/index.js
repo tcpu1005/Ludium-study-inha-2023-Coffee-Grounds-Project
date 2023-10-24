@@ -4,7 +4,7 @@ import { members_cafe_collection } from "./members_cafe_collection";
 import { fetch_collections } from "./fetch_collections";
 import { update_collection } from "./update_collection";
 import { default_action_fn } from "./default_action";
-import { login_user } from "./login_user";
+import { login_user_fn } from "./login_user_action";
 // ...
 
 export {
@@ -14,6 +14,6 @@ export {
   fetch_collections,
   update_collection,
   default_action_fn,
-  login_user,
+  login_user_fn,
   // ...
 };

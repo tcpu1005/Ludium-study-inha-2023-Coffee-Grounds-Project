@@ -3,9 +3,9 @@
 import { register_cafe_user_fn, register_collector_user_fn } from "../../redux/middleware";
 import { Button_1, MAROON_COLOR_1, WHITE_COLOR_1 } from "../../base_style";
 import Default_component from "../../component/default_component";
-import { default_action_fn } from "../../redux/middleware";
-import { login_user } from "../../redux/middleware";
 import { members_cafe_collection } from "../../redux/middleware";
+import { default_action_fn } from "../../redux/middleware";
+import { login_user_fn } from "../../redux/middleware";
 import { useDispatch, useSelector } from "react-redux";
 import Footer_layout from "../../layout/footer_layout";
 import Top_layout from "../../layout/top_layout";
@@ -78,7 +78,7 @@ const Default_page = () => {
         <h6>{team_message}</h6>
       </div>
       <Default_component />
-      <Button_1 onClick={() => dispatch(login_user(login_user_data))}>
+      <Button_1 onClick={() => dispatch(default_action_fn(login_user_data))}>
         로그인
       </Button_1>
       <Button_1 onClick={() => register_cafe_user_fn(cafe_user_data)}>

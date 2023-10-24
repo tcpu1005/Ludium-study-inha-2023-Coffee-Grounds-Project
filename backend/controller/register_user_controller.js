@@ -1,6 +1,4 @@
-const { CafeDetails } = require("../model");
-const { CollectorDetails } = require("../model");
-const { Users } = require("../model");
+const { Users, CafeDetails, CollectorDetails } = require("../model");
 
 
 // 카페 회원가입
