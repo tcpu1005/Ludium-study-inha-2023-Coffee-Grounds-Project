@@ -1,4 +1,4 @@
-// ㅜ 리듀서 초기 값
+// 리듀서 초기 값 (총 11개)
 const init = {
   cafe_id: null,
   is_login: false,
@@ -9,6 +9,7 @@ const init = {
   address_gu: null,
   address_dong: null,
   company_name: null,
+  collector_id: null,
   wallet_address: null,
 };
 
@@ -18,12 +19,12 @@ function reducer(state = init, action) {
 
   const { type, payload } = action;
 
-  // ㅜ 액션명은 대문자 스네이크 타입으로 정의
+  // 액션명은 대문자 스네이크 타입으로 정의
   switch (type) {
     //
 
     case "LOGIN_USER":
-      // ㅜ 리렌더링을 위해 스프레드 연산자 사용
+      // 리렌더링을 위해 스프레드 연산자 사용
       //   console.log(payload);
       return { ...state, is_login: true, ...payload };
 
