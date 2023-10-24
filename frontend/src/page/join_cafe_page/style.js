@@ -37,7 +37,7 @@ top: calc(50% - 7.5vw/2 - 16.88vw);
 
 font-family: 'Arita-dotum4.0(OTF)';
 font-style: normal;
-font-weight: 400;
+font-weight: 500;
 font-size: 5vw;
 line-height: 5vw;
 display: flex;

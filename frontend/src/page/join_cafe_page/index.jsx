@@ -83,11 +83,10 @@ const Join_cafe_page = () => {
   return (
     <>
       <Small_title_component title="정보입력" />
-
+        <Flex_body_container>
             <div >
                             
                 <left_id htmlFor="login_id"> 아이디</left_id><br/>
-                
                 <left_password htmlFor="login_password"> 비밀번호</left_password><br/>
                 <left_name htmlFor="user_name">이름</left_name><br/>
                 <left_cafename htmlFor="cafe_name">카페명</left_cafename>
@@ -103,7 +102,7 @@ const Join_cafe_page = () => {
                 
 
             </div>
-
+            </Flex_body_container>
 
             <div>
             <left_address>카페 주소</left_address>
@@ -126,7 +125,7 @@ const Join_cafe_page = () => {
             
             </div>    
 
-
+           
       <Button_3 onClick={join_button_fn}>가입하기</Button_3>
     </>
   )

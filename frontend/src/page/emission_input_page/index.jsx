@@ -3,9 +3,10 @@
 import Big_title_component from "../../component/big_title_component";
 import { members_cafe_collection } from "../../redux/middleware";
 import { useDispatch, useSelector } from "react-redux";
-import { Button_2 } from "../../base_style";
+import { Button_7 } from "../../base_style";
 import { useRef } from "react";
-import { Entire_container } from "./style";
+import { Entire_container, Cafename, Coffee_status, Coffee_weight, In_cafename, In_coffeestatus, In_coffeeweight, Kg,
+          Option_container, Option_dry, Option_Mold,Option_wet } from "./style";
 
 const Emission_input_page = () => {
   //
@@ -63,31 +64,38 @@ const Emission_input_page = () => {
       <div >
 
       <div>
-        <label htmlFor="cafe_name">카페명</label>
+        <Cafename htmlFor="cafe_name">카페명</Cafename>
         <input
           id="cafe_name"
           value={cafe_name || "카페인 중독"}
           disabled
           autoComplete="off"
+          as={In_cafename}
         />
+        
       </div>
 
       <div>
-      <legend htmlFor="coffee_status">커피박 상태</legend>
-      <select name="" id="" ref={coffee_status_ref} defaultValue={"moisture"}>
-        <option value="drying">건조</option>
-        <option value="moisture">습기</option>
-        <option value="mold">곰팡이</option>
+      <Coffee_status htmlFor="coffee_status">커피박 상태</Coffee_status>
+      <In_coffeestatus> 
+      <select name="" id="" ref={coffee_status_ref} defaultValue={"moisture"} as={In_coffeestatus}>
+        <Option_container>
+        <Option_dry value="drying">건조</Option_dry>
+        <Option_wet value="moisture">습기</Option_wet>
+        <Option_Mold value="mold">곰팡이</Option_Mold>
+      </Option_container>
       </select>
+      </In_coffeestatus>
       </div>
 
       <div>
-        <label htmlFor="coffee_amount">커피박 양</label>
-        <input id="coffee_amount" ref={coffee_amount_ref} autoComplete="off" />
-        kg
+        <Coffee_weight htmlFor="coffee_amount">커피박 양</Coffee_weight>
+        
+        <input id="coffee_amount" ref={coffee_amount_ref} autoComplete="off" as={In_coffeeweight} />
+        <Kg>kg</Kg>
       </div>
 
-      <Button_2 onClick={emission_button_fn}>데이터 입력</Button_2>
+      <Button_7 onClick={emission_button_fn}>데이터 입력</Button_7>
 
       </div>
       </Entire_container>
