@@ -2,8 +2,8 @@
 
 import axios from "axios";
 
-const BACK_SERVER_PATH =
-  process.env.BACK_SERVER_PATH || "http://localhost:8080";
+const REACT_APP_BACK_SERVER_PATH =
+  process.env.REACT_APP_BACK_SERVER_PATH || "http://localhost:8080";
 
 const default_action_fn = () => {
   //
@@ -14,7 +14,7 @@ const default_action_fn = () => {
     const res = await axios({
       //
 
-      url: `${BACK_SERVER_PATH}/api/vi/redux-action-test/front-text`,
+      url: `${REACT_APP_BACK_SERVER_PATH}/api/vi/redux-action-test/front-text`,
       method: "get",
     });
 

@@ -22,3 +22,74 @@ export const Login_container = styled.div`
     align-items: center;   // 세로 중앙 정렬
     width: 80%;
 `;
+
+export const Login_id = styled.div`
+position: absolute;
+width: 24.13vw;
+height: 7.5vw;
+left: calc(50% - 24.13vw/2 - 33.88vw);
+top: calc(50% - 81.5vw/2 - 7.81vw);
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 500;
+font-size: 5vw;
+line-height: 5vw;
+text-align: center;
+letter-spacing: -0.05em;
+
+color: #6F6F4B;
+
+margin: 24.69vw 1.21vw 17.81vw 0vw;
+`
+
+export const Login_password = styled.div`
+
+position: absolute;
+width: 26.78vw;
+height: 7.5vw;
+left: calc(50% - 26.78vw/2 - 35.67vw);
+top: calc(50% - 7.5vw/2 + 19.38vw);
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 500;
+font-size: 5vw;
+line-height: 5vw;
+text-align: center;
+letter-spacing: -0.05em;
+
+color: #6F6F4B;
+
+margin: 0vw 0.41vw 25.31vw 0vw
+`
+
+export const Input_id = styled.input`
+
+position: absolute;
+width: 73.02vw;
+height: 11.56vw;
+left: 26.99vw;
+top: calc(50% - 37.5vw/2 - 7.81vw);
+
+background: #E8D4B9;
+border-radius: 0px 60px 60px 0px;
+transform: rotate(-180deg);
+border: none;
+
+`
+
+export const Input_password = styled.input`
+
+position: absolute;
+width: 71.88vw;
+height: 11.56vw;
+left: 26.99vw;
+top: 21.060000000000002vw;
+
+background: #E8D4B9;
+border-radius: 0px 60px 60px 0px;
+transform: rotate(-180deg);
+border: none;
+
+`

@@ -29,7 +29,6 @@ app.use(cors({
 
 // ㅜ 라우터 사용 => 모든 API 함수는 라우터 폴더 내에 구현
 const router = require("./router");
-console.log(Object.keys(router))
 Object.values(router).forEach((rt) => app.use(rt));
 
 

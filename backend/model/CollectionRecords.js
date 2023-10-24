@@ -40,7 +40,7 @@ class CollectionRecords extends Sequelize.Model {
           allowNull: true,
         },
         reward_status: {
-          type: Sequelize.ENUM("수거 요청", "수거 완료", "보상 완료"),
+          type: Sequelize.ENUM("수거요청", "수거완료", "보상완료"),
           allowNull: false,
         },
         reward_amount: {

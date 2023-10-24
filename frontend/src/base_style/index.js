@@ -118,12 +118,23 @@ margin: 5vw;
 // 화면 아래에 초록 버튼이라 가정
 export const Button_3 = styled.button`
 box-shadow: 1.25vw 2.5vw 1.25vw rgba(0, 0, 0, 0.3);
-background-color: ${GREEN_COLOR_1};
-color: ${WHITEBEIGE_COLOR_1};
-padding: 3.75vw 15.02vw;
+background-color: #6F6F4B;
+color: #E8D4B9;
+padding: 3.75vw 6.02vw;
 border-radius: 60px;
 font-size: 6.25vw;
 margin: 17.5vw;
+border: none;
+/* display: flex; */
+position: absolute;
+width: 38.75vw;
+height: 12.81vw;
+left: calc(50% - 37.81vw/2 + -15.84vw);
+top: 129.69vw;
+display: flex;
+justify-content: center;
+align-items: center;
+
 `;
 
 
@@ -131,12 +142,57 @@ margin: 17.5vw;
 export const Button_4= styled.button`
 background-color: ${WHITEBEIGE_COLOR_1};
 color: ${GREEN_COLOR_1};
-font-weight: 900;
 border-radius: 60px;
 text-align: center;
 font-size: 3.7vw;
+font-weight: 900;
 height: 10.94vw;
 width: 77.19vw;
+margin: 0.5vw;
+margin: 0.5vw;
 border: 0;
 `
 
+//로그인 버튼
+export const Button_6= styled.button`
+box-shadow: 1.25vw 2.5vw 1.25vw rgba(0, 0, 0, 0.3);
+background-color: #6F6F4B;
+color: #E8D4B9;
+padding: 3.75vw 6.02vw;
+border-radius: 60px;
+font-size: 6.25vw;
+margin: 17.5vw;
+border: none;
+/* display: flex; */
+position: absolute;
+width: 38.75vw;
+height: 12.81vw;
+left: calc(50% - 37.81vw/2 + -15.84vw);
+top: 41.69vw;
+display: flex;
+justify-content: center;
+align-items: center;
+`
+//배출 데이터 입력 버튼
+export const Button_7= styled.button`
+
+background: #E8D4B9;
+box-shadow: 4px 8px 4px rgba(0, 0, 0, 0.3);
+border-radius: 60px;
+border: none;
+position: absolute;
+width: 41.67vw;
+height: 14.69vw;
+left: 34.38vw;
+top: 152.81vw;
+font-family: 'Gowun Batang';
+font-style: normal;
+font-weight: 700;
+font-size: 6.25vw;
+line-height: 9.06vw;
+align-items: center;
+text-align: center;
+letter-spacing: 0.015em;
+color: #67493F;
+
+`

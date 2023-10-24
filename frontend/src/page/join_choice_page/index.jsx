@@ -22,7 +22,7 @@ const Join_choice_page = () => {
             <div>
                 <Button_5 onClick={() => nav("/join/collector")}>수거업체</Button_5>
             </div>
-            <Background_image3 />
+            <div className="Background_image3"></div>
         </>
     );
 

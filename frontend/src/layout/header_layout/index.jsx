@@ -1,9 +1,9 @@
 // 모든 화면에 보일 Header_layout 컴포넌트
 
 
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import { HeaderStyle } from './style';
-import { useLocation, useNavigate } from 'react-router-dom';
 
 
 const Header_layout = () => {
@@ -40,7 +40,7 @@ const Header_layout = () => {
 
             // 6_MY_PAGE_CAFE_COFFEE
             case "/emission":
-                return "배출";
+                return "배출 목록";
 
             // 7_MY_PAGE_CAFE_COFFEE_IINPUT
             case "/emission/input":
@@ -56,15 +56,23 @@ const Header_layout = () => {
 
             // 10_MY_PAGE_CAFE_TOKEN_EXCHANGE
             case "/insentive/token/exchange":
-                return "환전";
+                return "토큰 환전";
 
             // 11_MY_PAGE_COLLECTOR
             case "/collection":
-                return "수거";
+                return "수거 목록";
 
             // 12_MY_PAGE_COLLECTOR_INPUT
             case "/collection/input":
                 return "수거 입력";
+
+            // 13_MY_PAGE_COLLECTOR_CHECK
+            case "/collection/check":
+                return "수거 검증";
+
+            // 14_COLLECTION_ONCHAIN
+            case "/collection/onchain":
+                return "보상 목록";
 
             default:
                 return "";
@@ -77,7 +85,7 @@ const Header_layout = () => {
             <HeaderStyle>
                 <button onClick={() => nav(-1)}>←</button>
                 <header>{get_header_title_fn()}</header>
-                <button onClick={() => nav("/gnb/temp")}>☰</button>
+                <button onClick={() => nav("/gnb")}>☰</button>
             </HeaderStyle>
             <Outlet />
         </>

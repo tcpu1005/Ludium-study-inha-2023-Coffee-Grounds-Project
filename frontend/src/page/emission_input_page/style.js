@@ -5,7 +5,7 @@ export const Entire_container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow-y: auto;  // 필요한 경우에만 스크롤 표시
+   
 `;
 
 export const DivContainer = styled.div`
@@ -14,6 +14,7 @@ export const DivContainer = styled.div`
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); 
+  margin: 15px 0;
 `;
 
 export const LabelDiv = styled.div`
@@ -55,3 +56,6 @@ export const InputDiv = styled.div`
     border-radius: 4px;
   }
 `;
+
+
+
