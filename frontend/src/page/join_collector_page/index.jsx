@@ -86,7 +86,7 @@ const Join_collector_page = () => {
                 <div>
                     <Input_container2>
                         <Right_name id="user_name" ref={user_name_ref} autoComplete="off" /><br />
-                        <Right_company id="user_name" ref={user_name_ref} autoComplete="off" /><br />
+                        <Right_company id="company_name" ref={company_name_ref} autoComplete="off" /><br />
                         <Right_id id="login_id" ref={login_id_ref} autoComplete="off" /><br />
                         <Right_password id="login_password" type="password" ref={login_password_ref} autoComplete="off" /><br />
                     </Input_container2>
