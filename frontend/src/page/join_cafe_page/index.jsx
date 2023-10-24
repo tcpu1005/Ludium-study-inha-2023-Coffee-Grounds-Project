@@ -6,6 +6,7 @@ import { Button_3 } from "../../base_style";
 import { useNavigate } from "react-router";
 import { useRef, useState } from "react";
 import {
+  Flex_body_container,
   Left_cafename,
   Left_password,
   Left_address,
@@ -86,26 +87,26 @@ const Join_cafe_page = () => {
   return (
     <>
       <Small_title_component title="정보입력" />
+      <Flex_body_container>
+        <div >
 
-      <div >
+          <Left_id htmlFor="login_id"> 아이디</Left_id><br />
+          <Left_password htmlFor="login_password"> 비밀번호</Left_password><br />
+          <Left_name htmlFor="user_name">이름</Left_name><br />
+          <Left_cafename htmlFor="cafe_name">카페명</Left_cafename>
 
-        <Left_id htmlFor="login_id"> 아이디</Left_id><br />
+        </div>
 
-        <Left_password htmlFor="login_password"> 비밀번호</Left_password><br />
-        <Left_name htmlFor="user_name">이름</Left_name><br />
-        <Left_cafename htmlFor="cafe_name">카페명</Left_cafename>
+        <div>
 
-      </div>
-
-      <div>
-
-        <Input_el id="login_id" style={{ fontSize: '60%' }} ref={login_id_ref} autoComplete="off" /> <br />
-        <Input_el id="login_password" style={{ fontSize: '60%' }} type="password" ref={login_password_ref} autoComplete="off" /> <br />
-        <Input_el id="user_name" style={{ fontSize: '60%' }} ref={user_name_ref} autoComplete="off" /> <br />
-        <Input_el id="cafe_name" style={{ fontSize: '60%' }} ref={cafe_name_ref} autoComplete="off" /> <br />
+          <Input_el id="login_id" style={{ fontSize: '60%' }} ref={login_id_ref} autoComplete="off" /> <br />
+          <Input_el id="login_password" style={{ fontSize: '60%' }} type="password" ref={login_password_ref} autoComplete="off" /> <br />
+          <Input_el id="user_name" style={{ fontSize: '60%' }} ref={user_name_ref} autoComplete="off" /> <br />
+          <Input_el id="cafe_name" style={{ fontSize: '60%' }} ref={cafe_name_ref} autoComplete="off" /> <br />
 
 
-      </div>
+        </div>
+      </Flex_body_container>
 
 
       <div>

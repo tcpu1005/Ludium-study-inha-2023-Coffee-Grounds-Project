@@ -64,7 +64,7 @@ color: #6F6F4B;
 margin: 0vw 0.41vw 25.31vw 0vw
 `
 
-export const Input_id = styled.div`
+export const Input_id = styled.input`
 
 position: absolute;
 width: 73.02vw;
@@ -79,7 +79,7 @@ border: none;
 
 `
 
-export const Input_password = styled.div`
+export const Input_password = styled.input`
 
 position: absolute;
 width: 71.88vw;

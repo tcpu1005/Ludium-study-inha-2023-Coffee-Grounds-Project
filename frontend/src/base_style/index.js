@@ -174,3 +174,26 @@ display: flex;
 justify-content: center;
 align-items: center;
 `
+//배출 데이터 입력 버튼
+export const Button_7= styled.button`
+
+background: #E8D4B9;
+box-shadow: 4px 8px 4px rgba(0, 0, 0, 0.3);
+border-radius: 60px;
+border: none;
+position: absolute;
+width: 41.67vw;
+height: 14.69vw;
+left: 34.38vw;
+top: 152.81vw;
+font-family: 'Gowun Batang';
+font-style: normal;
+font-weight: 700;
+font-size: 6.25vw;
+line-height: 9.06vw;
+align-items: center;
+text-align: center;
+letter-spacing: 0.015em;
+color: #67493F;
+
+`
