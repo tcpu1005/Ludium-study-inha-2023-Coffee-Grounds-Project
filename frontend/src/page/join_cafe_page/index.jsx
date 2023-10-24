@@ -75,7 +75,6 @@ const Join_cafe_page = () => {
 
     // 여기서 액션 날리면 됩니다.
     const { success, message } = await register_cafe_user_fn(cafe_user_data);
-
     alert(message);
 
 
