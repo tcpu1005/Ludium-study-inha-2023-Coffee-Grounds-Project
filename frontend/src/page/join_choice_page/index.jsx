@@ -5,7 +5,6 @@ import Small_title_component from "../../component/small_title_component";
 import { Button_1, Button_5 } from "../../base_style";
 import { useNavigate } from "react-router";
 import { Button_choice } from "./style";
-// import Background_image3 from "./style.css";
 
 
 const Join_choice_page = () => {
@@ -22,7 +21,7 @@ const Join_choice_page = () => {
             <div>
                 <Button_5 onClick={() => nav("/join/collector")}>수거업체</Button_5>
             </div>
-            <div class="Background_image3"></div>
+            <div className="Background_image3"></div>
         </>
     );
 

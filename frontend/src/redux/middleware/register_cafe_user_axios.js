@@ -1,15 +1,23 @@
 import axios from "axios";
 
+
 const REACT_APP_BACK_SERVER_PATH =
   process.env.REACT_APP_BACK_SERVER_PATH || "http://localhost:8080";
 
-const register_cafe_user = async (cafe_user_data) =>
-  await axios({
+
+const register_cafe_user_fn = async (cafe_user_data) => {
+  //
+  const res = await axios({
     url: `${REACT_APP_BACK_SERVER_PATH}/api/v1/members/cafe`,
-    method: "put",
     data: cafe_user_data,
+    method: "put",
   });
+
+  return res.data;
+}
+
+
 export {
-  register_cafe_user,
+  register_cafe_user_fn,
   // ...
 };

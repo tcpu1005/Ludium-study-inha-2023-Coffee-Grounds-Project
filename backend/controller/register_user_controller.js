@@ -1,56 +1,62 @@
 const { CafeDetails } = require("../model");
 const { Users } = require("../model");
 
-module.exports.register_user_controller = async (req, res) => {
+
+module.exports.register_cafe_user_controller = async (req, res) => {
+  //
+
   const {
     login_id,
-    login_password,
     user_name,
-    user_type,
-    wallet_address,
-    wallet_privatekey,
     cafe_name,
     address_si,
     address_gu,
     address_dong,
-    total_emissions,
+    login_password,
   } = req.body;
 
-  console.log("hello");
+
+  if (!login_id) {
+    return res
+      .status(400)
+      .send({ message: "login_id 값이 유효하지 않습니다." });
+  }
+
   try {
-    if (!login_id) {
-      console.log("if!");
-      return res
-        .status(400)
-        .send({ message: "login_id 값이 유효하지 않습니다." });
-    }
     const existingUser = await Users.findOne({ where: { login_id } });
-    console.log("if!");
     if (existingUser) {
       return res.status(409).send({ message: "이미 존재하는 ID입니다." });
     }
-    console.log("if!");
-    const createdUser = await Users.create({
+
+
+    // 블록체인 영역에서 구현 예정
+    const wallet_address = "0x7c564eBD81307509daa2Ea46A64b1F179fe6B1Bc";
+    const wallet_privatekey = "12a3fd1fb9c45b3aef6b37e4d1056d691aeb374b7631487bbc912de68bcec3ce";
+
+
+    const created_user = await Users.create({
       login_id,
-      login_password,
       user_name,
-      user_type,
       wallet_address,
+      login_password,
+      user_type: "Cafe",
       wallet_privatekey,
     });
 
+
     const created_cafeDetails = await CafeDetails.create({
-      user_id: createdUser.user_id,
+      user_id: created_user.user_id,
       cafe_name,
       address_si,
       address_gu,
       address_dong,
-      total_emissions,
+      total_emissions: 0,
     });
-    console.log("if!");
-    console.log({ message: "회원 가입에 성공하였습니다." });
+
+
+    res.send({ success: true, message: "회원 가입에 성공하였습니다." });
   } catch (error) {
-    console.error(error);
-    console.log({ message: "회원 가입에 실패하였습니다." });
+    console.error(`register_cafe_user_controller : ${error}`);
+    res.send({ success: false, message: "회원 가입에 실패하였습니다." });
   }
 };

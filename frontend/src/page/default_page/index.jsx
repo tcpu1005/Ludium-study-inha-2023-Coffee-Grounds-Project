@@ -4,7 +4,7 @@ import { Button_1, MAROON_COLOR_1, WHITE_COLOR_1 } from "../../base_style";
 import Default_component from "../../component/default_component";
 import { default_action_fn } from "../../redux/middleware";
 import { register_company_user } from "../../redux/middleware";
-import { register_cafe_user } from "../../redux/middleware";
+import { register_cafe_user_fn } from "../../redux/middleware";
 import { login_user } from "../../redux/middleware";
 import { members_cafe_collection } from "../../redux/middleware";
 import { useDispatch, useSelector } from "react-redux";
@@ -82,7 +82,7 @@ const Default_page = () => {
       <Button_1 onClick={() => dispatch(login_user(login_user_data))}>
         로그인
       </Button_1>
-      <Button_1 onClick={() => register_cafe_user(cafe_user_data)}>
+      <Button_1 onClick={() => register_cafe_user_fn(cafe_user_data)}>
         카페유저등록
       </Button_1>
       <Button_1 onClick={() => register_company_user(company_user_data)}>
