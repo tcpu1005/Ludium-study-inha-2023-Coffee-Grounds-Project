@@ -33,7 +33,7 @@ const login_user_fn = (login_user_data, nav) => {
       });
     }
 
-    
+
     alert(message);
 
 
@@ -44,7 +44,17 @@ const login_user_fn = (login_user_data, nav) => {
 };
 
 
+const logout_user_fn = () => {
+  //
+
+  return (dispatch, get_state) => {
+    dispatch({ type: "LOGOUT", payload: null });
+  }
+}
+
+
 export {
+  logout_user_fn,
   login_user_fn,
   // ...
 };
