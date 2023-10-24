@@ -43,7 +43,7 @@ const Gnb_page = () => {
       {/* 9_MY_PAGE_CAFE_TOKEN */}
       <Button_4 onClick={() => nav("/insentive/token")}>나의 토큰 확인하기(+)</Button_4>
 
-      
+
       {/* 10_MY_PAGE_CAFE_TOKEN_EXCHANGE */}
       <Button_4 onClick={() => nav("/insentive/token/exchange")}>토큰 환전하기(+)</Button_4>
 
@@ -55,16 +55,16 @@ const Gnb_page = () => {
 
       {/* 12_MY_PAGE_COLLECTOR_INPUT */}
       <Button_4 onClick={() => nav("/collection/input")}>수거 입력하기(개발 전용)</Button_4>
-      
-      
+
+
       {/* 13_MY_PAGE_COLLECTOR_CHECK */}
       {/* 나의 수거 완료 목록 조회 + 수정하기 버튼 (준비중) + 검증 완료 버튼 (해당 페이지 수거자만 접근 가능) */}
-      <Button_4 >나의 수거 목록 확인하기(+)</Button_4>
-      
+      <Button_4 onClick={() => nav("/collection/check")}>나의 수거 목록 확인하기(+)</Button_4>
 
-      {/* 14_ONCHAIN */}
+
+      {/* 14_COLLECTION_ONCHAIN */}
       {/* 모든 보상 완료 목록 확인하기 (오라클 문제, 검증자 역할의 수거자에게 책임감을 강화시키기 위한 페이지) */}
-      <Button_4 >보상 완료 목록 확인하기(+)</Button_4>
+      <Button_4 onClick={() => nav("/collection/onchain")}>보상 완료 목록 확인하기(+)</Button_4>
     </>
   )
 }
