@@ -2,7 +2,6 @@
 
 
 const { ethers } = require("ethers");
-require("dotenv").config();
 
 
 // 지갑 생성 성공
