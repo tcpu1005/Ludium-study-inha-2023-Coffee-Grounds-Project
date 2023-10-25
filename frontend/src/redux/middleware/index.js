@@ -2,7 +2,7 @@
 import {
   register_cafe_user_fn,
   register_collector_user_fn,
-} from "./register_cafe_user_axios";
+} from "./register_user_axios";
 import { login_user_fn, logout_user_fn } from "./login_user_action";
 import { members_cafe_collection } from "./members_cafe_collection";
 import { fetch_collections } from "./fetch_collections";

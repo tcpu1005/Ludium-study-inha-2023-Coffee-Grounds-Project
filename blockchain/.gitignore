@@ -1,2 +1,4 @@
+contract/artifacts/
+contract/.deps/
 node_modules/
 .env

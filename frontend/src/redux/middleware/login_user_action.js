@@ -11,14 +11,17 @@ const login_user_fn = (login_user_data, nav) => {
   return async (dispatch, get_state) => {
     //
 
-    const { success, message, data } = (await axios({
+    const res = await axios({
       url: `${REACT_APP_BACK_SERVER_PATH}/api/v1/login`,
       data: login_user_data,
       method: "post",
-    })).data;
+    });
 
 
-    if (data.user_type === "Cafe") {
+    const { success, message, data } = res.data;
+
+
+    if (data?.user_type === "Cafe") {
       dispatch({
         type: "LOGIN_USER",
         payload: data,
@@ -26,7 +29,7 @@ const login_user_fn = (login_user_data, nav) => {
     }
 
 
-    else if (data.user_type === "Collector") {
+    else if (data?.user_type === "Collector") {
       dispatch({
         type: "LOGIN_COLLECTOR",
         payload: data,
