@@ -1,18 +1,18 @@
 import styled from "styled-components";
 
-export const Inside_character3= styled.p`
+export const Inside_character3= styled.span`
 
 position: absolute;
-width: 137px;
-height: 30px;
-left: calc(50% - 137px/2 - 0.5px);
-top: 120px;
+width: 42.81vw;
+height: 9.38vw;
+left: calc(50% - 42.81vw/2 - 0.16vw);
+top: 20.5vw;
 
 font-family: 'Gowun Batang';
 font-style: normal;
 font-weight: 700;
-font-size: 16px;
-line-height: 23px;
+font-size: 5vw;
+line-height: 7.19vw;
 text-align: center;
 letter-spacing: 0.165em;
 

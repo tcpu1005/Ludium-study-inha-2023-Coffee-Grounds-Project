@@ -5,7 +5,7 @@ import { Button_3 } from '../../base_style';
 import { useState, useEffect } from 'react';
 import { MAROON_COLOR_1 } from "../../base_style";
 import List_component from '../../component/list_component';
-import Small_title_component from "../../component/small_title_component";
+import Small_title_component2 from "../../component/small_title2_component";
 import {Span_pageNumDirectionBtn, Span_pageNumBtn } from "./style";
 
 
@@ -92,7 +92,7 @@ const Emission_page = () => {
 
     return (
         <>
-            <Small_title_component title={"나의 배출 목록"} />
+            <Small_title_component2 title={"나의 배출 목록"} />
 
 
             <List_component current_list={emission_list.slice((current_page_number - 1) * page_unit, current_page_number * page_unit)} total_amount={total_amount} />
