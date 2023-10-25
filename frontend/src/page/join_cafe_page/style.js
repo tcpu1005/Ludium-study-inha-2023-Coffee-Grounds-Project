@@ -142,8 +142,19 @@ left: 29vw;
 top: 36.19vw;
 background: #E8D4B9;
 border-radius: 60px 0px 0px 60px;
-/* transform: rotate(-180deg); */
 border: none;
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 500;
+font-size: 5vw;
+line-height: 5vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.05em;
+
+color: #6F6F4B;
 
 `
 
@@ -159,6 +170,18 @@ background: #E8D4B9;
 border-radius: 60px 0px 0px 60px;
 border: none;
 
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 500;
+font-size: 5vw;
+line-height: 5vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.05em;
+
+color: #6F6F4B;
+
 `
 export const Right_name = styled.input`
 position: absolute;
@@ -170,6 +193,18 @@ top: 79vw;
 background: #E8D4B9;
 border-radius: 60px 0px 0px 60px;
 border: none;
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 500;
+font-size: 5vw;
+line-height: 5vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.05em;
+
+color: #6F6F4B;
 `
 
 export const Right_cafename = styled.input`
@@ -183,6 +218,18 @@ top: 100.19vw;
 background: #E8D4B9;
 border-radius: 60px 0px 0px 60px;
 border: none;
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 500;
+font-size: 5vw;
+line-height: 5vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.05em;
+
+color: #6F6F4B;
 
 `
 

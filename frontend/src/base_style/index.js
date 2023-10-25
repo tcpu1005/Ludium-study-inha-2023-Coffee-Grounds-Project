@@ -165,7 +165,7 @@ color: #E8D4B9;
 padding: 3.75vw 6.02vw;
 border-radius: 60px;
 font-size: 6.25vw;
-margin: 17.5vw;
+margin: 17.5vw 17.5vw 0vw 17.5vw;
 border: none;
 /* display: flex; */
 position: absolute;
