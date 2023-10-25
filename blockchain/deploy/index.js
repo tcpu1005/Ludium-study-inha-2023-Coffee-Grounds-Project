@@ -12,7 +12,7 @@ const { get_abi_fn, get_bytecode_fn } = require("../compile");
 const { get_infura_provider_fn, get_wallet_fn } = require("../create_wallet_ethers_v5.7.2");
 
 
-module.exports.deploy = async (fileName) => {
+module.exports.deploy = async (fileName, argument) => {
     //
 
     const abi = get_abi_fn(fileName);
@@ -34,7 +34,7 @@ module.exports.deploy = async (fileName) => {
 
         // solc 버전, ethers 버전에 따라 이슈 발생 (해결 완)
         // 배포한다.
-        const contract = await factory.deploy();
+        const contract = await factory.deploy(argument);
         console.log('contract address', contract.address);
 
 

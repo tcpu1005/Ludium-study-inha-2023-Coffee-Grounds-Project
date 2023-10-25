@@ -2432,17 +2432,11 @@ abstract contract ERC20Burnable is Context, ERC20 {
 // cd contract
 // remixd -s . -u https://remix.ethereum.org
 
-// ㅜ solc 0.8.19 버전도 배포 불가
-// 모든 컨트랙트 0.8.19로 버전 다운그레이드
+// 모든 컨트랙트 v0.8.20 => v0.8.19 버전 다운그레이드
 
 pragma solidity ^0.8.19;
 
 // npm install @openzeppelin/contracts
-
-
-
-
-
 
 contract Incheon_Coffeebak_Token is ERC20, Ownable, ERC20Burnable, ERC20Pausable, ERC20Permit {
     constructor(address initialOwner)
