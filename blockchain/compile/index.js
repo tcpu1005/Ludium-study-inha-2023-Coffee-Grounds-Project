@@ -43,6 +43,8 @@ module.exports.compile_fn = (fileName, contractName) => {
     // Compile the Solidity code using solc
     const compiledCode = JSON.parse(solc.compile(JSON.stringify(input)));
 
+    console.log(compiledCode)
+
 
     // Get the bytecode from the compiled contract
     const bytecode = compiledCode.contracts[fileName][contractName].evm.bytecode.object;
