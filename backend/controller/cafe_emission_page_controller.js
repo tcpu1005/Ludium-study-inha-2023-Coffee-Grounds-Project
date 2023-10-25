@@ -2,10 +2,10 @@ const { CollectionRecords } = require("../model");
 const { CollectorDetails } = require("../model");
 module.exports.cafe_emission_page_controller = async (req, res) => {
   // const wallet = req.params.wallet_address;
-  const cafe_id = req.params.cafe_id;
-  console.log(cafe_id);
+  const wallet_address = req.params.wallet_address;
+  console.log(req.params);
   const records = await CollectionRecords.findAll({
-    where: { cafe_id: cafe_id },
+    where: { wallet_address: wallet_address },
     attributes: [
       "coffee_amount",
       "coffee_status",
@@ -27,7 +27,7 @@ module.exports.cafe_emission_page_controller = async (req, res) => {
 
       if (collector) {
         record.company_name = collector.company_name;
-        record.collector_name = collector.collector_name;
+        record._name = collector.collector_name;
       }
     }
   }

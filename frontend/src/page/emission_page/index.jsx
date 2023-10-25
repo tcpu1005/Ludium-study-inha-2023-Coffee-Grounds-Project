@@ -12,7 +12,9 @@ import user_reducer from "../../redux/reducer";
 import { useDispatch, useSelector } from "react-redux";
 const Emission_page = () => {
   //
-  const cafe_id = useSelector((state) => state.user_reducer.cafe_id);
+  const wallet_address = useSelector(
+    (state) => state.user_reducer.wallet_address
+  );
   const nav = useNavigate();
 
   // 10개씩 보여주기
@@ -56,8 +58,8 @@ const Emission_page = () => {
     };
     const emission_data = async () => {
       try {
-        console.log("실행됨2");
-        const result = await cafe_emission_page(1);
+        console.log(wallet_address);
+        const result = await cafe_emission_page(wallet_address);
         console.log(result.data);
         // 지훈아 예외 처리의 중요성
         // 백에 데이터가 없을 경우 null이 반환될 수 있음

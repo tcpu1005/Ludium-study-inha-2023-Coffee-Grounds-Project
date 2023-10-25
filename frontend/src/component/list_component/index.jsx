@@ -19,6 +19,7 @@ const List_component = ({
   // 라디오 선택 시 선택한 수거 데이터의 UUID 값 저장
   const select_radio_fn = (e) => {
     const idx = e.target.value;
+    console.log(current_list[idx].record_id);
     set_collection_choice(current_list[idx].record_id);
   };
 
@@ -29,24 +30,16 @@ const List_component = ({
           <div key={`list-${i}`}>
             {
               // 배출 목록 페이지가 아닌 수거 목록 페이지일 때
-              set_collection_choice &&
+              set_collection_choice && (
                 // 수거 완료 상태일 경우 선택 불가
-                (v.reward_status !== "수거요청" ? (
-                  <Input_selectNBtn
-                    type="radio"
-                    name="collection_choice"
-                    value={`${i}`}
-                    disabled
-                  />
-                ) : (
-                  <Input_selectYBtn
-                    type="radio"
-                    name="collection_choice"
-                    value={`${i}`}
-                    onChange={(e) => select_radio_fn(e)}
-                    defaultChecked
-                  />
-                ))
+
+                <Input_selectYBtn
+                  type="radio"
+                  name="collection_choice"
+                  value={`${i}`}
+                  onChange={(e) => select_radio_fn(e)}
+                />
+              )
             }
             {v.reward_status === "수거요청" ? (
               <>
