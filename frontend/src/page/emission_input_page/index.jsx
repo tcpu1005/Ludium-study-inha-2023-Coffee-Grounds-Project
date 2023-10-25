@@ -3,10 +3,9 @@
 import Big_title_component from "../../component/big_title_component";
 import { members_cafe_collection } from "../../redux/middleware";
 import { useDispatch, useSelector } from "react-redux";
-import { Button_7 } from "../../base_style";
+import { Button_2 } from "../../base_style";
 import { useRef } from "react";
-import { Entire_container, Cafename, Coffee_status, Coffee_weight, In_cafename, In_coffeestatus, In_coffeeweight, Kg,
-          Option_container, Option_dry, Option_Mold,Option_wet } from "./style";
+import { Entire_container, DivContainer, LabelDiv, InputDiv,  } from './style';
 
 const Emission_input_page = () => {
   //
@@ -59,47 +58,40 @@ const Emission_input_page = () => {
   return (
     <>
       <Big_title_component title="배출 데이터 입력" />
-
       <Entire_container>
-      <div >
-
-      <div>
-        <Cafename htmlFor="cafe_name">카페명</Cafename>
-        <input
-          id="cafe_name"
-          value={cafe_name || "카페인 중독"}
-          disabled
-          autoComplete="off"
-          as={In_cafename}
-        />
         
-      </div>
+        <DivContainer>
+          
+          <LabelDiv>
+            <label htmlFor="cafe_name" style={{ fontSize: '60%' }} >카페명</label>
+            <input
+            style={{ fontSize: '60%' }}
+              id="cafe_name"
+              value={cafe_name ||  "카페인 중독"}
+              disabled
+              autoComplete="off"
+            />
+          </LabelDiv>
 
-      <div>
-      <Coffee_status htmlFor="coffee_status">커피박 상태</Coffee_status>
-      <In_coffeestatus> 
-      <select name="" id="" ref={coffee_status_ref} defaultValue={"moisture"} as={In_coffeestatus}>
-        <Option_container>
-        <Option_dry value="drying">건조</Option_dry>
-        <Option_wet value="moisture">습기</Option_wet>
-        <Option_Mold value="mold">곰팡이</Option_Mold>
-      </Option_container>
-      </select>
-      </In_coffeestatus>
-      </div>
+          <InputDiv>
+            <legend htmlFor="coffee_status" style={{ fontSize: '60%' }} >커피박 상태</legend>
+            <select name="" id="" ref={coffee_status_ref} defaultValue={"moisture"} style={{ fontSize: '60%' }} >
+              <option value="drying">건조</option>
+              <option value="moisture">습기</option>
+              <option value="mold">곰팡이</option>
+            </select>
+          </InputDiv>
 
-      <div>
-        <Coffee_weight htmlFor="coffee_amount">커피박 양</Coffee_weight>
-        
-        <input id="coffee_amount" ref={coffee_amount_ref} autoComplete="off" as={In_coffeeweight} />
-        <Kg>kg</Kg>
-      </div>
+          <InputDiv>
+            <label htmlFor="coffee_amount" style={{ fontSize: '60%' }} >커피박 양 (단위 : kg)</label>
+            <input id="coffee_amount" ref={coffee_amount_ref} autoComplete="off" style={{ fontSize: '60%' }} />
+          </InputDiv>
 
-      <Button_7 onClick={emission_button_fn}>데이터 입력</Button_7>
-
-      </div>
+          
+            <Button_2 onClick={emission_button_fn} style={{ fontSize: '60%' }} >데이터 입력</Button_2>
+          
+        </DivContainer>
       </Entire_container>
-      
     </>
   );
 };

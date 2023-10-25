@@ -2,11 +2,10 @@
 
 
 const { ethers } = require("ethers");
-require("dotenv").config();
 
 
-// 지갑 생성 성공
-const new_wallet = ethers.Wallet.createRandom();
+// // 지갑 생성 성공
+// const new_wallet = ethers.Wallet.createRandom();
 // console.log(new_wallet);
 // // HDNodeWallet {
 // //     provider: null,
@@ -124,4 +123,4 @@ module.exports.get_polygon_provider_fn = () => new ethers.providers.JsonRpcProvi
 
 module.exports.get_etherscan_provider_fn = () => new ethers.providers.EtherscanProvider("maticmum");
 module.exports.get_ankr_provider_fn = () => new ethers.providers.JsonRpcProvider("https://rpc.ankr.com/polygon_mumbai");
-module.exports.get_infura_provider_fn = () => new ethers.providers.JsonRpcProvider(`https://polygon-mumbai.infura.io/v3/${JIWON_API_KEY}`);
+module.exports.get_infura_provider_fn = (api_key) => new ethers.providers.JsonRpcProvider(`https://polygon-mumbai.infura.io/v3/${api_key}`);
