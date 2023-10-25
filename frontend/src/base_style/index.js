@@ -108,11 +108,10 @@ export const Button_2 = styled.button`
 box-shadow: 1.25vw 2.5vw 1.25vw rgba(0, 0, 0, 0.3);
 background-color: ${WHITEBEIGE_COLOR_1};
 color: ${BROWN_COLOR_1};
-padding: 5.31vw 8.13vw;
+padding: 3vw 8.13vw;
 border-radius: 60px;
 font-size: 6.25vw;
-margin: 17.5vw;
-border: none;
+margin: 5vw;
 `;
 
 

@@ -17,7 +17,7 @@ margin: 1.88vw 6.33vw;
     font-family: 'Gowun Batang';
     font-style: normal;
     font-weight: 700;
-    font-size: 6.25vw;
+    font-size: 5vw;
     line-height: 9.06vw;
     display: flex;
     text-align: center;

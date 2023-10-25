@@ -1,9 +1,19 @@
 // 1_MAIN
-import React from "react";
+
+
+import { useSelector } from "react-redux";
+
 
 const Main_page = () => {
+    //
+
+    // 로그인 및 로그아웃 시 테스트용
+    const user_state = useSelector((state) => state.user_reducer);
+    console.log(user_state);
+
+
     return (
-<div>
+        <div>
             Main_page</div>
     )
 }

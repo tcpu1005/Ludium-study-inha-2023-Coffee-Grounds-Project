@@ -1,14 +1,17 @@
 // ㅜ rafce 명령어로 컴포넌트 생성하면 된다.
 
-import { register_cafe_user_fn, register_collector_user_fn } from "../../redux/middleware";
 import { Button_1, MAROON_COLOR_1, WHITE_COLOR_1 } from "../../base_style";
 import Default_component from "../../component/default_component";
-import { default_action_fn } from "../../redux/middleware";
-import { login_user } from "../../redux/middleware";
-import { members_cafe_collection } from "../../redux/middleware";
 import { useDispatch, useSelector } from "react-redux";
 import Footer_layout from "../../layout/footer_layout";
 import Top_layout from "../../layout/top_layout";
+import {
+  register_collector_user_fn,
+  members_cafe_collection,
+  register_cafe_user_fn,
+  default_action_fn,
+  login_user_fn,
+} from "../../redux/middleware";
 
 const Default_page = () => {
   const cafe_user_data = {
@@ -78,7 +81,7 @@ const Default_page = () => {
         <h6>{team_message}</h6>
       </div>
       <Default_component />
-      <Button_1 onClick={() => dispatch(login_user(login_user_data))}>
+      <Button_1 onClick={() => dispatch(login_user_fn(login_user_data))}>
         로그인
       </Button_1>
       <Button_1 onClick={() => register_cafe_user_fn(cafe_user_data)}>
