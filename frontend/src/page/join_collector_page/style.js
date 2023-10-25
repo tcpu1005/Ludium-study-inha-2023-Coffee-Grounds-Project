@@ -123,29 +123,26 @@ width: 71.88vw;
 height: 11.56vw;
 
 background: #E8D4B9;
-border-radius: 0px 60px 60px 0px;
-transform: rotate(-180deg);
+border-radius: 60px 0px 0px 60px;
+
 border: none;
 
 position: absolute;
 left: 28.13vw;
 top: 41.94vw;
 
-&::placeholder,
-&::-webkit-input-placeholder,
-&::-moz-placeholder,
-&::-ms-input-placeholder {
-    transform: rotate(180deg); 
-    font-family: 'Arita-dotum4.0(OTF)';
+font-family: 'Arita-dotum4.0(OTF)';
 font-style: normal;
-font-weight: 400;
+font-weight: 500;
 font-size: 5vw;
 line-height: 5vw;
 display: flex;
 align-items: center;
 text-align: center;
 letter-spacing: -0.05em;
-}
+
+color: #6F6F4B;
+
 `
 
 export const Right_company = styled.input`
@@ -154,8 +151,7 @@ export const Right_company = styled.input`
     height: 11.56vw;
 
     background: #E8D4B9;
-    border-radius: 0px 60px 60px 0px;
-    transform: rotate(-180deg);
+    border-radius: 60px 0px 0px 60px;
     border: none;
     margin: 14.75vw 0vw 14.75vw 0vw;
 
@@ -163,22 +159,17 @@ export const Right_company = styled.input`
 left: 37.5vw;
 top: 52.06vw;
 
-&::placeholder,
-&::-webkit-input-placeholder,
-&::-moz-placeholder,
-&::-ms-input-placeholder {
-    transform: rotate(180deg); 
-    font-family: 'Arita-dotum4.0(OTF)';
+font-family: 'Arita-dotum4.0(OTF)';
 font-style: normal;
-font-weight: 400;
+font-weight: 500;
 font-size: 5vw;
 line-height: 5vw;
 display: flex;
 align-items: center;
 text-align: center;
 letter-spacing: -0.05em;
-}
 
+color: #6F6F4B;
 `
 
 export const Right_id = styled.input`
@@ -188,60 +179,49 @@ width: 71.88vw;
 height: 11.56vw;
 
 background: #E8D4B9;
-border-radius: 0px 60px 60px 0px;
-transform: rotate(-180deg);
+border-radius: 60px 0px 0px 60px;
 border: none;
 
 position: absolute;
 left: 28.13vw;
 top: 90.5vw;
 
-&::placeholder,
-&::-webkit-input-placeholder,
-&::-moz-placeholder,
-&::-ms-input-placeholder {
-    transform: rotate(180deg); 
-    font-family: 'Arita-dotum4.0(OTF)';
+font-family: 'Arita-dotum4.0(OTF)';
 font-style: normal;
-font-weight: 400;
+font-weight: 500;
 font-size: 5vw;
 line-height: 5vw;
 display: flex;
 align-items: center;
 text-align: center;
 letter-spacing: -0.05em;
-}
+
+color: #6F6F4B;
+
 `
 
 export const Right_password = styled.input`
-
 
 width: 71.88vw;
 height: 11.56vw;
 
 background: #E8D4B9;
-border-radius: 0px 60px 60px 0px;
-transform: rotate(-180deg);
+border-radius: 60px 0px 0px 60px;
 border: none;
 
 position: absolute;
 left: 28.13vw;
 top:118.63vw;
 
-&::placeholder,
-&::-webkit-input-placeholder,
-&::-moz-placeholder,
-&::-ms-input-placeholder {
-    transform: rotate(180deg); 
-    font-family: 'Arita-dotum4.0(OTF)';
+font-family: 'Arita-dotum4.0(OTF)';
 font-style: normal;
-font-weight: 400;
+font-weight: 500;
 font-size: 5vw;
 line-height: 5vw;
 display: flex;
 align-items: center;
 text-align: center;
 letter-spacing: -0.05em;
-  }
 
+color: #6F6F4B;
 `
