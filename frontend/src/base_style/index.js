@@ -200,3 +200,28 @@ letter-spacing: 0.015em;
 color: #67493F;
 
 `
+
+//카페 회원가입 버튼
+export const Button_8 = styled.button`
+background: #6f6f4b;
+box-shadow: 4px 8px 4px rgba(0, 0, 0, 0.3);
+border-radius: 60px;
+border: none;
+position: absolute;
+width: 38.75vw;
+height: 12.81vw;
+left: calc(50% - 38.75vw/2);
+top: calc(50% - 3.8100000000000023vw/2 + 66.41vw);
+
+font-family: 'Gowun Batang';
+font-style: normal;
+font-weight: 700;
+font-size: 6.25vw;
+line-height: 9.06vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.01em;
+color: #E8D4B9;
+justify-content: center;
+`

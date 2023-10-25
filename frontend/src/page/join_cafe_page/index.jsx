@@ -2,7 +2,7 @@
 
 import Small_title_component from "../../component/small_title_component";
 import { register_cafe_user_fn } from "../../redux/middleware";
-import { Button_3 } from "../../base_style";
+import { Button_8 } from "../../base_style";
 import { useNavigate } from "react-router";
 import { useRef, useState } from "react";
 import {
@@ -14,6 +14,7 @@ import {
   Select_el,
   Input_el,
   Left_id,
+  Right_id, Right_password, Right_name, Right_cafename, Addsi_container, Addgu_container, Adddong_container, Si_cha, Gu_cha, Dong_cha
 } from "./style";
 
 
@@ -87,7 +88,7 @@ const Join_cafe_page = () => {
   return (
     <>
       <Small_title_component title="정보입력" />
-      <Flex_body_container>
+      
         <div >
 
           <Left_id htmlFor="login_id"> 아이디</Left_id><br />
@@ -98,40 +99,40 @@ const Join_cafe_page = () => {
         </div>
 
         <div>
-
-          <Input_el id="login_id" style={{ fontSize: '60%' }} ref={login_id_ref} autoComplete="off" /> <br />
-          <Input_el id="login_password" style={{ fontSize: '60%' }} type="password" ref={login_password_ref} autoComplete="off" /> <br />
-          <Input_el id="user_name" style={{ fontSize: '60%' }} ref={user_name_ref} autoComplete="off" /> <br />
-          <Input_el id="cafe_name" style={{ fontSize: '60%' }} ref={cafe_name_ref} autoComplete="off" /> <br />
+          
+          <Right_id id="login_id"  ref={login_id_ref} autoComplete="off" /> <br />
+          <Right_password id="login_password"  type="password" ref={login_password_ref} autoComplete="off" /> <br />
+          <Right_name id="user_name"  ref={user_name_ref} autoComplete="off" /> <br />
+          <Right_cafename id="cafe_name"  ref={cafe_name_ref} autoComplete="off" /> <br />
 
 
         </div>
-      </Flex_body_container>
+      
 
 
       <div>
         <Left_address>카페 주소</Left_address>
 
-        <Select_el style={{ fontSize: '60%' }} name="" id="" ref={address_si_ref} disabled>
+        <Addsi_container  name="" id="" ref={address_si_ref} disabled>
           {address_si_array.map((v, i) => {
             return <option key={`address-si-${i}`} value={`${v}`} > {v}</option>;
           })}
-        </Select_el >
-        <Select_el style={{ fontSize: '60%' }} name="" id="" ref={address_gu_ref} disabled>
+        </Addsi_container >
+        <Addgu_container name="" id="" ref={address_gu_ref} disabled>
           {address_gu_array.map((v, i) => {
             return <option key={`address-gu-${i}`} value={`${v}`}> {v}</option>;
           })}
-        </Select_el >
-        <Select_el style={{ fontSize: '60%' }} name="" id="" ref={address_dong_ref}>
+        </Addgu_container >
+        <Adddong_container name="" id="" ref={address_dong_ref}>
           {address_dong_array.map((v, i) => {
             return <option key={`address-dong-${i}`} value={`${v}`}> {v}</option>;
           })}
-        </Select_el >
+        </Adddong_container>
 
       </div>
 
 
-      <Button_3 onClick={join_button_fn}>가입하기</Button_3>
+      <Button_8 onClick={join_button_fn}>가입하기</Button_8>
     </>
   )
 }
