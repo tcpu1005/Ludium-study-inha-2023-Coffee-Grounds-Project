@@ -1,7 +1,9 @@
 // 8_MY_PAGE_CAFE_INSENTIVE
 
-
-import Small_title_component from "../../component/small_title_component";
+import {
+    Outcontainer_green1, Outcontainer_beige1, Outcontainer_green2, Outcontainer_beige2, Outcontainer_green3,
+    Token_cha, Emission_weight, Decreased_cost, Dec_carbon, Dec_cost, Dec_cost2
+} from "./style";
 import { useNavigate } from "react-router";
 
 
@@ -21,37 +23,55 @@ const Insentive_visualization_page = () => {
 
     return (
         <>
-            <Small_title_component title="나의 배출 성과" />
 
 
             <div onClick={() => nav("/insentive/token")}>
-                <span>지급된 토큰 총량</span>
-                <span>{total_token_amount}token</span>
-                <div>잔액 확인하기</div>
+                <span><Token_cha>지급받은 총 토큰</Token_cha></span>
+                <Outcontainer_green1>
+
+                    <span>{total_token_amount}token</span>
+
+                </Outcontainer_green1>
             </div>
 
 
             <div>
-                <span>배출 총량</span>
-                <span>{total_emission_amount}kg</span>
+                <span><Emission_weight>배출 총량</Emission_weight></span>
+                <Outcontainer_beige1>
+
+                    <span>{total_emission_amount}kg</span>
+                </Outcontainer_beige1>
             </div>
 
 
             <div>
-                <span>쓰레기 봉투 절감 비용</span>
-                <span>{parseInt(total_emission_amount / 20) * 620}원</span>
+                <span><Decreased_cost>쓰레기 봉투 절감 비용</Decreased_cost></span>
+                <Outcontainer_green2>
+
+                    <span>{parseInt(total_emission_amount / 20) * 620}원</span>
+                </Outcontainer_green2>
             </div>
 
 
             <div>
-                <span>감소한 탄소 배출량</span>
-                <span>"계산식 필요"</span>
+                <span><Dec_carbon>감소한 탄소 배출량</Dec_carbon></span>
+                <Outcontainer_beige2>
+
+                    <span>"계산식 필요"</span>
+                </Outcontainer_beige2>
             </div>
 
 
             <div>
-                <span>감소한 매립 비용</span>
-                <span>{total_emission_amount * 100}원</span>
+                <span><Dec_cost>감소한 </Dec_cost></span>
+
+                <span> <Dec_cost2> 매립비용</Dec_cost2>
+                </span>
+
+                <Outcontainer_green3>
+
+                    <span>{total_emission_amount * 100}원</span>
+                </Outcontainer_green3>
             </div>
         </>
     )
