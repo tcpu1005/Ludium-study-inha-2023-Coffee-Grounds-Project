@@ -1,6 +1,5 @@
 const { Users, CafeDetails, CollectorDetails } = require("../model");
 
-
 // 로그인
 module.exports.login_user_controller = async (req, res) => {
   //
@@ -8,15 +7,10 @@ module.exports.login_user_controller = async (req, res) => {
   // 비밀번호 암호화 필요
   const { login_id, login_password } = req.body;
 
-
   try {
     const login_user_info = await Users.findOne({
       where: { login_id, login_password },
-      attributes: [
-        "user_type",
-        "user_name",
-        "wallet_address",
-      ],
+      attributes: ["user_type", "user_name", "wallet_address"],
       include: [
         {
           model: CafeDetails,
@@ -34,28 +28,35 @@ module.exports.login_user_controller = async (req, res) => {
         },
       ],
     }).then((v) => {
-
-
       // 데이터가 없을 때 (null)
       if (!v) {
         return;
       }
 
-
       data = v.get({ plain: true });
-
 
       if (data.user_type === "Cafe") {
         const { user_type, user_name, wallet_address, CafeDetail } = data;
-        return { user_type, user_type, user_name, wallet_address, ...CafeDetail }
+        return {
+          user_type,
+          user_type,
+          user_name,
+          wallet_address,
+          ...CafeDetail,
+        };
       }
 
       if (data.user_type === "Collector") {
         const { user_type, user_name, wallet_address, CollectorDetail } = data;
-        return { user_type, user_type, user_name, wallet_address, ...CollectorDetail }
+        return {
+          user_type,
+          user_type,
+          user_name,
+          wallet_address,
+          ...CollectorDetail,
+        };
       }
     });
-
 
     // 데이터가 없을 때 (null)
     if (!login_user_info) {
@@ -63,10 +64,16 @@ module.exports.login_user_controller = async (req, res) => {
       return;
     }
 
-
-    res.send({ success: true, message: "로그인에 성공하였습니다.", data: login_user_info });
+    res.send({
+      success: true,
+      message: "로그인에 성공하였습니다.",
+      data: login_user_info,
+    });
   } catch (err) {
     console.log(err);
-    res.send({ success: false, message: "서버 오류로 로그인에 실패하였습니다." });
+    res.send({
+      success: false,
+      message: "서버 오류로 로그인에 실패하였습니다.",
+    });
   }
 };

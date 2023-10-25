@@ -1,5 +1,4 @@
 // ㅜ rafce 명령어로 컴포넌트 생성하면 된다.
-
 import { Button_1, MAROON_COLOR_1, WHITE_COLOR_1 } from "../../base_style";
 import Default_component from "../../component/default_component";
 import { useDispatch, useSelector } from "react-redux";
