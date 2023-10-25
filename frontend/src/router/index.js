@@ -109,6 +109,11 @@ const Router = () => {
           path: "/default",
           element: <Default_page />,
         },
+        {
+          // 팀원들을 위한 임시 GNB
+          path: "/gnb/temp",
+          element: <Gnb_page />,
+        },
         //
         
         // ㅜ 여기서부터는 피그마 적용 페이지

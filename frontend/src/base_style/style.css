@@ -6,7 +6,6 @@ width: 39.06vw;
 height: 14.69vw;
 left: calc(50% - 39.06vw/2 - 0.156vw);
 top: 150vw;
-
 /* 버튼 크기 및 위치 */
 
 position: absolute;
@@ -14,6 +13,7 @@ width: 39.06vw;
 height: 14.69vw;
 left: calc(50% - 39.06vw/2 - 0.156vw);
 top: 150vw;
+
 
 /* 버튼 바탕 색 및 그림자 */
 background: #E8D4B9;
@@ -27,7 +27,7 @@ position: absolute;
 width: 30.94vw;
 height: 9.38vw;
 left: 34.38vw;
-top: 152.81vw;
+top: 50.81vw;
 
 font-family: 'Gowun Batang';
 font-style: normal;
@@ -85,4 +85,4 @@ letter-spacing: 0.01em;
 
 color: #E8D4B9;
 
-}
+} 
