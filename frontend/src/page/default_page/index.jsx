@@ -1,6 +1,9 @@
 // ㅜ rafce 명령어로 컴포넌트 생성하면 된다.
 
-import { register_cafe_user_fn, register_collector_user_fn } from "../../redux/middleware";
+import {
+  register_cafe_user_fn,
+  register_collector_user_fn,
+} from "../../redux/middleware";
 import { Button_1, MAROON_COLOR_1, WHITE_COLOR_1 } from "../../base_style";
 import Default_component from "../../component/default_component";
 import { members_cafe_collection } from "../../redux/middleware";

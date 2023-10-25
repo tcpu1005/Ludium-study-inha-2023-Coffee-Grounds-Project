@@ -13,6 +13,7 @@ module.exports.update_collection_controller = async (req, res) => {
     // 데이터베이스 업데이트 로직
     await CollectionRecords.update(
       {
+        cafe_name: cafe_name,
         coffee_amount: coffee_amount,
         coffee_status: coffee_status,
         collection_date: collection_date,

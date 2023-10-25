@@ -5,7 +5,7 @@ module.exports.fetch_collections_controller = async (req, res) => {
     const collections = await CollectionRecords.findAll({
       where: {
         reward_status: {
-          [Op.or]: ["수거 요청", "수거 완료"], // '수거 요청' 및 '수거 완료' 상태인 데이터 모두 조회
+          [Op.or]: ["수거요청", "수거완료"], // '수거 요청' 및 '수거 완료' 상태인 데이터 모두 조회
         },
       },
       order: [

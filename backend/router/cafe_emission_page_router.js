@@ -4,7 +4,7 @@ const router = express.Router();
 const { cafe_emission_page_controller } = require("../controller");
 
 router.get(
-  "/api/v1/members/cafe/mycoffeegounds/:wallet_address",
+  "/api/v1/members/cafe/mycoffeegrounds/:cafe_id",
   cafe_emission_page_controller.cafe_emission_page_controller
 );
 
