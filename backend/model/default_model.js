@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 
-class Cafe extends Sequelize.Model {
+class Default_model extends Sequelize.Model {
   //
   static init(sequelize) {
     return super.init(
@@ -18,8 +18,8 @@ class Cafe extends Sequelize.Model {
         sequelize,
         underscoed: true,
         timestamp: true,
-        modelName: "Cafe",
-        tableName: "Cafes",
+        modelName: "Default_model",
+        tableName: "default_models",
         charset: "utf8",
         collate: "utf8_general_ci",
       }
@@ -30,4 +30,4 @@ class Cafe extends Sequelize.Model {
   }
 }
 
-module.exports = Cafe;
+module.exports = Default_model;

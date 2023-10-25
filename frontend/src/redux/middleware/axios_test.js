@@ -1,13 +1,13 @@
 import axios from "axios";
 
-const BACK_SERVER_PATH =
-  process.env.BACK_SERVER_PATH || "http://localhost:8080";
+const REACT_APP_BACK_SERVER_PATH =
+  process.env.REACT_APP_BACK_SERVER_PATH || "http://localhost:8080";
 
 // 리덕스 구현 전까지 axios 함수 구현은 여기서
 export const default_axios_fn = async () =>
   await axios({
     //
-    url: `${BACK_SERVER_PATH}/api/vi/axios-test`,
+    url: `${REACT_APP_BACK_SERVER_PATH}/api/vi/axios-test`,
     method: "post",
     data: {
       front_text: "front_text",

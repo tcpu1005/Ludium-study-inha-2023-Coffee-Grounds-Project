@@ -1,13 +1,13 @@
 import axios from "axios";
 
-const BACK_SERVER_PATH =
-  process.env.BACK_SERVER_PATH || "http://localhost:8080";
+const REACT_APP_BACK_SERVER_PATH =
+  process.env.REACT_APP_BACK_SERVER_PATH || "http://localhost:8080";
 
 const login_user = (login_user_data) => {
   return async (dispatch, getState) => {
     // console.log(getState());
     const login_info = await axios({
-      url: `${BACK_SERVER_PATH}/api/v1/login`,
+      url: `${REACT_APP_BACK_SERVER_PATH}/api/v1/login`,
       method: "post",
       data: login_user_data,
     });

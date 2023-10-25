@@ -27,7 +27,7 @@ height: 50%;
 width: 25%;
 `;
 
-export const left_id= styled.div`
+export const Left_id= styled.div`
 
 position: absolute;
 width: 23.75vw;
@@ -49,7 +49,7 @@ color: #6F6F4B;
 
 `
 
-export const left_password= styled.div`
+export const Left_password= styled.div`
 
 position: absolute;
 width: 23.78vw;
@@ -71,7 +71,7 @@ color: #6F6F4B;
 
 `
 
-export const left_name= styled.div`
+export const Left_name= styled.div`
 
 position: absolute;
 width: 23.75vw;
@@ -93,7 +93,7 @@ color: #6F6F4B;
 
 `
 
-export const left_address= styled.div`
+export const Left_address= styled.div`
 
 position: absolute;
 width: 23.75vw;
@@ -115,7 +115,7 @@ color: #6F6F4B;
 
 `
 
-export const left_cafename=styled.div`
+export const Left_cafename=styled.div`
 position: absolute;
 width: 23.75vw;
 height: 7.5vw;
