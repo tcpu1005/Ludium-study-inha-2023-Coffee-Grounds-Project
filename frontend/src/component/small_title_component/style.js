@@ -9,7 +9,7 @@ left: calc(50% - 37.81vw/2 + 0.16vw);
 top: 32.81vw;
 border: 0.63vw solid #67493F;
 border-radius: 60px;
-margin: 4.69vw 31.88vw
+margin: 25.69vw 31.88vw 4.69vw 31.88vw;
 
 `;
 

@@ -15,7 +15,7 @@ const Collection_page = () => {
   const nav = useNavigate();
 
   // 10개씩 보여주기
-  const page_unit = 10;
+  const page_unit = 7;
 
   // 페이지네이션 넘버는 5개만 보여주기
   const page_number_unit = 5;
