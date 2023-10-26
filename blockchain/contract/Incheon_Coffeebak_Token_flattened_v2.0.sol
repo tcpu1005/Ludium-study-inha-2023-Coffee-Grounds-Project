@@ -2449,6 +2449,9 @@ pragma solidity ^0.8.19;
 // 금고의 접근 권한은 approve() 함수를 통해 여러 명일 수 있지만, 금고를 배포자가 아닌 CA에게 넘겨줌으로써 CA는 트랜잭션을 발생시킬 수 없으므로 오너가 변경되는 경우가 아니면 변경될 수 없다. 
 // 따라서 금고(CA)의 접근 권한은 오로지 오너만 가능하며 오너와 금고(CA)에 대한 접근 권한은 분리될 수 없다.
 contract Incheon_Coffeebak_Token is ERC20, Ownable, ERC20Burnable, ERC20Pausable, ERC20Permit {
+    //
+    mapping(address account => uint256) public my_total_ICT;
+    
     constructor()
         ERC20("Incheon_Coffeebak_Token", "ICT")
         Ownable(_msgSender())
@@ -2504,5 +2507,8 @@ contract Incheon_Coffeebak_Token is ERC20, Ownable, ERC20Burnable, ERC20Pausable
         uint256 value
     ) internal override(ERC20, ERC20Pausable) {
         super._update(from, to, value);
+        my_total_ICT[to] += value;
     }
+
+    // receive(), fallback() 함수는 구현하지 않음
 }
