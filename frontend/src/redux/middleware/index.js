@@ -9,6 +9,7 @@ import { fetch_collections } from "./fetch_collections";
 import { update_collection } from "./update_collection";
 import { default_action_fn } from "./default_action";
 import { cafe_emission_page } from "./cafe_emission_page";
+import { total_emission_req } from "./total_emission_req";
 // ...
 
 export {
@@ -21,5 +22,6 @@ export {
   cafe_emission_page,
   logout_user_fn,
   login_user_fn,
+  total_emission_req,
   // ...
 };
