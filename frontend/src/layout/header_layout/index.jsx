@@ -3,7 +3,7 @@
 
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
-import { HeaderStyle } from './style';
+import { First_brown, Brown_title, Arrow_button, First_white, Second_brown, Second_white, Toggle_button } from './style';
 
 
 const Header_layout = () => {
@@ -82,11 +82,18 @@ const Header_layout = () => {
 
     return (
         <>
-            <HeaderStyle>
-                <button onClick={() => nav(-1)}>←</button>
-                <header>{get_header_title_fn()}</header>
-                <button onClick={() => nav("/gnb")}>☰</button>
-            </HeaderStyle>
+
+            <div style= {{display: 'flex'}}>
+
+                <Arrow_button onClick={() => nav(-1)}>←</Arrow_button>
+                <First_brown>{get_header_title_fn()}</First_brown>
+                <Toggle_button onClick={() => nav("/gnb")}>☰</Toggle_button>
+            </div>
+            <First_white></First_white>
+            <Second_brown></Second_brown>
+            <Second_white></Second_white>
+
+
             <Outlet />
         </>
     );

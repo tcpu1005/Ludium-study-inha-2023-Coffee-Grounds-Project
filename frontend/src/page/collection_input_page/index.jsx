@@ -1,8 +1,9 @@
 // 12_MY_PAGE_COLLECTOR_INPUT
 
-import { StyledContainer, StyledInputContainer, StyledLabel, StyledInput, StyledSelect, StyledButton } from "./style";
+import { StyledContainer, StyledInputContainer, StyledLabel, StyledInput, StyledSelect, StyledButton,
+        Coffee_Status, Coffee_Statuscon, Coffee_weight, Coffee_weightcon, Coffee_date, Coffee_monthcon, Cha_month, KG } from "./style";
 import Big_title_component from "../../component/big_title_component";
-import { Button_2 } from "../../base_style";
+import { Button_9 } from "../../base_style";
 import { useLocation } from "react-router";
 import { useRef } from "react";
 
@@ -92,31 +93,32 @@ const Collection_input_page = () => {
             <Big_title_component title="수거 데이터 입력" />
 
             <StyledInputContainer>
-                <StyledLabel htmlFor="company_name">수거업체명</StyledLabel>
+                <StyledLabel htmlFor="company_name">수거카페명</StyledLabel>
                 <StyledInput id="company_name" value={company_name} disabled autoComplete="off" />
             </StyledInputContainer>
 
             <StyledInputContainer>
-                <StyledLabel htmlFor="coffee_status"style={{ fontSize: '60%' }}>커피박 상태</StyledLabel>
-                <StyledSelect name="" id="" ref={coffee_status_ref} defaultValue={coffee_status_value}>
+                <Coffee_Status htmlFor="coffee_status">커피박 상태</Coffee_Status>
+                <Coffee_Statuscon name="" id="" ref={coffee_status_ref} defaultValue={coffee_status_value}>
                     <option value="drying">건조</option>
                     <option value="moisture">습기</option>
                     <option value="mold">곰팡이</option>
                     <option value="impossible">수거 불가</option>
-                </StyledSelect>
+                </Coffee_Statuscon>
             </StyledInputContainer>
 
             <StyledInputContainer>
-                <StyledLabel htmlFor="coffee_amount" style={{ fontSize: '60%' }}>커피박 양 (기준 : kg)</StyledLabel>
-                <StyledInput id="coffee_amount" ref={coffee_amount_ref} defaultValue={coffee_amount_value} autoComplete="off" />
+                <Coffee_weight htmlFor="coffee_amount" >커피박 양</Coffee_weight>
+                <Coffee_weightcon id="coffee_amount" ref={coffee_amount_ref} defaultValue={coffee_amount_value} autoComplete="off" />
+                <KG htmlFor="coffee_amount" >kg</KG>
             </StyledInputContainer>
 
             <StyledInputContainer>
-                <StyledLabel htmlFor="collection_date" style={{ fontSize: '60%' }}>수거날짜</StyledLabel>
-                <StyledInput id="collection_date" type={"date"} ref={collection_date_ref} />
+                <Coffee_date htmlFor="collection_date" >수거날짜</Coffee_date>
+                <Cha_month id="collection_date" type={"date"} ref={collection_date_ref} />
             </StyledInputContainer>
 
-            <Button_2 onClick={collection_button_fn}>데이터 입력</Button_2>
+            <Button_9 onClick={collection_button_fn}>데이터 입력</Button_9>
         </StyledContainer>
     )
 }
