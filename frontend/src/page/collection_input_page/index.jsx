@@ -19,8 +19,8 @@ const Collection_input_page = () => {
   //
 
   const location = useLocation();
-
   const company_name = useSelector((state) => state.user_reducer.company_name);
+
   // 수거 목록 페이지에서 선택한 수거 목록의 데이터가 여기에 들어있다.
   const { collection_choice_data } = location.state;
   // const collection_choice_data = { coffee_status: "습기", coffee_amount: 100 };
@@ -45,6 +45,7 @@ const Collection_input_page = () => {
     collection_choice_data.coffee_status
   );
   const coffee_record_id = collection_choice_data.record_id;
+  const cafe_id = collection_choice_data.cafe_id;
   const coffee_amount_value = collection_choice_data.coffee_amount;
 
   const coffee_status_ref = useRef();
@@ -65,6 +66,7 @@ const Collection_input_page = () => {
     const update_collection_data = {
       record_id: coffee_record_id,
       company_name: company_name,
+      cafe_id: cafe_id,
       coffee_amount: coffee_amount,
       coffee_status: coffee_status,
       collection_date: collection_date,

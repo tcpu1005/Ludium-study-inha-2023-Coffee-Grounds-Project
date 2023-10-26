@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Div_bigContainer = styled.div`
 text-align: center;
-left: calc(50% - 240px/2);
-top: calc(50% - 212px/2 - 30px);
+left: calc(50% - 75vw/2);
+top: calc(50% - 66.25vw/2 - 9.38vw);
 font-size: 7vw;
 padding: 5%;
 margin: 17% 10% 10%;
@@ -13,7 +13,11 @@ border-radius: 60px;
 `;
 
 export const Span_el = styled.span`
-font-size: 4vw;
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 3.44vw;
+line-height: 6.25vw;
 color: #67493F;
 `;
 
@@ -30,8 +34,11 @@ color: #C00A0A;
 `;
 
 export const Span_el_extra = styled.span`
-font-size: 4vw;
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
 font-weight: 400;
+font-size: 3.44vw;
+line-height: 6.25vw;
 color: #09C11B;
 `;
 
@@ -58,14 +65,24 @@ background-color: #D2691E; /* 선택된 라디오 버튼에 배경색을 적용�
 `;
 
 export const Div_totalAmount = styled.span`
+
+position: absolute;
+width: 37.5vw;
+height: 8.13vw;
+left: calc(50% - 37.5vw/2);
+top: calc(50% - 8.13vw/2 + 15.31vw);
+
 font-family: 'Arita-dotum4.0(OTF)';
 font-style: normal;
 font-weight: 400;
-font-size: 18px;
+font-size: 4.38vw;
 line-height: 181.3%;
-
+/* identical to box height, or 25px */
+display: flex;
+align-items: center;
 text-align: center;
 letter-spacing: 0.005em;
 
 color: #67493F;
+
 `;

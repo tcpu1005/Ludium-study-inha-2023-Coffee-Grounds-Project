@@ -1,13 +1,13 @@
 // 11_MY_PAGE_COLLECTOR
 
-import { useNavigate } from "react-router";
-import { Button_3 } from "../../base_style";
-import { useState, useEffect } from "react";
-import { MAROON_COLOR_1 } from "../../base_style";
-import { fetch_collections } from "../../redux/middleware";
-import List_component from "../../component/list_component";
 import Small_title_component from "../../component/small_title_component";
 import { Span_pageNumDirectionBtn, Span_pageNumBtn } from "./style";
+import List_component from "../../component/list_component";
+import { fetch_collections } from "../../redux/middleware";
+import { MAROON_COLOR_1 } from "../../base_style";
+import { useState, useEffect } from "react";
+import { Button_3 } from "../../base_style";
+import { useNavigate } from "react-router";
 
 const Collection_page = () => {
   //

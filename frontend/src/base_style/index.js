@@ -14,9 +14,9 @@ export const ORANGE_COLOR_1 = "#DE8F5F";
 export const BEIGE_COLOR_1 = "#F4DFB6";
 export const WHITE_COLOR_1 = "#FFFFFF";
 export const SAGE_COLOR_1 = "#F3E9DC";
-export const WHITEBEIGE_COLOR_1= "#E8D4B9";
-export const BROWN_COLOR_1= "#67493F";
-export const GREEN_COLOR_1= "#6F6F4B";
+export const WHITEBEIGE_COLOR_1 = "#E8D4B9";
+export const BROWN_COLOR_1 = "#67493F";
+export const GREEN_COLOR_1 = "#6F6F4B";
 // ...
 
 
@@ -117,29 +117,33 @@ margin: 5vw;
 
 // 화면 아래에 초록 버튼이라 가정
 export const Button_3 = styled.button`
-box-shadow: 1.25vw 2.5vw 1.25vw rgba(0, 0, 0, 0.3);
-background-color: #6F6F4B;
-color: #E8D4B9;
-padding: 3.75vw 6.02vw;
-border-radius: 60px;
-font-size: 6.25vw;
-margin: 17.5vw;
-border: none;
-/* display: flex; */
-position: absolute;
-width: 38.75vw;
-height: 12.81vw;
-left: calc(50% - 37.81vw/2 + -15.84vw);
-top: 129.69vw;
-display: flex;
-justify-content: center;
-align-items: center;
+
+background: #6F6F4B;
+    box-shadow: 4px 8px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 60px;
+    border: none;
+    position: absolute;
+    width: 38.75vw;
+    height: 12.81vw;
+    left: calc(50% - 38.75vw/2);
+    top: calc(50% - 12.81vw/2 + 66.41vw);
+    font-family: 'Gowun Batang';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 6.25vw;
+    line-height: 9.06vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #E8D4B9;
+    justify-content: center;
 
 `;
 
 
 // GNB 메뉴 버튼
-export const Button_4= styled.button`
+export const Button_4 = styled.button`
 background-color: ${WHITEBEIGE_COLOR_1};
 color: ${GREEN_COLOR_1};
 border-radius: 60px;
@@ -154,14 +158,14 @@ border: 0;
 `
 
 //로그인 버튼
-export const Button_6= styled.button`
+export const Button_6 = styled.button`
 box-shadow: 1.25vw 2.5vw 1.25vw rgba(0, 0, 0, 0.3);
 background-color: #6F6F4B;
 color: #E8D4B9;
 padding: 3.75vw 6.02vw;
 border-radius: 60px;
 font-size: 6.25vw;
-margin: 17.5vw;
+margin: 17.5vw 17.5vw 0vw 17.5vw;
 border: none;
 /* display: flex; */
 position: absolute;
@@ -174,7 +178,7 @@ justify-content: center;
 align-items: center;
 `
 //배출 데이터 입력 버튼
-export const Button_7= styled.button`
+export const Button_7 = styled.button`
 
 background: #E8D4B9;
 box-shadow: 4px 8px 4px rgba(0, 0, 0, 0.3);
@@ -195,4 +199,29 @@ text-align: center;
 letter-spacing: 0.015em;
 color: #67493F;
 
+`
+
+//카페 회원가입 버튼
+export const Button_8 = styled.button`
+background: #6f6f4b;
+box-shadow: 4px 8px 4px rgba(0, 0, 0, 0.3);
+border-radius: 60px;
+border: none;
+position: absolute;
+width: 38.75vw;
+height: 12.81vw;
+left: calc(50% - 38.75vw/2);
+top: calc(50% - 3.8100000000000023vw/2 + 66.41vw);
+
+font-family: 'Gowun Batang';
+font-style: normal;
+font-weight: 700;
+font-size: 6.25vw;
+line-height: 9.06vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.01em;
+color: #E8D4B9;
+justify-content: center;
 `
