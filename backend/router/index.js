@@ -8,4 +8,5 @@ router.members_cafe_collection_router = require("./members_cafe_collection_route
 router.fetch_collections_router = require("./fetch_collections_router");
 router.update_collection_router = require("./update_collection_router");
 router.cafe_emission_page_router = require("./cafe_emission_page_router");
+router.total_emission_req_router = require("./total_emission_req_router");
 module.exports = router;
