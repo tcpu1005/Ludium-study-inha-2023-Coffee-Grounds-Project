@@ -8,6 +8,7 @@ controller.members_cafe_collection_controller = require("./members_cafe_collecti
 controller.fetch_collections_controller = require("./fetch_collections_controller");
 controller.update_collection_controller = require("./update_collection_controller");
 controller.cafe_emission_page_controller = require("./cafe_emission_page_controller");
+controller.total_emission_req_controller = require("./total_emission_req_controller");
 // ...
 
 module.exports = controller;

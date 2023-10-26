@@ -27,7 +27,7 @@ class CollectionRecords extends Sequelize.Model {
           },
         },
         coffee_amount: {
-          type: Sequelize.DECIMAL(5, 2),
+          type: Sequelize.INTEGER,
           allowNull: false,
         },
         coffee_status: {
