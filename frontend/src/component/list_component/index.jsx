@@ -22,7 +22,7 @@ const List_component = ({
     console.log(current_list[idx].record_id);
     set_collection_choice(current_list[idx].record_id);
   };
-
+  console.log(current_list);
   return (
     <Div_bigContainer>
       {current_list.map((v, i) => {

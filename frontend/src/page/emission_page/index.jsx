@@ -3,6 +3,7 @@
 import Small_title_component from "../../component/small_title_component";
 import { Span_pageNumDirectionBtn, Span_pageNumBtn } from "./style";
 import { cafe_emission_page } from "../../redux/middleware";
+import { total_emission_req } from "../../redux/middleware";
 import List_component from "../../component/list_component";
 import { MAROON_COLOR_1 } from "../../base_style";
 import { useState, useEffect } from "react";
@@ -15,6 +16,7 @@ const Emission_page = () => {
   const wallet_address = useSelector(
     (state) => state.user_reducer.wallet_address
   );
+  const cafe_id = useSelector((state) => state.user_reducer.cafe_id);
   const nav = useNavigate();
 
   // 10개씩 보여주기
@@ -25,9 +27,14 @@ const Emission_page = () => {
   const [total_page_count, set_total_page_count] = useState(0);
   const [emission_list, set_emission_list] = useState(new Array());
   const [current_page_number, set_current_page_number] = useState(0);
-
+  const [total_amount, setTotalAmount] = useState(0);
   // 총 배출 양은 리덕스에서 가져오기
-  const total_amount = 1000;
+  const total_amount_req = async () => {
+    const records = await total_emission_req(cafe_id);
+    console.log("여기");
+    console.log(records.total_emissions);
+    setTotalAmount(records.total_emissions); // 객체 대신 값만 저장
+  };
 
   // 배출 페이지 접속 시 백과 통신하여 배출 목록 조회
   useEffect(() => {
@@ -60,7 +67,7 @@ const Emission_page = () => {
       try {
         console.log(wallet_address);
         const result = await cafe_emission_page(wallet_address);
-        console.log(result.data);
+        console.log(result);
         // 지훈아 예외 처리의 중요성
         // 백에 데이터가 없을 경우 null이 반환될 수 있음
         // 이러한 예외 처리는 백에서 해주는 것도 좋겠지?
@@ -70,14 +77,16 @@ const Emission_page = () => {
         //   }
 
         set_current_page_number(1);
-        set_emission_list(result.data);
-        set_total_page_count(get_new_total_page_count_fn(result.data));
+        set_emission_list(result);
+        set_total_page_count(get_new_total_page_count_fn(result));
       } catch (error) {
         console.error("Error fetching collector collections:", error);
         //   use_dummy_data_fn();
       }
     };
+
     emission_data();
+    total_amount_req();
   }, []);
 
   const plus_current_page_number_button_fn = () => {
