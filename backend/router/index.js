@@ -11,5 +11,5 @@ router.cafe_emission_page_router = require("./cafe_emission_page_router");
 router.total_emission_req_router = require("./total_emission_req_router");
 router.complete_collections_router = require("./complete_collections_router");
 router.complete_reward_router = require("./complete_reward_router");
-
+router.update_reward_router = require("./update_reward_router");
 module.exports = router;

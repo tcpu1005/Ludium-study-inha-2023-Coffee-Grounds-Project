@@ -11,6 +11,7 @@ controller.update_collection_controller = require("./update_collection_controlle
 controller.cafe_emission_page_controller = require("./cafe_emission_page_controller");
 controller.total_emission_req_controller = require("./total_emission_req_controller");
 controller.complete_reward_controller = require("./complete_reward_controller");
+controller.update_reward_controller = require("./update_reward_controller");
 
 // ...
 
