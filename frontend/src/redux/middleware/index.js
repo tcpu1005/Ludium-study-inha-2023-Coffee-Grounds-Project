@@ -10,6 +10,8 @@ import { update_collection } from "./update_collection";
 import { default_action_fn } from "./default_action";
 import { cafe_emission_page } from "./cafe_emission_page";
 import { total_emission_req } from "./total_emission_req";
+import { complete_collections } from "./complete_collections";
+import { complete_reward } from "./complete_reward";
 // ...
 
 export {
@@ -23,5 +25,7 @@ export {
   logout_user_fn,
   login_user_fn,
   total_emission_req,
+  complete_collections,
+  complete_reward,
   // ...
 };

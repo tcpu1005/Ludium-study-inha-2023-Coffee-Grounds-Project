@@ -118,7 +118,7 @@ const Emission_page = () => {
       <Small_title_component title={"나의 배출 목록"} />
 
       <List_component
-        current_list={emission_list.slice(
+        current_list={emission_list?.slice(
           (current_page_number - 1) * page_unit,
           current_page_number * page_unit
         )}

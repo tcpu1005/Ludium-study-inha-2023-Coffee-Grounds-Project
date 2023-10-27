@@ -8,6 +8,8 @@ box-sizing: border-box;
     height: 15vw;
     border: 0.63vw solid #67493F;
     border-radius: 60px;
+    position: absolute;
+    top: 31.5vw;
 
 `;
 

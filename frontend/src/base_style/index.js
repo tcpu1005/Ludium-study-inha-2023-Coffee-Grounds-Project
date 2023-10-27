@@ -73,9 +73,7 @@ h6 {
 // 회원 유형 선택 버튼 중 위에거
 export const Button_1 = styled.button`
 background-color: #E8D4B9;
-padding: 3.28vw 3.28vw 3.28vw 3.28vw
-vw
-;
+padding: 3.28vw 3.28vw 3.28vw 3.28vw;
 color: #6F6F4B;
 border: none;
 border-radius: 60px;
@@ -83,7 +81,7 @@ font-size: 6.25vw;
 box-shadow: 1.25vw 2.5vw 1.25vw rgba(0, 0, 0, 0.3);
 width: 33.75vw;
 height: 14.69vw;
-margin: 32.81vw 31.88vw 0vw;
+margin:17.69vw 31.88vw 4.69vw 31.88vw;
 
 `;
 
@@ -224,4 +222,30 @@ text-align: center;
 letter-spacing: 0.01em;
 color: #E8D4B9;
 justify-content: center;
+`
+
+//수거 데이터 입력 버튼
+export const Button_9 = styled.button`
+
+position: absolute;
+    width: 39.06vw;
+    height: 14.69vw;
+    left: calc(50% - 39.06vw/2 + 0.16vw);
+    top: 162vw;
+    background: #E8D4B9;
+    box-shadow: 4px 8px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 60px;
+    border: none;
+    font-family: 'Gowun Batang';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 6.25vw;
+    line-height: 9.06vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.015em;
+    color: #67493F;
+    justify-content: center;
+
 `

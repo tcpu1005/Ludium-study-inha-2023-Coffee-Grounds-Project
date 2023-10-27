@@ -6,7 +6,7 @@ position: absolute;
     width: 56.25vw;
     height: 14.69vw;
     left: calc(50% - 56.25vw/2 + 15.94vw);
-    top: 27.380000000000003vw;
+    top: 38.38vw;
     background: #9F9F77;
     border-radius: 60px;
     border: none;
@@ -145,7 +145,7 @@ position: absolute;
 width: 28.13vw;
 height: 14.38vw;
 left: calc(50% - 28.13vw/2 - 29.38vw);
-top: calc(50% - 34.38vw/2 - 44.06vw);
+top: calc(50% - 12.380000000000003vw/2 - 44.06vw);
 
 font-family: 'Arita-dotum4.0(OTF)';
 font-style: normal;
