@@ -12,6 +12,7 @@ import { cafe_emission_page } from "./cafe_emission_page";
 import { total_emission_req } from "./total_emission_req";
 import { complete_collections } from "./complete_collections";
 import { complete_reward } from "./complete_reward";
+import { update_reward } from "./update_reward";
 // ...
 
 export {
@@ -27,5 +28,6 @@ export {
   total_emission_req,
   complete_collections,
   complete_reward,
+  update_reward,
   // ...
 };
