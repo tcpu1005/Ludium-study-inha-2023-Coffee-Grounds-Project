@@ -34,7 +34,7 @@ export const Left_name = styled.div`
     height: 7.5vw;
     position: absolute;
     left: calc(50% - 32.75vw/2 - 32.19vw);
-    top: 31.939999999999998vw;
+    top:41.94vw;
     font-family: 'Arita-dotum4.0(OTF)';
     font-style: normal;
     font-weight: 500;
@@ -56,7 +56,7 @@ export const Left_company = styled.div`
     position: absolute;
 
     left: calc(50% - 32.75vw/2 - 32.19vw);
-    top: 71.06vw;
+    top: 77.06vw;
 
     font-family: 'Arita-dotum4.0(OTF)';
     font-style: normal;
@@ -81,7 +81,7 @@ export const Left_id = styled.div`
     position: absolute;
 
 left: calc(50% - 32.75vw/2 - 32.19vw);
-top: calc(50% - 7.5vw/2 + 18.13vw);
+top: calc(50% - -1.5vw/2 + 18.13vw);
     font-family: 'Arita-dotum4.0(OTF)';
     font-style: normal;
     font-weight: 500;
@@ -107,7 +107,7 @@ export const Left_password = styled.div`
     line-height: 5vw;
     position: absolute;
     left: calc(50% - 32.75vw/2 - 32.19vw);
-    top: calc(50% - 7.5vw/2 + 46.25vw);
+    top: calc(50% - -51.5vw/2 + 18.13vw);
     align-items: center;
     text-align: center;
     letter-spacing: -0.05em;
@@ -129,7 +129,7 @@ border: none;
 
 position: absolute;
 left: 28.13vw;
-top: 41.94vw;
+top: 52.94vw;
 
 font-family: 'Arita-dotum4.0(OTF)';
 font-style: normal;
@@ -157,7 +157,7 @@ export const Right_company = styled.input`
 
     position: absolute;
 left: 37.5vw;
-top: 52.06vw;
+top: 59.06vw;
 
 font-family: 'Arita-dotum4.0(OTF)';
 font-style: normal;
@@ -184,7 +184,7 @@ border: none;
 
 position: absolute;
 left: 28.13vw;
-top: 90.5vw;
+top: 95.5vw;
 
 font-family: 'Arita-dotum4.0(OTF)';
 font-style: normal;
@@ -224,4 +224,13 @@ text-align: center;
 letter-spacing: -0.05em;
 
 color: #6F6F4B;
+`
+export const Background_image= styled.div`
+background: url('https://i.pinimg.com/originals/b3/a6/26/b3a626dd0b36654c075d8d532e3fe44d.png');
+    position: absolute;
+    width: 115.56vw;
+    height: 126.75vw;
+    left: -16.56vw;
+    top: 39.5vw;
+    
 `

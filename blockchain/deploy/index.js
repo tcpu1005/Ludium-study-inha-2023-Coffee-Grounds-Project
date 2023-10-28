@@ -12,7 +12,7 @@ const { get_abi_fn, get_bytecode_fn } = require("../compile");
 const { get_infura_provider_fn, get_wallet_fn } = require("../create_wallet_ethers_v5.7.2");
 
 
-module.exports.deploy = async (fileName, argument) => {
+module.exports.deploy = async (fileName, arguments) => {
     //
 
     const abi = get_abi_fn(fileName);
@@ -32,10 +32,22 @@ module.exports.deploy = async (fileName, argument) => {
         const factory = new ethers.ContractFactory(abi, bytecode, signer);
 
 
-        // solc 버전, ethers 버전에 따라 이슈 발생 (해결 완)
-        // 배포한다.
-        const contract = await factory.deploy(argument);
-        console.log('contract address', contract.address);
+        // 배포하고
+        // solc 버전에 따라 이슈 발생 => v0.8.20 이상 뭄바이 네트워크 지원 안 함
+        // ethers 버전에 따라 이슈 발생 => v6.8 버전에서는 해당 프로바이더로 배포 시 에러 발생
+        let contract;
+
+
+        if (!arguments) {
+            contract = await factory.deploy();
+            console.log('contract address', contract.address);
+        }
+
+
+        else {
+            contract = await factory.deploy(...arguments);
+            console.log('contract address', contract.address);
+        }
 
 
         // wait for contract creation transaction to be mined

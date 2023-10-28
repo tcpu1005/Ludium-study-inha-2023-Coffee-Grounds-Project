@@ -5,23 +5,25 @@ import { members_cafe_collection } from "../../redux/middleware";
 import { useDispatch, useSelector } from "react-redux";
 import { Button_2 } from "../../base_style";
 import { useRef } from "react";
-import { Entire_container, DivContainer, LabelDiv, InputDiv,  } from './style';
+import { Entire_container, DivContainer, LabelDiv, InputDiv } from "./style";
+import user_reducer from "../../redux/reducer";
 
 const Emission_input_page = () => {
   //
 
   const dispatch = useDispatch();
+
   const coffee_status_ref = useRef();
   const coffee_amount_ref = useRef();
-  const cafe_id = useSelector((state) => state.login_reducer.cafe_id);
-  const cafe_name = useSelector((state) => state.login_reducer.cafe_name);
+  const cafe_id = useSelector((state) => state.user_reducer.cafe_id);
+  const cafe_name = useSelector((state) => state.user_reducer.cafe_name);
 
   const emission_button_fn = (e) => {
     //
 
     const coffee_status = coffee_status_ref.current.value;
     const coffee_amount = Number(coffee_amount_ref.current.value);
-
+    console.log(cafe_id);
     console.log(cafe_name);
     console.log(coffee_status);
     console.log(coffee_amount);
@@ -59,23 +61,31 @@ const Emission_input_page = () => {
     <>
       <Big_title_component title="배출 데이터 입력" />
       <Entire_container>
-        
         <DivContainer>
-          
           <LabelDiv>
-            <label htmlFor="cafe_name" style={{ fontSize: '60%' }} >카페명</label>
+            <label htmlFor="cafe_name" style={{ fontSize: "60%" }}>
+              카페명
+            </label>
             <input
-            style={{ fontSize: '60%' }}
+              style={{ fontSize: "60%" }}
               id="cafe_name"
-              value={cafe_name ||  "카페인 중독"}
+              value={cafe_name || "카페인 중독"}
               disabled
               autoComplete="off"
             />
           </LabelDiv>
 
           <InputDiv>
-            <legend htmlFor="coffee_status" style={{ fontSize: '60%' }} >커피박 상태</legend>
-            <select name="" id="" ref={coffee_status_ref} defaultValue={"moisture"} style={{ fontSize: '60%' }} >
+            <legend htmlFor="coffee_status" style={{ fontSize: "60%" }}>
+              커피박 상태
+            </legend>
+            <select
+              name=""
+              id=""
+              ref={coffee_status_ref}
+              defaultValue={"moisture"}
+              style={{ fontSize: "60%" }}
+            >
               <option value="drying">건조</option>
               <option value="moisture">습기</option>
               <option value="mold">곰팡이</option>
@@ -83,13 +93,20 @@ const Emission_input_page = () => {
           </InputDiv>
 
           <InputDiv>
-            <label htmlFor="coffee_amount" style={{ fontSize: '60%' }} >커피박 양 (단위 : kg)</label>
-            <input id="coffee_amount" ref={coffee_amount_ref} autoComplete="off" style={{ fontSize: '60%' }} />
+            <label htmlFor="coffee_amount" style={{ fontSize: "60%" }}>
+              커피박 양 (단위 : kg)
+            </label>
+            <input
+              id="coffee_amount"
+              ref={coffee_amount_ref}
+              autoComplete="off"
+              style={{ fontSize: "60%" }}
+            />
           </InputDiv>
 
-          
-            <Button_2 onClick={emission_button_fn} style={{ fontSize: '60%' }} >데이터 입력</Button_2>
-          
+          <Button_2 onClick={emission_button_fn} style={{ fontSize: "60%" }}>
+            데이터 입력
+          </Button_2>
         </DivContainer>
       </Entire_container>
     </>

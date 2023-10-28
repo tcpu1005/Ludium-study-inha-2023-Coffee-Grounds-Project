@@ -1,5 +1,11 @@
-// ㅜ solc 0.8.20 버전도 배포 불가
-// 모든 컨트랙트 0.8.19로 버전 다운그레이드
+// v1.0
+// 오픈 재플린 위자드 사이트를 이용해서 작성한 토큰 컨트랙트
+// https://wizard.openzeppelin.com/
+
+// 리믹스 데몬 실행하는 법
+// npm install -g @remix-project/remixd
+// cd contract
+// remixd -s . -u https://remix.ethereum.org
 
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
@@ -10,11 +16,6 @@ import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Pausable.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-
-// ㅜ 리믹스 데몬 실행하는 법
-// npm install -g @remix-project/remixd
-// cd contract
-// remixd -s . -u https://remix.ethereum.org
 
 contract Incheon_Coffeebak_Token is ERC20, Ownable, ERC20Burnable, ERC20Pausable, ERC20Permit {
     constructor(address initialOwner)

@@ -13,8 +13,7 @@ const init = {
   wallet_address: null,
 };
 
-
-function reducer(state = init, action) {
+function user_reducer(state = init, action) {
   //
 
   const { type, payload } = action;
@@ -41,4 +40,4 @@ function reducer(state = init, action) {
   }
 }
 
-export default reducer;
+export default user_reducer;

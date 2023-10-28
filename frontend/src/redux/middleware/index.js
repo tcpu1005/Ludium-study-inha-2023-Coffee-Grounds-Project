@@ -1,10 +1,18 @@
 // ㅜ 액션 모음집
-import { register_cafe_user_fn, register_collector_user_fn } from "./register_user_axios";
+import {
+  register_cafe_user_fn,
+  register_collector_user_fn,
+} from "./register_user_axios";
 import { login_user_fn, logout_user_fn } from "./login_user_action";
 import { members_cafe_collection } from "./members_cafe_collection";
 import { fetch_collections } from "./fetch_collections";
 import { update_collection } from "./update_collection";
 import { default_action_fn } from "./default_action";
+import { cafe_emission_page } from "./cafe_emission_page";
+import { total_emission_req } from "./total_emission_req";
+import { complete_collections } from "./complete_collections";
+import { complete_reward } from "./complete_reward";
+import { update_reward } from "./update_reward";
 // ...
 
 export {
@@ -14,7 +22,12 @@ export {
   fetch_collections,
   update_collection,
   default_action_fn,
+  cafe_emission_page,
   logout_user_fn,
   login_user_fn,
+  total_emission_req,
+  complete_collections,
+  complete_reward,
+  update_reward,
   // ...
 };

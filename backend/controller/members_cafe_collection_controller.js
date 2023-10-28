@@ -15,12 +15,13 @@ module.exports.members_cafe_collection_controller = async (req, res) => {
       // return res.status(400).json({ message: "" });
     } else {
       const created_coffee = await CollectionRecords.create({
-        cafe_id,
-        cafe_name,
-        coffee_amount,
-        coffee_status,
-        reward_status: "수거 요청",
+        cafe_id: cafe_id,
+        cafe_name: cafe_name,
+        coffee_amount: coffee_amount,
+        coffee_status: coffee_status,
+        reward_status: "수거요청",
       });
+      console.log(created_coffee);
       console.log("배출 입력이 완료되었습니다.");
     }
     //커피박 양과 질 CollectionRecords에 생성

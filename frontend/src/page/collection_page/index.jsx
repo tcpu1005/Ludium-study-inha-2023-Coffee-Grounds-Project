@@ -1,13 +1,13 @@
 // 11_MY_PAGE_COLLECTOR
 
-import { useNavigate } from "react-router";
-import { Button_3 } from "../../base_style";
-import { useState, useEffect } from "react";
-import { MAROON_COLOR_1 } from "../../base_style";
-import { fetch_collections } from "../../redux/middleware";
+import Small_title_component from "../../component/small_title_component";
+import { Span_pageNumDirectionBtn, Span_pageNumBtn } from "./style";
 import List_component from "../../component/list_component";
-import Small_title_component2 from "../../component/small_title2_component";
-import {Span_pageNumDirectionBtn, Span_pageNumBtn} from "./style";
+import { fetch_collections } from "../../redux/middleware";
+import { MAROON_COLOR_1 } from "../../base_style";
+import { useState, useEffect } from "react";
+import { Button_3 } from "../../base_style";
+import { useNavigate } from "react-router";
 
 const Collection_page = () => {
   //
@@ -51,7 +51,7 @@ const Collection_page = () => {
       const new_collection_list = Array.from({ length: 131 }, (v, i) => {
         return {
           record_id: `UUID_CAFFEINE_ADDICTION_${i}`,
-          reward_process: "수거요청",
+          reward_status: "수거요청",
           updated_at: new Date(),
           coffee_amount: 100,
           coffee_status: "곰팡이",
@@ -69,7 +69,6 @@ const Collection_page = () => {
       try {
         console.log("실행됨1");
         const result = await fetch_collections(); // 이 부분에서 백과 통신하고 결과를 가져옵니다.
-        console.log(result.data);
 
         // 지훈아 예외 처리의 중요성
         // 백에 데이터가 없을 경우 null이 반환될 수 있음
@@ -82,7 +81,6 @@ const Collection_page = () => {
         set_current_page_number(1);
         set_collection_list(result.data); // 가져온 결과로 상태를 업데이트합니다.\
         set_total_page_count(get_new_total_page_count_fn(result.data));
-        console.log(collection_list);
       } catch (error) {
         console.error("Error fetching collector collections:", error);
         use_dummy_data_fn();
@@ -118,7 +116,7 @@ const Collection_page = () => {
 
   return (
     <>
-      <Small_title_component2 title={"나의 수거 목록"} />
+      <Small_title_component title={"수거 요청 목록"} />
 
       <List_component
         current_list={collection_list.slice(
@@ -129,7 +127,9 @@ const Collection_page = () => {
       />
 
       <div>
-        <Span_pageNumDirectionBtn onClick={minus_current_page_number_button_fn}>{"<"}</Span_pageNumDirectionBtn>
+        <Span_pageNumDirectionBtn onClick={minus_current_page_number_button_fn}>
+          {"<"}
+        </Span_pageNumDirectionBtn>
 
         {/* ㅜ total_page_count가 0이 아닐 때 */}
         {total_page_count &&
@@ -174,7 +174,9 @@ const Collection_page = () => {
             );
           })}
 
-        <Span_pageNumDirectionBtn onClick={plus_current_page_number_button_fn}>{">"}</Span_pageNumDirectionBtn>
+        <Span_pageNumDirectionBtn onClick={plus_current_page_number_button_fn}>
+          {">"}
+        </Span_pageNumDirectionBtn>
       </div>
 
       <Button_3

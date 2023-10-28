@@ -14,7 +14,8 @@ import {
   Select_el,
   Input_el,
   Left_id,
-  Right_id, Right_password, Right_name, Right_cafename, Addsi_container, Addgu_container, Adddong_container, Si_cha, Gu_cha, Dong_cha
+  Right_id, Right_password, Right_name, Right_cafename, Addsi_container, Addgu_container, Adddong_container, Si_cha, Gu_cha, Dong_cha,
+  Adddong_container2, Background_image
 } from "./style";
 
 
@@ -87,6 +88,7 @@ const Join_cafe_page = () => {
 
   return (
     <>
+    <Background_image></Background_image>
       <Small_title_component title="정보입력" />
       
         <div >
@@ -125,7 +127,7 @@ const Join_cafe_page = () => {
         </Addgu_container >
         <Adddong_container name="" id="" ref={address_dong_ref}>
           {address_dong_array.map((v, i) => {
-            return <option key={`address-dong-${i}`} value={`${v}`}> {v}</option>;
+            return <Adddong_container2 key={`address-dong-${i}`} value={`${v}`}> {v}</Adddong_container2>;
           })}
         </Adddong_container>
 
@@ -133,6 +135,8 @@ const Join_cafe_page = () => {
 
 
       <Button_8 onClick={join_button_fn}>가입하기</Button_8>
+
+      
     </>
   )
 }
