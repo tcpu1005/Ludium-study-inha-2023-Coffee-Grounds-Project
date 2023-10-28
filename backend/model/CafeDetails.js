@@ -5,18 +5,10 @@ class CafeDetails extends Sequelize.Model {
     return super.init(
       {
         cafe_id: {
-          type: Sequelize.INTEGER,
+          type: Sequelize.UUID,
           primaryKey: true,
-          autoIncrement: true,
           allowNull: false,
-        },
-        user_id: {
-          type: Sequelize.INTEGER,
-          allowNull: false,
-          references: {
-            model: "Users",
-            key: "user_id",
-          },
+          defaultValue: Sequelize.UUIDV4,
         },
         cafe_name: {
           type: Sequelize.STRING(10),
@@ -34,9 +26,9 @@ class CafeDetails extends Sequelize.Model {
           type: Sequelize.STRING(10),
           allowNull: false,
         },
-        total_emissions: {
+        total_emission: {
           type: Sequelize.INTEGER,
-          allowNull: true, //임시 null true
+          allowNull: false,
           defaultValue: 0,
         },
       },

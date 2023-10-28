@@ -5,18 +5,10 @@ class CollectorDetails extends Sequelize.Model {
     return super.init(
       {
         collector_id: {
-          type: Sequelize.INTEGER,
+          type: Sequelize.UUID,
           primaryKey: true,
-          autoIncrement: true,
           allowNull: false,
-        },
-        user_id: {
-          type: Sequelize.INTEGER,
-          allowNull: false,
-          references: {
-            model: "Users",
-            key: "user_id",
-          },
+          defaultValue: Sequelize.UUIDV4,
         },
         company_name: {
           type: Sequelize.STRING(10),

@@ -1,4 +1,4 @@
-// 리듀서 초기 값 (총 11개)
+// 리듀서 초기 값
 const init = {
   cafe_id: null,
   is_login: false,
@@ -7,10 +7,9 @@ const init = {
   cafe_name: null,
   address_si: null,
   address_gu: null,
+  collector_id: null,
   address_dong: null,
   company_name: null,
-  collector_id: null,
-  wallet_address: null,
 };
 
 function user_reducer(state = init, action) {

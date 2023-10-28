@@ -10,7 +10,7 @@ module.exports.login_user_controller = async (req, res) => {
   try {
     const login_user_info = await Users.findOne({
       where: { login_id, login_password },
-      attributes: ["user_type", "user_name", "wallet_address"],
+      attributes: ["user_type", "user_name",],
       include: [
         {
           model: CafeDetails,
@@ -73,7 +73,7 @@ module.exports.login_user_controller = async (req, res) => {
     console.log(err);
     res.send({
       success: false,
-      message: "서버 오류로 로그인에 실패하였습니다.",
+      message: "로그인에 실패하였습니다.",
     });
   }
 };

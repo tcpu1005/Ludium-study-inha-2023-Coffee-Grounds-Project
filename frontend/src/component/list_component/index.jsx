@@ -1,38 +1,36 @@
 import {
-  Div_bigContainer,
-  Span_el,
-  Span_el_request,
   Span_el_completed,
-  Span_el_extra,
-  Input_selectNBtn,
   Input_selectYBtn,
+  Div_bigContainer,
   Div_totalAmount,
+  Span_el_request,
+  Span_el_extra,
+  Span_el,
 } from "./style";
 
+
 const List_component = ({
+  set_collection_choice,
   current_list,
   total_amount,
-  set_collection_choice,
 }) => {
   //
 
   // 라디오 선택 시 선택한 수거 데이터의 UUID 값 저장
   const select_radio_fn = (e) => {
     const idx = e.target.value;
-    console.log(current_list[idx].record_id);
     set_collection_choice(current_list[idx].record_id);
   };
-  console.log(current_list);
+  
+
   return (
     <Div_bigContainer>
       {current_list.map((v, i) => {
         return (
           <div key={`list-${i}`}>
             {
-              // 배출 목록 페이지가 아닌 수거 목록 페이지일 때
+              // 배출 목록 페이지가 아닌 목록 페이지일 때
               set_collection_choice && (
-                // 수거 완료 상태일 경우 선택 불가
-
                 <Input_selectYBtn
                   type="radio"
                   name="collection_choice"
@@ -77,7 +75,8 @@ const List_component = ({
         );
       })}
 
-      {total_amount && (
+
+      {total_amount !== undefined && (
         <Div_totalAmount>총 배출량 : {total_amount}kg</Div_totalAmount>
       )}
     </Div_bigContainer>

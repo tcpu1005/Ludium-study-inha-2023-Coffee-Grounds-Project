@@ -5,10 +5,10 @@ class Users extends Sequelize.Model {
     return super.init(
       {
         user_id: {
-          type: Sequelize.INTEGER,
+          type: Sequelize.UUID,
           primaryKey: true,
-          autoIncrement: true,
           allowNull: false,
+          defaultValue: Sequelize.UUIDV4,
         },
         login_id: {
           type: Sequelize.STRING(50),

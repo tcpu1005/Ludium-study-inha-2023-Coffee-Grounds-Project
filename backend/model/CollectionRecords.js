@@ -10,22 +10,6 @@ class CollectionRecords extends Sequelize.Model {
           allowNull: false,
           defaultValue: Sequelize.UUIDV4,
         },
-        cafe_id: {
-          type: Sequelize.INTEGER,
-          allowNull: false,
-          references: {
-            model: "CafeDetails",
-            key: "cafe_id",
-          },
-        },
-        collector_id: {
-          type: Sequelize.INTEGER,
-          allowNull: true,
-          references: {
-            model: "CollectorDetails",
-            key: "collector_id",
-          },
-        },
         coffee_amount: {
           type: Sequelize.INTEGER,
           allowNull: false,
