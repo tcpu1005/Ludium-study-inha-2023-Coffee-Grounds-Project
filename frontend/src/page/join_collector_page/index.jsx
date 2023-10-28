@@ -39,7 +39,6 @@ const Join_collector_page = () => {
         const user_name = user_name_ref.current.value;
         const company_name = company_name_ref.current.value;
         const login_password = login_password_ref.current.value;
-        console.log(login_id, user_name, company_name, login_password);
 
 
         // 빈 값에 대한 예외 처리

@@ -14,14 +14,14 @@ const Header_layout = () => {
     const location = useLocation();
     const current_path = location.pathname;
 
-    
+
     // 로그인한 유저가 카페일 경우 카페명 표시
     const cafe_name = useSelector((state) => state.user_reducer.cafe_name);
-    
-    
+
+
     // 수거자일 경우 수거자명 표시
     const user_name = useSelector((state) => state.user_reducer.user_name);
-    
+
 
     const get_header_title_fn = () => {
         switch (current_path) {
@@ -30,6 +30,10 @@ const Header_layout = () => {
             // 1_MAIN
             case "/":
                 return "메인";
+
+            // GNB
+            case "/gnb":
+                return "메뉴 목록";
 
             // 2_JOIN_CHOICE
             case "/join/choice":
