@@ -73,7 +73,7 @@ const Header_layout = () => {
 
             // 11_MY_PAGE_COLLECTOR
             case "/collection":
-                return "수거 목록";
+                return "수거 예정";
 
             // 12_MY_PAGE_COLLECTOR_INPUT
             case "/collection/input":

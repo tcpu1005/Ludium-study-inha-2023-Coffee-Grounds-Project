@@ -1,11 +1,11 @@
 // 14_COLLECTION_ONCHAIN
+
 import Small_title_component from "../../component/small_title_component";
 import { Span_pageNumDirectionBtn, Span_pageNumBtn } from "./style";
+import { get_completed_reward_fn } from "../../redux/middleware";
 import List_component from "../../component/list_component";
-import { complete_reward } from "../../redux/middleware";
 import { MAROON_COLOR_1 } from "../../base_style";
 import { useState, useEffect } from "react";
-import { Button_3 } from "../../base_style";
 import { useNavigate } from "react-router";
 
 const Collection_onchain_page = () => {
@@ -67,7 +67,7 @@ const Collection_onchain_page = () => {
     const complete_reward_data = async () => {
       try {
         console.log("수거완료 목록 실행");
-        const result = await complete_reward(); // 이 부분에서 백과 통신하고 결과를 가져옵니다.
+        const result = await get_completed_reward_fn(); // 이 부분에서 백과 통신하고 결과를 가져옵니다.
 
         console.log(result);
         // 지훈아 예외 처리의 중요성
@@ -116,7 +116,7 @@ const Collection_onchain_page = () => {
 
   return (
     <>
-      <Small_title_component title={"수거 완료 목록"} />
+      <Small_title_component title={"보상 완료 목록"} />
 
       <List_component
         current_list={collection_list.slice(

@@ -3,30 +3,32 @@
 import Small_title_component from "../../component/small_title_component";
 import { Span_pageNumDirectionBtn, Span_pageNumBtn } from "./style";
 import List_component from "../../component/list_component";
-import { fetch_collections } from "../../redux/middleware";
+import { get_collections_fn } from "../../redux/middleware";
 import { MAROON_COLOR_1 } from "../../base_style";
 import { useState, useEffect } from "react";
 import { Button_3 } from "../../base_style";
 import { useNavigate } from "react-router";
+
 
 const Collection_page = () => {
   //
 
   const nav = useNavigate();
 
+
   // 10개씩 보여주기
   const page_unit = 7;
 
+
   // 페이지네이션 넘버는 5개만 보여주기
   const page_number_unit = 5;
-
   const [total_page_count, set_total_page_count] = useState(0);
   const [collection_choice, set_collection_choice] = useState();
   const [current_page_number, set_current_page_number] = useState(0);
-
   const [collection_list, set_collection_list] = useState(new Array());
 
-  // 수거 페이지 접속 시 백과 통신하여 수거 목록 조회
+
+  // 수거 페이지 접속 시 백과 통신하여 수거 요청 목록 조회
   useEffect(() => {
     //
 
@@ -68,11 +70,8 @@ const Collection_page = () => {
     const fetch_data = async () => {
       try {
         console.log("실행됨1");
-        const result = await fetch_collections(); // 이 부분에서 백과 통신하고 결과를 가져옵니다.
+        const result = await get_collections_fn(); // 이 부분에서 백과 통신하고 결과를 가져옵니다.
 
-        // 지훈아 예외 처리의 중요성
-        // 백에 데이터가 없을 경우 null이 반환될 수 있음
-        // 이러한 예외 처리는 백에서 해주는 것도 좋겠지?
         if (!result.data) {
           use_dummy_data_fn();
           return;

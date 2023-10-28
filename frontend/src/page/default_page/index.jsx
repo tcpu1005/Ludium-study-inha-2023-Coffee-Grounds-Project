@@ -6,8 +6,8 @@ import Footer_layout from "../../layout/footer_layout";
 import Top_layout from "../../layout/top_layout";
 import {
   register_collector_user_fn,
-  members_cafe_collection,
   register_cafe_user_fn,
+  register_emission_fn,
   default_action_fn,
   login_user_fn,
 } from "../../redux/middleware";
@@ -91,7 +91,7 @@ const Default_page = () => {
       </Button_1>
       <Button_1
         onClick={() =>
-          dispatch(members_cafe_collection(members_cafe_collection_data))
+          dispatch(register_emission_fn(members_cafe_collection_data))
         }
       >
         카페배출입력(카페유저입장)

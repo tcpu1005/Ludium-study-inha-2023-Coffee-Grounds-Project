@@ -1,12 +1,12 @@
 // 13_MY_PAGE_COLLECTOR_CHECK
 
+
+import { get_my_collections_fn, resigter_reward_fn } from "../../redux/middleware";
 import Small_title_component from "../../component/small_title_component";
 import { Span_pageNumDirectionBtn, Span_pageNumBtn } from "./style";
 import List_component from "../../component/list_component";
-import { complete_collections } from "../../redux/middleware";
 import { MAROON_COLOR_1 } from "../../base_style";
 import { useState, useEffect } from "react";
-import { Button_3 } from "../../base_style";
 import { useNavigate } from "react-router";
 
 const Collection_check_page = () => {
@@ -65,10 +65,10 @@ const Collection_check_page = () => {
 
     // 백 통신 함수
 
-    const complete_collections_data = async () => {
+    const get_my_collections_fn = async () => {
       try {
         console.log("수거완료 목록 실행");
-        const result = await complete_collections(); // 이 부분에서 백과 통신하고 결과를 가져옵니다.
+        const result = await get_my_collections_fn(); // 이 부분에서 백과 통신하고 결과를 가져옵니다.
         console.log(result);
         // 지훈아 예외 처리의 중요성
         // 백에 데이터가 없을 경우 null이 반환될 수 있음
@@ -87,7 +87,7 @@ const Collection_check_page = () => {
       }
     };
 
-    complete_collections_data();
+    get_my_collections_fn();
   }, []);
 
   const plus_current_page_number_button_fn = () => {

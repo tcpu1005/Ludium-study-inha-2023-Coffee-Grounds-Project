@@ -4,11 +4,13 @@ import {
   StyledContainer, StyledInputContainer, StyledLabel, StyledInput, Coffee_Status, Coffee_Statuscon, Coffee_weight, Coffee_weightcon, Coffee_date, Cha_month, KG
 } from "./style";
 import Big_title_component from "../../component/big_title_component";
-import { update_collection } from "../../redux/middleware";
+import { resigter_collection_fn } from "../../redux/middleware";
 import { Button_9 } from "../../base_style";
 import { useLocation } from "react-router";
 import { useSelector } from "react-redux";
 import { useRef } from "react";
+
+
 const Collection_input_page = () => {
   //
 
@@ -95,7 +97,7 @@ const Collection_input_page = () => {
     }
 
 
-    update_collection(update_collection_data);
+    resigter_collection_fn(update_collection_data);
   };
 
 
