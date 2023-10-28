@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const Outline_container2 = styled.div`
-
+position: absolute;
 box-sizing: border-box;
 width: 37.81vw;
 height: 9.69vw;
-left: calc(50% - 37.81vw/2 + 0.16vw);
-top: 32.81vw;
+left: calc(50% - 91.81vw/2 + 0.16vw);
+    top: 8.810000000000002vw;
 border: 0.63vw solid #67493F;
 border-radius: 60px;
 margin: 25.69vw 31.88vw 4.69vw 31.88vw;
