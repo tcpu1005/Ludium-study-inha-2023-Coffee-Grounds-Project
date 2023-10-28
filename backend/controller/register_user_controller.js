@@ -16,16 +16,15 @@ module.exports.register_cafe_user_controller = async (req, res) => {
   } = req.body;
 
 
-  if (!login_id) {
-    return res
-      .status(400)
-      .send({ message: "login_id 값이 유효하지 않습니다." });
-  }
+  // if (!login_id) {
+  //   return res.send({ message: "login_id 값이 유효하지 않습니다." });
+  // }
+
 
   try {
     const existingUser = await Users.findOne({ where: { login_id } });
     if (existingUser) {
-      return res.status(409).send({ message: "이미 존재하는 ID입니다." });
+      return res.send({ success: false, message: "이미 존재하는 ID입니다." });
     }
 
 
@@ -74,16 +73,17 @@ module.exports.register_collector_user_controller = async (req, res) => {
   } = req.body;
 
 
-  if (!login_id) {
-    return res
-      .status(400)
-      .send({ message: "login_id 값이 유효하지 않습니다." });
-  }
+  // if (!login_id) {
+  //   return res
+  //     .status(400)
+  //     .send({ message: "login_id 값이 유효하지 않습니다." });
+  // }
+
 
   try {
     const existingUser = await Users.findOne({ where: { login_id } });
     if (existingUser) {
-      return res.status(409).send({ message: "이미 존재하는 ID입니다." });
+      return res.send({ success: false, message: "이미 존재하는 ID입니다." });
     }
 
 

@@ -69,7 +69,7 @@ const Join_collector_page = () => {
 
     return (
         <>
-        <Background_image></Background_image>
+            <Background_image></Background_image>
             <Small_title_component title="수거업체" />
 
             <Flex_body_container>
@@ -96,7 +96,7 @@ const Join_collector_page = () => {
             </Flex_body_container>
 
             <Button_3 onClick={join_button_fn}>가입하기</Button_3>
-            
+
         </>
     )
 }

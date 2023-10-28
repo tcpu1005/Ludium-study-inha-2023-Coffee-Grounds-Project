@@ -46,8 +46,8 @@ const Join_cafe_page = () => {
     const address_gu = address_gu_ref.current.value;
     const address_dong = address_dong_ref.current.value;
     const login_password = login_password_ref.current.value;
-    console.log(login_id, user_name, cafe_name, login_password);
-    console.log(address_si, address_gu, address_dong);
+    // console.log(login_id, user_name, cafe_name, login_password);
+    // console.log(address_si, address_gu, address_dong);
 
 
     // 빈 값에 대한 예외 처리
@@ -88,34 +88,34 @@ const Join_cafe_page = () => {
 
   return (
     <>
-    <Background_image></Background_image>
+      <Background_image></Background_image>
       <Small_title_component title="정보입력" />
-      
-        <div >
 
-          <Left_id htmlFor="login_id"> 아이디</Left_id><br />
-          <Left_password htmlFor="login_password"> 비밀번호</Left_password><br />
-          <Left_name htmlFor="user_name">이름</Left_name><br />
-          <Left_cafename htmlFor="cafe_name">카페명</Left_cafename>
+      <div >
 
-        </div>
+        <Left_id htmlFor="login_id"> 아이디</Left_id><br />
+        <Left_password htmlFor="login_password"> 비밀번호</Left_password><br />
+        <Left_name htmlFor="user_name">이름</Left_name><br />
+        <Left_cafename htmlFor="cafe_name">카페명</Left_cafename>
 
-        <div>
-          
-          <Right_id id="login_id"  ref={login_id_ref} autoComplete="off" /> <br />
-          <Right_password id="login_password"  type="password" ref={login_password_ref} autoComplete="off" /> <br />
-          <Right_name id="user_name"  ref={user_name_ref} autoComplete="off" /> <br />
-          <Right_cafename id="cafe_name"  ref={cafe_name_ref} autoComplete="off" /> <br />
+      </div>
+
+      <div>
+
+        <Right_id id="login_id" ref={login_id_ref} autoComplete="off" /> <br />
+        <Right_password id="login_password" type="password" ref={login_password_ref} autoComplete="off" /> <br />
+        <Right_name id="user_name" ref={user_name_ref} autoComplete="off" /> <br />
+        <Right_cafename id="cafe_name" ref={cafe_name_ref} autoComplete="off" /> <br />
 
 
-        </div>
-      
+      </div>
+
 
 
       <div>
         <Left_address>카페 주소</Left_address>
 
-        <Addsi_container  name="" id="" ref={address_si_ref} disabled>
+        <Addsi_container name="" id="" ref={address_si_ref} disabled>
           {address_si_array.map((v, i) => {
             return <option key={`address-si-${i}`} value={`${v}`} > {v}</option>;
           })}
@@ -136,7 +136,7 @@ const Join_cafe_page = () => {
 
       <Button_8 onClick={join_button_fn}>가입하기</Button_8>
 
-      
+
     </>
   )
 }

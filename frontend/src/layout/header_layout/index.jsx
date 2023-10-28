@@ -101,7 +101,7 @@ const Header_layout = () => {
                 <Toggle_button onClick={() => nav("/gnb")}>☰</Toggle_button>
             </div>
             <First_white></First_white>
-            <Second_brown>{cafe_name || user_name || "커피박은 가치多!"}</Second_brown>
+            <Second_brown>{cafe_name || user_name || "커피 한 잔의 자원"}</Second_brown>
             <Second_white></Second_white>
 
 
