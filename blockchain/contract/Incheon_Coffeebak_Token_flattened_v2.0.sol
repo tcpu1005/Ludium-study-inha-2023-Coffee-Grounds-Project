@@ -1,10 +1,8 @@
 // v2.0
 // 탈중앙화 관점에서 배포 시 민팅되는 토큰을 CA가 갖도록 하고, 오너가 발행량만큼 접근할 수 있게 한다.
 
-
 // SPDX-License-Identifier: MIT
 // File: @openzeppelin/contracts/utils/Nonces.sol
-
 
 // OpenZeppelin Contracts (last updated v5.0.0) (utils/Nonces.sol)
 pragma solidity ^0.8.19;
@@ -56,7 +54,6 @@ abstract contract Nonces {
 
 // File: @openzeppelin/contracts/interfaces/IERC5267.sol
 
-
 // OpenZeppelin Contracts (last updated v5.0.0) (interfaces/IERC5267.sol)
 
 pragma solidity ^0.8.19;
@@ -95,7 +92,6 @@ interface IERC5267 {
 }
 
 // File: @openzeppelin/contracts/utils/StorageSlot.sol
-
 
 // OpenZeppelin Contracts (last updated v5.0.0) (utils/StorageSlot.sol)
 // This file was procedurally generated from scripts/generate/templates/StorageSlot.js.
@@ -155,7 +151,9 @@ library StorageSlot {
     /**
      * @dev Returns an `AddressSlot` with member `value` located at `slot`.
      */
-    function getAddressSlot(bytes32 slot) internal pure returns (AddressSlot storage r) {
+    function getAddressSlot(
+        bytes32 slot
+    ) internal pure returns (AddressSlot storage r) {
         /// @solidity memory-safe-assembly
         assembly {
             r.slot := slot
@@ -165,7 +163,9 @@ library StorageSlot {
     /**
      * @dev Returns an `BooleanSlot` with member `value` located at `slot`.
      */
-    function getBooleanSlot(bytes32 slot) internal pure returns (BooleanSlot storage r) {
+    function getBooleanSlot(
+        bytes32 slot
+    ) internal pure returns (BooleanSlot storage r) {
         /// @solidity memory-safe-assembly
         assembly {
             r.slot := slot
@@ -175,7 +175,9 @@ library StorageSlot {
     /**
      * @dev Returns an `Bytes32Slot` with member `value` located at `slot`.
      */
-    function getBytes32Slot(bytes32 slot) internal pure returns (Bytes32Slot storage r) {
+    function getBytes32Slot(
+        bytes32 slot
+    ) internal pure returns (Bytes32Slot storage r) {
         /// @solidity memory-safe-assembly
         assembly {
             r.slot := slot
@@ -185,7 +187,9 @@ library StorageSlot {
     /**
      * @dev Returns an `Uint256Slot` with member `value` located at `slot`.
      */
-    function getUint256Slot(bytes32 slot) internal pure returns (Uint256Slot storage r) {
+    function getUint256Slot(
+        bytes32 slot
+    ) internal pure returns (Uint256Slot storage r) {
         /// @solidity memory-safe-assembly
         assembly {
             r.slot := slot
@@ -195,7 +199,9 @@ library StorageSlot {
     /**
      * @dev Returns an `StringSlot` with member `value` located at `slot`.
      */
-    function getStringSlot(bytes32 slot) internal pure returns (StringSlot storage r) {
+    function getStringSlot(
+        bytes32 slot
+    ) internal pure returns (StringSlot storage r) {
         /// @solidity memory-safe-assembly
         assembly {
             r.slot := slot
@@ -205,7 +211,9 @@ library StorageSlot {
     /**
      * @dev Returns an `StringSlot` representation of the string storage pointer `store`.
      */
-    function getStringSlot(string storage store) internal pure returns (StringSlot storage r) {
+    function getStringSlot(
+        string storage store
+    ) internal pure returns (StringSlot storage r) {
         /// @solidity memory-safe-assembly
         assembly {
             r.slot := store.slot
@@ -215,7 +223,9 @@ library StorageSlot {
     /**
      * @dev Returns an `BytesSlot` with member `value` located at `slot`.
      */
-    function getBytesSlot(bytes32 slot) internal pure returns (BytesSlot storage r) {
+    function getBytesSlot(
+        bytes32 slot
+    ) internal pure returns (BytesSlot storage r) {
         /// @solidity memory-safe-assembly
         assembly {
             r.slot := slot
@@ -225,7 +235,9 @@ library StorageSlot {
     /**
      * @dev Returns an `BytesSlot` representation of the bytes storage pointer `store`.
      */
-    function getBytesSlot(bytes storage store) internal pure returns (BytesSlot storage r) {
+    function getBytesSlot(
+        bytes storage store
+    ) internal pure returns (BytesSlot storage r) {
         /// @solidity memory-safe-assembly
         assembly {
             r.slot := store.slot
@@ -235,11 +247,9 @@ library StorageSlot {
 
 // File: @openzeppelin/contracts/utils/ShortStrings.sol
 
-
 // OpenZeppelin Contracts (last updated v5.0.0) (utils/ShortStrings.sol)
 
 pragma solidity ^0.8.19;
-
 
 // | string  | 0xAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA   |
 // | length  | 0x                                                              BB |
@@ -276,7 +286,8 @@ type ShortString is bytes32;
  */
 library ShortStrings {
     // Used as an identifier for strings longer than 31 bytes.
-    bytes32 private constant FALLBACK_SENTINEL = 0x00000000000000000000000000000000000000000000000000000000000000FF;
+    bytes32 private constant FALLBACK_SENTINEL =
+        0x00000000000000000000000000000000000000000000000000000000000000FF;
 
     error StringTooLong(string str);
     error InvalidShortString();
@@ -286,7 +297,9 @@ library ShortStrings {
      *
      * This will trigger a `StringTooLong` error is the input string is too long.
      */
-    function toShortString(string memory str) internal pure returns (ShortString) {
+    function toShortString(
+        string memory str
+    ) internal pure returns (ShortString) {
         bytes memory bstr = bytes(str);
         if (bstr.length > 31) {
             revert StringTooLong(str);
@@ -323,7 +336,10 @@ library ShortStrings {
     /**
      * @dev Encode a string into a `ShortString`, or write it to storage if it is too long.
      */
-    function toShortStringWithFallback(string memory value, string storage store) internal returns (ShortString) {
+    function toShortStringWithFallback(
+        string memory value,
+        string storage store
+    ) internal returns (ShortString) {
         if (bytes(value).length < 32) {
             return toShortString(value);
         } else {
@@ -335,7 +351,10 @@ library ShortStrings {
     /**
      * @dev Decode a string that was encoded to `ShortString` or written to storage using {setWithFallback}.
      */
-    function toStringWithFallback(ShortString value, string storage store) internal pure returns (string memory) {
+    function toStringWithFallback(
+        ShortString value,
+        string storage store
+    ) internal pure returns (string memory) {
         if (ShortString.unwrap(value) != FALLBACK_SENTINEL) {
             return toString(value);
         } else {
@@ -350,7 +369,10 @@ library ShortStrings {
      * WARNING: This will return the "byte length" of the string. This may not reflect the actual length in terms of
      * actual characters as the UTF-8 encoding of a single character can span over multiple bytes.
      */
-    function byteLengthWithFallback(ShortString value, string storage store) internal view returns (uint256) {
+    function byteLengthWithFallback(
+        ShortString value,
+        string storage store
+    ) internal view returns (uint256) {
         if (ShortString.unwrap(value) != FALLBACK_SENTINEL) {
             return byteLength(value);
         } else {
@@ -360,7 +382,6 @@ library ShortStrings {
 }
 
 // File: @openzeppelin/contracts/utils/math/SignedMath.sol
-
 
 // OpenZeppelin Contracts (last updated v5.0.0) (utils/math/SignedMath.sol)
 
@@ -408,7 +429,6 @@ library SignedMath {
 
 // File: @openzeppelin/contracts/utils/math/Math.sol
 
-
 // OpenZeppelin Contracts (last updated v5.0.0) (utils/math/Math.sol)
 
 pragma solidity ^0.8.19;
@@ -433,7 +453,10 @@ library Math {
     /**
      * @dev Returns the addition of two unsigned integers, with an overflow flag.
      */
-    function tryAdd(uint256 a, uint256 b) internal pure returns (bool, uint256) {
+    function tryAdd(
+        uint256 a,
+        uint256 b
+    ) internal pure returns (bool, uint256) {
         unchecked {
             uint256 c = a + b;
             if (c < a) return (false, 0);
@@ -444,7 +467,10 @@ library Math {
     /**
      * @dev Returns the subtraction of two unsigned integers, with an overflow flag.
      */
-    function trySub(uint256 a, uint256 b) internal pure returns (bool, uint256) {
+    function trySub(
+        uint256 a,
+        uint256 b
+    ) internal pure returns (bool, uint256) {
         unchecked {
             if (b > a) return (false, 0);
             return (true, a - b);
@@ -454,7 +480,10 @@ library Math {
     /**
      * @dev Returns the multiplication of two unsigned integers, with an overflow flag.
      */
-    function tryMul(uint256 a, uint256 b) internal pure returns (bool, uint256) {
+    function tryMul(
+        uint256 a,
+        uint256 b
+    ) internal pure returns (bool, uint256) {
         unchecked {
             // Gas optimization: this is cheaper than requiring 'a' not being zero, but the
             // benefit is lost if 'b' is also tested.
@@ -469,7 +498,10 @@ library Math {
     /**
      * @dev Returns the division of two unsigned integers, with a division by zero flag.
      */
-    function tryDiv(uint256 a, uint256 b) internal pure returns (bool, uint256) {
+    function tryDiv(
+        uint256 a,
+        uint256 b
+    ) internal pure returns (bool, uint256) {
         unchecked {
             if (b == 0) return (false, 0);
             return (true, a / b);
@@ -479,7 +511,10 @@ library Math {
     /**
      * @dev Returns the remainder of dividing two unsigned integers, with a division by zero flag.
      */
-    function tryMod(uint256 a, uint256 b) internal pure returns (bool, uint256) {
+    function tryMod(
+        uint256 a,
+        uint256 b
+    ) internal pure returns (bool, uint256) {
         unchecked {
             if (b == 0) return (false, 0);
             return (true, a % b);
@@ -531,7 +566,11 @@ library Math {
      * @dev Original credit to Remco Bloemen under MIT license (https://xn--2-umb.com/21/muldiv) with further edits by
      * Uniswap Labs also under MIT license.
      */
-    function mulDiv(uint256 x, uint256 y, uint256 denominator) internal pure returns (uint256 result) {
+    function mulDiv(
+        uint256 x,
+        uint256 y,
+        uint256 denominator
+    ) internal pure returns (uint256 result) {
         unchecked {
             // 512-bit multiply [prod1 prod0] = x * y. Compute the product mod 2^256 and mod 2^256 - 1, then use
             // use the Chinese Remainder Theorem to reconstruct the 512 bit result. The result is stored in two 256
@@ -615,7 +654,12 @@ library Math {
     /**
      * @notice Calculates x * y / denominator with full precision, following the selected rounding direction.
      */
-    function mulDiv(uint256 x, uint256 y, uint256 denominator, Rounding rounding) internal pure returns (uint256) {
+    function mulDiv(
+        uint256 x,
+        uint256 y,
+        uint256 denominator,
+        Rounding rounding
+    ) internal pure returns (uint256) {
         uint256 result = mulDiv(x, y, denominator);
         if (unsignedRoundsUp(rounding) && mulmod(x, y, denominator) > 0) {
             result += 1;
@@ -665,10 +709,15 @@ library Math {
     /**
      * @notice Calculates sqrt(a), following the selected rounding direction.
      */
-    function sqrt(uint256 a, Rounding rounding) internal pure returns (uint256) {
+    function sqrt(
+        uint256 a,
+        Rounding rounding
+    ) internal pure returns (uint256) {
         unchecked {
             uint256 result = sqrt(a);
-            return result + (unsignedRoundsUp(rounding) && result * result < a ? 1 : 0);
+            return
+                result +
+                (unsignedRoundsUp(rounding) && result * result < a ? 1 : 0);
         }
     }
 
@@ -718,10 +767,15 @@ library Math {
      * @dev Return the log in base 2, following the selected rounding direction, of a positive value.
      * Returns 0 if given 0.
      */
-    function log2(uint256 value, Rounding rounding) internal pure returns (uint256) {
+    function log2(
+        uint256 value,
+        Rounding rounding
+    ) internal pure returns (uint256) {
         unchecked {
             uint256 result = log2(value);
-            return result + (unsignedRoundsUp(rounding) && 1 << result < value ? 1 : 0);
+            return
+                result +
+                (unsignedRoundsUp(rounding) && 1 << result < value ? 1 : 0);
         }
     }
 
@@ -767,10 +821,15 @@ library Math {
      * @dev Return the log in base 10, following the selected rounding direction, of a positive value.
      * Returns 0 if given 0.
      */
-    function log10(uint256 value, Rounding rounding) internal pure returns (uint256) {
+    function log10(
+        uint256 value,
+        Rounding rounding
+    ) internal pure returns (uint256) {
         unchecked {
             uint256 result = log10(value);
-            return result + (unsignedRoundsUp(rounding) && 10 ** result < value ? 1 : 0);
+            return
+                result +
+                (unsignedRoundsUp(rounding) && 10 ** result < value ? 1 : 0);
         }
     }
 
@@ -810,10 +869,19 @@ library Math {
      * @dev Return the log in base 256, following the selected rounding direction, of a positive value.
      * Returns 0 if given 0.
      */
-    function log256(uint256 value, Rounding rounding) internal pure returns (uint256) {
+    function log256(
+        uint256 value,
+        Rounding rounding
+    ) internal pure returns (uint256) {
         unchecked {
             uint256 result = log256(value);
-            return result + (unsignedRoundsUp(rounding) && 1 << (result << 3) < value ? 1 : 0);
+            return
+                result +
+                (
+                    unsignedRoundsUp(rounding) && 1 << (result << 3) < value
+                        ? 1
+                        : 0
+                );
         }
     }
 
@@ -826,7 +894,6 @@ library Math {
 }
 
 // File: @openzeppelin/contracts/utils/Strings.sol
-
 
 // OpenZeppelin Contracts (last updated v5.0.0) (utils/Strings.sol)
 
@@ -873,8 +940,14 @@ library Strings {
     /**
      * @dev Converts a `int256` to its ASCII `string` decimal representation.
      */
-    function toStringSigned(int256 value) internal pure returns (string memory) {
-        return string.concat(value < 0 ? "-" : "", toString(SignedMath.abs(value)));
+    function toStringSigned(
+        int256 value
+    ) internal pure returns (string memory) {
+        return
+            string.concat(
+                value < 0 ? "-" : "",
+                toString(SignedMath.abs(value))
+            );
     }
 
     /**
@@ -889,7 +962,10 @@ library Strings {
     /**
      * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation with fixed length.
      */
-    function toHexString(uint256 value, uint256 length) internal pure returns (string memory) {
+    function toHexString(
+        uint256 value,
+        uint256 length
+    ) internal pure returns (string memory) {
         uint256 localValue = value;
         bytes memory buffer = new bytes(2 * length + 2);
         buffer[0] = "0";
@@ -915,13 +991,17 @@ library Strings {
     /**
      * @dev Returns true if the two strings are equal.
      */
-    function equal(string memory a, string memory b) internal pure returns (bool) {
-        return bytes(a).length == bytes(b).length && keccak256(bytes(a)) == keccak256(bytes(b));
+    function equal(
+        string memory a,
+        string memory b
+    ) internal pure returns (bool) {
+        return
+            bytes(a).length == bytes(b).length &&
+            keccak256(bytes(a)) == keccak256(bytes(b));
     }
 }
 
 // File: @openzeppelin/contracts/utils/cryptography/MessageHashUtils.sol
-
 
 // OpenZeppelin Contracts (last updated v5.0.0) (utils/cryptography/MessageHashUtils.sol)
 
@@ -950,7 +1030,9 @@ library MessageHashUtils {
      *
      * See {ECDSA-recover}.
      */
-    function toEthSignedMessageHash(bytes32 messageHash) internal pure returns (bytes32 digest) {
+    function toEthSignedMessageHash(
+        bytes32 messageHash
+    ) internal pure returns (bytes32 digest) {
         /// @solidity memory-safe-assembly
         assembly {
             mstore(0x00, "\x19Ethereum Signed Message:\n32") // 32 is the bytes-length of messageHash
@@ -969,9 +1051,17 @@ library MessageHashUtils {
      *
      * See {ECDSA-recover}.
      */
-    function toEthSignedMessageHash(bytes memory message) internal pure returns (bytes32) {
+    function toEthSignedMessageHash(
+        bytes memory message
+    ) internal pure returns (bytes32) {
         return
-            keccak256(bytes.concat("\x19Ethereum Signed Message:\n", bytes(Strings.toString(message.length)), message));
+            keccak256(
+                bytes.concat(
+                    "\x19Ethereum Signed Message:\n",
+                    bytes(Strings.toString(message.length)),
+                    message
+                )
+            );
     }
 
     /**
@@ -983,7 +1073,10 @@ library MessageHashUtils {
      *
      * See {ECDSA-recover}.
      */
-    function toDataWithIntendedValidatorHash(address validator, bytes memory data) internal pure returns (bytes32) {
+    function toDataWithIntendedValidatorHash(
+        address validator,
+        bytes memory data
+    ) internal pure returns (bytes32) {
         return keccak256(abi.encodePacked(hex"19_00", validator, data));
     }
 
@@ -996,7 +1089,10 @@ library MessageHashUtils {
      *
      * See {ECDSA-recover}.
      */
-    function toTypedDataHash(bytes32 domainSeparator, bytes32 structHash) internal pure returns (bytes32 digest) {
+    function toTypedDataHash(
+        bytes32 domainSeparator,
+        bytes32 structHash
+    ) internal pure returns (bytes32 digest) {
         /// @solidity memory-safe-assembly
         assembly {
             let ptr := mload(0x40)
@@ -1009,7 +1105,6 @@ library MessageHashUtils {
 }
 
 // File: @openzeppelin/contracts/utils/cryptography/EIP712.sol
-
 
 // OpenZeppelin Contracts (last updated v5.0.0) (utils/cryptography/EIP712.sol)
 
@@ -1044,7 +1139,9 @@ abstract contract EIP712 is IERC5267 {
     using ShortStrings for *;
 
     bytes32 private constant TYPE_HASH =
-        keccak256("EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)");
+        keccak256(
+            "EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)"
+        );
 
     // Cache the domain separator as an immutable value, but also store the chain id that it corresponds to, in order to
     // invalidate the cached domain separator if the chain id changes.
@@ -1095,7 +1192,16 @@ abstract contract EIP712 is IERC5267 {
     }
 
     function _buildDomainSeparator() private view returns (bytes32) {
-        return keccak256(abi.encode(TYPE_HASH, _hashedName, _hashedVersion, block.chainid, address(this)));
+        return
+            keccak256(
+                abi.encode(
+                    TYPE_HASH,
+                    _hashedName,
+                    _hashedVersion,
+                    block.chainid,
+                    address(this)
+                )
+            );
     }
 
     /**
@@ -1113,8 +1219,11 @@ abstract contract EIP712 is IERC5267 {
      * address signer = ECDSA.recover(digest, signature);
      * ```
      */
-    function _hashTypedDataV4(bytes32 structHash) internal view virtual returns (bytes32) {
-        return MessageHashUtils.toTypedDataHash(_domainSeparatorV4(), structHash);
+    function _hashTypedDataV4(
+        bytes32 structHash
+    ) internal view virtual returns (bytes32) {
+        return
+            MessageHashUtils.toTypedDataHash(_domainSeparatorV4(), structHash);
     }
 
     /**
@@ -1170,7 +1279,6 @@ abstract contract EIP712 is IERC5267 {
 
 // File: @openzeppelin/contracts/utils/cryptography/ECDSA.sol
 
-
 // OpenZeppelin Contracts (last updated v5.0.0) (utils/cryptography/ECDSA.sol)
 
 pragma solidity ^0.8.19;
@@ -1178,7 +1286,7 @@ pragma solidity ^0.8.19;
 /**
  * @dev Elliptic Curve Digital Signature Algorithm (ECDSA) operations.
  * ECDSA 라이브러리는 메시지에 대한 서명 확인 등 타원 곡선 디지털 서명 알고리즘(ECDSA) 작업을 수행하는 데 사용됩니다. 이를 통해 특정 주소의 개인 키 소유자가 메시지를 서명했는지를 확인할 수 있습니다.
- * 
+ *
  * These functions can be used to verify that a message was signed by the holder
  * of the private keys of a given address.
  */
@@ -1226,7 +1334,10 @@ library ECDSA {
      * - with https://web3js.readthedocs.io/en/v1.3.4/web3-eth-accounts.html#sign[Web3.js]
      * - with https://docs.ethers.io/v5/api/signer/#Signer-signMessage[ethers]
      */
-    function tryRecover(bytes32 hash, bytes memory signature) internal pure returns (address, RecoverError, bytes32) {
+    function tryRecover(
+        bytes32 hash,
+        bytes memory signature
+    ) internal pure returns (address, RecoverError, bytes32) {
         if (signature.length == 65) {
             bytes32 r;
             bytes32 s;
@@ -1241,7 +1352,11 @@ library ECDSA {
             }
             return tryRecover(hash, v, r, s);
         } else {
-            return (address(0), RecoverError.InvalidSignatureLength, bytes32(signature.length));
+            return (
+                address(0),
+                RecoverError.InvalidSignatureLength,
+                bytes32(signature.length)
+            );
         }
     }
 
@@ -1259,8 +1374,14 @@ library ECDSA {
      * this is by receiving a hash of the original message (which may otherwise
      * be too long), and then calling {MessageHashUtils-toEthSignedMessageHash} on it.
      */
-    function recover(bytes32 hash, bytes memory signature) internal pure returns (address) {
-        (address recovered, RecoverError error, bytes32 errorArg) = tryRecover(hash, signature);
+    function recover(
+        bytes32 hash,
+        bytes memory signature
+    ) internal pure returns (address) {
+        (address recovered, RecoverError error, bytes32 errorArg) = tryRecover(
+            hash,
+            signature
+        );
         _throwError(error, errorArg);
         return recovered;
     }
@@ -1270,9 +1391,16 @@ library ECDSA {
      *
      * See https://eips.ethereum.org/EIPS/eip-2098[EIP-2098 short signatures]
      */
-    function tryRecover(bytes32 hash, bytes32 r, bytes32 vs) internal pure returns (address, RecoverError, bytes32) {
+    function tryRecover(
+        bytes32 hash,
+        bytes32 r,
+        bytes32 vs
+    ) internal pure returns (address, RecoverError, bytes32) {
         unchecked {
-            bytes32 s = vs & bytes32(0x7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff);
+            bytes32 s = vs &
+                bytes32(
+                    0x7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+                );
             // We do not check for an overflow here since the shift operation results in 0 or 1.
             uint8 v = uint8((uint256(vs) >> 255) + 27);
             return tryRecover(hash, v, r, s);
@@ -1282,8 +1410,16 @@ library ECDSA {
     /**
      * @dev Overload of {ECDSA-recover} that receives the `r and `vs` short-signature fields separately.
      */
-    function recover(bytes32 hash, bytes32 r, bytes32 vs) internal pure returns (address) {
-        (address recovered, RecoverError error, bytes32 errorArg) = tryRecover(hash, r, vs);
+    function recover(
+        bytes32 hash,
+        bytes32 r,
+        bytes32 vs
+    ) internal pure returns (address) {
+        (address recovered, RecoverError error, bytes32 errorArg) = tryRecover(
+            hash,
+            r,
+            vs
+        );
         _throwError(error, errorArg);
         return recovered;
     }
@@ -1307,7 +1443,10 @@ library ECDSA {
         // with 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141 - s1 and flip v from 27 to 28 or
         // vice versa. If your library also generates signatures with 0/1 for v instead 27/28, add 27 to v to accept
         // these malleable signatures as well.
-        if (uint256(s) > 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0) {
+        if (
+            uint256(s) >
+            0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0
+        ) {
             return (address(0), RecoverError.InvalidSignatureS, s);
         }
 
@@ -1324,8 +1463,18 @@ library ECDSA {
      * @dev Overload of {ECDSA-recover} that receives the `v`,
      * `r` and `s` signature fields separately.
      */
-    function recover(bytes32 hash, uint8 v, bytes32 r, bytes32 s) internal pure returns (address) {
-        (address recovered, RecoverError error, bytes32 errorArg) = tryRecover(hash, v, r, s);
+    function recover(
+        bytes32 hash,
+        uint8 v,
+        bytes32 r,
+        bytes32 s
+    ) internal pure returns (address) {
+        (address recovered, RecoverError error, bytes32 errorArg) = tryRecover(
+            hash,
+            v,
+            r,
+            s
+        );
         _throwError(error, errorArg);
         return recovered;
     }
@@ -1347,7 +1496,6 @@ library ECDSA {
 }
 
 // File: @openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol
-
 
 // OpenZeppelin Contracts (last updated v5.0.0) (token/ERC20/extensions/IERC20Permit.sol)
 
@@ -1442,7 +1590,6 @@ interface IERC20Permit {
 
 // File: @openzeppelin/contracts/interfaces/draft-IERC6093.sol
 
-
 // OpenZeppelin Contracts (last updated v5.0.0) (interfaces/draft-IERC6093.sol)
 
 pragma solidity ^0.8.19;
@@ -1459,7 +1606,11 @@ interface IERC20Errors {
      * @param balance Current balance for the interacting account.
      * @param needed Minimum amount required to perform a transfer.
      */
-    error ERC20InsufficientBalance(address sender, uint256 balance, uint256 needed);
+    error ERC20InsufficientBalance(
+        address sender,
+        uint256 balance,
+        uint256 needed
+    );
 
     /**
      * @dev Indicates a failure with the token `sender`. Used in transfers.
@@ -1479,7 +1630,11 @@ interface IERC20Errors {
      * @param allowance Amount of tokens a `spender` is allowed to operate with.
      * @param needed Minimum amount required to perform a transfer.
      */
-    error ERC20InsufficientAllowance(address spender, uint256 allowance, uint256 needed);
+    error ERC20InsufficientAllowance(
+        address spender,
+        uint256 allowance,
+        uint256 needed
+    );
 
     /**
      * @dev Indicates a failure with the `approver` of a token to be approved. Used in approvals.
@@ -1564,7 +1719,12 @@ interface IERC1155Errors {
      * @param needed Minimum amount required to perform a transfer.
      * @param tokenId Identifier number of a token.
      */
-    error ERC1155InsufficientBalance(address sender, uint256 balance, uint256 needed, uint256 tokenId);
+    error ERC1155InsufficientBalance(
+        address sender,
+        uint256 balance,
+        uint256 needed,
+        uint256 tokenId
+    );
 
     /**
      * @dev Indicates a failure with the token `sender`. Used in transfers.
@@ -1608,7 +1768,6 @@ interface IERC1155Errors {
 
 // File: @openzeppelin/contracts/utils/Context.sol
 
-
 // OpenZeppelin Contracts (last updated v5.0.0) (utils/Context.sol)
 
 pragma solidity ^0.8.19;
@@ -1635,7 +1794,6 @@ abstract contract Context {
 }
 
 // File: @openzeppelin/contracts/access/Ownable.sol
-
 
 // OpenZeppelin Contracts (last updated v5.0.0) (access/Ownable.sol)
 
@@ -1667,7 +1825,10 @@ abstract contract Ownable is Context {
      */
     error OwnableInvalidOwner(address owner);
 
-    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+    event OwnershipTransferred(
+        address indexed previousOwner,
+        address indexed newOwner
+    );
 
     /**
      * @dev Initializes the contract setting the address provided by the deployer as the initial owner.
@@ -1737,7 +1898,6 @@ abstract contract Ownable is Context {
 }
 
 // File: @openzeppelin/contracts/utils/Pausable.sol
-
 
 // OpenZeppelin Contracts (last updated v5.0.0) (utils/Pausable.sol)
 
@@ -1859,7 +2019,6 @@ abstract contract Pausable is Context {
 
 // File: @openzeppelin/contracts/token/ERC20/IERC20.sol
 
-
 // OpenZeppelin Contracts (last updated v5.0.0) (token/ERC20/IERC20.sol)
 
 pragma solidity ^0.8.19;
@@ -1881,7 +2040,11 @@ interface IERC20 {
      * @dev Emitted when the allowance of a `spender` for an `owner` is set by
      * a call to {approve}. `value` is the new allowance.
      */
-    event Approval(address indexed owner, address indexed spender, uint256 value);
+    event Approval(
+        address indexed owner,
+        address indexed spender,
+        uint256 value
+    );
 
     /**
      * @dev Returns the value of tokens in existence.
@@ -1909,7 +2072,10 @@ interface IERC20 {
      *
      * This value changes when {approve} or {transferFrom} are called.
      */
-    function allowance(address owner, address spender) external view returns (uint256);
+    function allowance(
+        address owner,
+        address spender
+    ) external view returns (uint256);
 
     /**
      * @dev Sets a `value` amount of tokens as the allowance of `spender` over the
@@ -1937,11 +2103,14 @@ interface IERC20 {
      *
      * Emits a {Transfer} event.
      */
-    function transferFrom(address from, address to, uint256 value) external returns (bool);
+    function transferFrom(
+        address from,
+        address to,
+        uint256 value
+    ) external returns (bool);
 }
 
 // File: @openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol
-
 
 // OpenZeppelin Contracts (last updated v5.0.0) (token/ERC20/extensions/IERC20Metadata.sol)
 
@@ -1969,7 +2138,6 @@ interface IERC20Metadata is IERC20 {
 }
 
 // File: @openzeppelin/contracts/token/ERC20/ERC20.sol
-
 
 // OpenZeppelin Contracts (last updated v5.0.0) (token/ERC20/ERC20.sol)
 
@@ -2002,7 +2170,8 @@ pragma solidity ^0.8.19;
 abstract contract ERC20 is Context, IERC20, IERC20Metadata, IERC20Errors {
     mapping(address account => uint256) private _balances;
 
-    mapping(address account => mapping(address spender => uint256)) private _allowances;
+    mapping(address account => mapping(address spender => uint256))
+        private _allowances;
 
     uint256 private _totalSupply;
 
@@ -2083,7 +2252,10 @@ abstract contract ERC20 is Context, IERC20, IERC20Metadata, IERC20Errors {
     /**
      * @dev See {IERC20-allowance}.
      */
-    function allowance(address owner, address spender) public view virtual returns (uint256) {
+    function allowance(
+        address owner,
+        address spender
+    ) public view virtual returns (uint256) {
         return _allowances[owner][spender];
     }
 
@@ -2097,7 +2269,10 @@ abstract contract ERC20 is Context, IERC20, IERC20Metadata, IERC20Errors {
      *
      * - `spender` cannot be the zero address.
      */
-    function approve(address spender, uint256 value) public virtual returns (bool) {
+    function approve(
+        address spender,
+        uint256 value
+    ) public virtual returns (bool) {
         address owner = _msgSender();
         _approve(owner, spender, value);
         return true;
@@ -2119,7 +2294,11 @@ abstract contract ERC20 is Context, IERC20, IERC20Metadata, IERC20Errors {
      * - the caller must have allowance for ``from``'s tokens of at least
      * `value`.
      */
-    function transferFrom(address from, address to, uint256 value) public virtual returns (bool) {
+    function transferFrom(
+        address from,
+        address to,
+        uint256 value
+    ) public virtual returns (bool) {
         address spender = _msgSender();
         _spendAllowance(from, spender, value);
         _transfer(from, to, value);
@@ -2249,7 +2428,12 @@ abstract contract ERC20 is Context, IERC20, IERC20Metadata, IERC20Errors {
      *
      * Requirements are the same as {_approve}.
      */
-    function _approve(address owner, address spender, uint256 value, bool emitEvent) internal virtual {
+    function _approve(
+        address owner,
+        address spender,
+        uint256 value,
+        bool emitEvent
+    ) internal virtual {
         if (owner == address(0)) {
             revert ERC20InvalidApprover(address(0));
         }
@@ -2270,11 +2454,19 @@ abstract contract ERC20 is Context, IERC20, IERC20Metadata, IERC20Errors {
      *
      * Does not emit an {Approval} event.
      */
-    function _spendAllowance(address owner, address spender, uint256 value) internal virtual {
+    function _spendAllowance(
+        address owner,
+        address spender,
+        uint256 value
+    ) internal virtual {
         uint256 currentAllowance = allowance(owner, spender);
         if (currentAllowance != type(uint256).max) {
             if (currentAllowance < value) {
-                revert ERC20InsufficientAllowance(spender, currentAllowance, value);
+                revert ERC20InsufficientAllowance(
+                    spender,
+                    currentAllowance,
+                    value
+                );
             }
             unchecked {
                 _approve(owner, spender, currentAllowance - value, false);
@@ -2284,7 +2476,6 @@ abstract contract ERC20 is Context, IERC20, IERC20Metadata, IERC20Errors {
 }
 
 // File: @openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol
-
 
 // OpenZeppelin Contracts (last updated v5.0.0) (token/ERC20/extensions/ERC20Permit.sol)
 
@@ -2301,7 +2492,9 @@ pragma solidity ^0.8.19;
  */
 abstract contract ERC20Permit is ERC20, IERC20Permit, EIP712, Nonces {
     bytes32 private constant PERMIT_TYPEHASH =
-        keccak256("Permit(address owner,address spender,uint256 value,uint256 nonce,uint256 deadline)");
+        keccak256(
+            "Permit(address owner,address spender,uint256 value,uint256 nonce,uint256 deadline)"
+        );
 
     /**
      * @dev Permit deadline has expired.
@@ -2336,7 +2529,16 @@ abstract contract ERC20Permit is ERC20, IERC20Permit, EIP712, Nonces {
             revert ERC2612ExpiredSignature(deadline);
         }
 
-        bytes32 structHash = keccak256(abi.encode(PERMIT_TYPEHASH, owner, spender, value, _useNonce(owner), deadline));
+        bytes32 structHash = keccak256(
+            abi.encode(
+                PERMIT_TYPEHASH,
+                owner,
+                spender,
+                value,
+                _useNonce(owner),
+                deadline
+            )
+        );
 
         bytes32 hash = _hashTypedDataV4(structHash);
 
@@ -2351,7 +2553,9 @@ abstract contract ERC20Permit is ERC20, IERC20Permit, EIP712, Nonces {
     /**
      * @inheritdoc IERC20Permit
      */
-    function nonces(address owner) public view virtual override(IERC20Permit, Nonces) returns (uint256) {
+    function nonces(
+        address owner
+    ) public view virtual override(IERC20Permit, Nonces) returns (uint256) {
         return super.nonces(owner);
     }
 
@@ -2366,14 +2570,13 @@ abstract contract ERC20Permit is ERC20, IERC20Permit, EIP712, Nonces {
 
 // File: @openzeppelin/contracts/token/ERC20/extensions/ERC20Pausable.sol
 
-
 // OpenZeppelin Contracts (last updated v5.0.0) (token/ERC20/extensions/ERC20Pausable.sol)
 
 pragma solidity ^0.8.19;
 
 /**
  * @dev ERC20 token with pausable token transfers, minting and burning.
- * 이 ERC20Pausable 컨트랙트는 일시적으로 토큰 전송, 발행 및 소각을 일시 중단할 수 있는 기능을 제공하지만 공개적인 일시 중단 및 일시 중단 해제 함수를 포함하고 있지 않습니다. 이 컨트랙트를 상속받는 경우, 해당 함수들을 정의하고 Pausable-_pause 및 Pausable-_unpause 내부 함수를 호출해야 합니다. 
+ * 이 ERC20Pausable 컨트랙트는 일시적으로 토큰 전송, 발행 및 소각을 일시 중단할 수 있는 기능을 제공하지만 공개적인 일시 중단 및 일시 중단 해제 함수를 포함하고 있지 않습니다. 이 컨트랙트를 상속받는 경우, 해당 함수들을 정의하고 Pausable-_pause 및 Pausable-_unpause 내부 함수를 호출해야 합니다.
  *
  * Useful for scenarios such as preventing trades until the end of an evaluation
  * period, or having an emergency switch for freezing all token transfers in the
@@ -2393,13 +2596,16 @@ abstract contract ERC20Pausable is ERC20, Pausable {
      *
      * - the contract must not be paused.
      */
-    function _update(address from, address to, uint256 value) internal virtual override whenNotPaused {
+    function _update(
+        address from,
+        address to,
+        uint256 value
+    ) internal virtual override whenNotPaused {
         super._update(from, to, value);
     }
 }
 
 // File: @openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol
-
 
 // OpenZeppelin Contracts (last updated v5.0.0) (token/ERC20/extensions/ERC20Burnable.sol)
 
@@ -2438,25 +2644,40 @@ abstract contract ERC20Burnable is Context, ERC20 {
     }
 }
 
-// File: Incheon_Coffeebak_Token.sol
-
+// File: Incheon_Coffeebak_Token_flattened_v2.0.sol
 
 pragma solidity ^0.8.19;
 
 // npm install @openzeppelin/contracts
 
 // 오너는 단 하나의 지갑일 수밖에 없고, 변경 가능하다.
-// 금고의 접근 권한은 approve() 함수를 통해 여러 명일 수 있지만, 금고를 배포자가 아닌 CA에게 넘겨줌으로써 CA는 트랜잭션을 발생시킬 수 없으므로 오너가 변경되는 경우가 아니면 변경될 수 없다. 
-// 따라서 금고(CA)의 접근 권한은 오로지 오너만 가능하며 오너와 금고(CA)에 대한 접근 권한은 분리될 수 없다.
-contract Incheon_Coffeebak_Token is ERC20, Ownable, ERC20Burnable, ERC20Pausable, ERC20Permit {
+// 금고의 접근 권한은 approve() 함수를 통해 여러 명일 수 있지만
+// 금고를 배포자가 아닌 CA에게 넘겨주게 되면
+// 컨트랙 내에 다른 컨트랙의 함수를 호출하는 게 아니면 CA는 트랜잭션을 발생시킬 수 없으므로
+// 오너가 변경되는 경우가 아니면 금고의 접근 권한은 변경될 수 없다.
+// 따라서 배포 당시 금고(CA)의 접근 권한을 오너에게 넘겨주었다면
+// 금고(CA)에 대한 접근은 오로지 오너만 가능하며
+// 오너와 금고(CA)에 대한 접근 권한은 분리될 수 없다.
+contract Incheon_Coffeebak_Token is
+    ERC20,
+    Ownable,
+    ERC20Burnable,
+    ERC20Pausable,
+    ERC20Permit
+{
     //
+    // 지급 받은 총 토큰에 대한 양
     mapping(address account => uint256) public my_total_ICT;
-    
+
+    // 여기서 msg.sender는 배포자
+    // 즉 배포자가 ICT 컨트랙의 소유자가 된다.
     constructor()
         ERC20("Incheon_Coffeebak_Token", "ICT")
         Ownable(_msgSender())
         ERC20Permit("Incheon_Coffeebak_Token")
     {
+        // 여기서 msg.sender는 배포자
+        // 여기서 address(this)는 ICT의 CA
         // 배포 시 민팅되는 토큰은 CA에게 발행해준다.
         // 그리고 CA의 토큰 잔액 전량에 대해 접근 권한을 배포자에게 부여한다.
         _mint(address(this), 1000000000 * 10 ** decimals());
@@ -2472,42 +2693,58 @@ contract Incheon_Coffeebak_Token is ERC20, Ownable, ERC20Burnable, ERC20Pausable
         _unpause();
     }
 
-    // 추가 민팅 역시 CA에게 전송되며, 추가 발행량 만큼 접근 권한도 증가시켜준다.
-    function mint(uint256 amount) public onlyOwner {
-        _mint(address(this), amount);
+    // 여기서 address(this)는 ICT의 CA
+    // 여기서 msg.sender는 ICT 컨트랙트의 오너
+    // 추가 민팅 역시 CA에게 전송되며, 추가 발행량 만큼 오너의 접근 권한도 증가시켜준다.
+    function mint(uint256 _amount) public onlyOwner {
+        //
+        _mint(address(this), _amount);
         uint256 old_amount = allowance(address(this), _msgSender());
-        _approve(address(this), _msgSender(), old_amount + amount);
+        _approve(address(this), _msgSender(), old_amount + _amount);
 
         // // 아니면 현재 CA 잔액만큼 접근 권한을 설정해줘도 될 듯하다.
         // _approve(address(this), msg.sender, balanceOf(address(this)));
     }
 
+    // 여기서 address(this)는 ICT의 CA
+    // 여기서 msg.sender는 ICT 컨트랙트의 오너
     // 만약 오너를 없애고자 할 경우 CA의 토큰에 대한 접근 권한도 0으로 초기화시켜준다.
-    // 따라서 CA는 트랜잭션을 발생시킬 수 없으므로 더 이상 CA의 토큰은 사용될 수 없다.
+    // CA의 토큰에 접근하고자 한다면 _approve() 함수는 internal이라서 외부에서 호출할 수 없고
+    // approve() 함수는 owner = msg.sender이기 때문에 CA가 msg.sender가 되어야 하는데
+    // CA가 msg.sender가 될 수 있는 경우의 수는 CA의 컨트랙 내부에서 다른 컨트랙의 함수를 호출해야 하는데
+    // 이미 배포된 코드는 변경될 수 없으므로 더 이상 CA의 토큰은 사용될 수 없다.
     function renounceOwnership() public override onlyOwner {
-        _transferOwnership(address(0));
+        //
+        super.renounceOwnership();
         _approve(address(this), _msgSender(), 0);
     }
 
-    // 만약 오너를 바꾸고자 한다면 CA 토큰 접근 권한에 대해 기존 오너는 0으로 초기화시키고, 새 오너는 현재 CA 토큰 잔액만큼 부여해준다.
-    function transferOwnership(address newOwner) public override onlyOwner {
-        _transferOwnership(newOwner);
+    // 여기서 address(this)는 ICT의 CA
+    // 여기서 msg.sender는 ICT 컨트랙트의 오너
+    // 만약 오너를 바꾸고자 한다면 CA 토큰 접근 권한에 대해 기존 오너는 0으로 초기화시키고
+    // 새 오너는 현재 CA 토큰 잔액만큼 부여해준다.
+    function transferOwnership(address _new_owner) public override onlyOwner {
+        //
+        super.transferOwnership(_new_owner);
         _approve(address(this), _msgSender(), 0);
-        _approve(address(this), newOwner, balanceOf(address(this)));
+        _approve(address(this), _new_owner, balanceOf(address(this)));
     }
 
     // The following functions are overrides required by Solidity.
 
-    // 결국 업데이트 함수가 토큰이 이동하는 최종 함수로서, 상속 받아서 재정의하는 것이 요구되어 있다. (=> 왜? 추가적인 이벤트 생성 시 사용하려고 그러나?)
-    // 이 _update() 함수는 ERC20, ERC20Pausable 컨트랙에 정의되어 있고, 상속 순서에 따라 ERC20Pausable 컨트랙의 _update() 함수가 호출된다.
-    // (=> 따라서 상속해주는 컨트랙들 간에 동일한 함수가 있을 경우 반드시 재정의가 요구되는 것 같다.)
+    // 결국 업데이트 함수가 토큰이 이동하는 최종 함수로서
+    // 상속 받아서 재정의하는 것이 요구되어 있다.
+    // 이 _update() 함수는 ERC20, ERC20Pausable 컨트랙에 정의되어 있고
+    // 상속 순서에 따라 ERC20Pausable 컨트랙의 _update() 함수가 호출된다.
+    // 따라서 상속해주는 컨트랙들 간에 동일한 함수가 있을 경우 반드시 재정의가 요구되는 것 같다.
     function _update(
-        address from,
-        address to,
-        uint256 value
+        address _from,
+        address _to,
+        uint256 _value
     ) internal override(ERC20, ERC20Pausable) {
-        super._update(from, to, value);
-        my_total_ICT[to] += value;
+        //
+        super._update(_from, _to, _value);
+        my_total_ICT[_to] += _value;
     }
 
     // receive(), fallback() 함수는 구현하지 않음

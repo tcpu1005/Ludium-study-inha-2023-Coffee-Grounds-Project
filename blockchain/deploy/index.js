@@ -12,7 +12,7 @@ const { get_abi_fn, get_bytecode_fn } = require("../compile");
 const { get_infura_provider_fn, get_wallet_fn } = require("../create_wallet_ethers_v5.7.2");
 
 
-module.exports.deploy = async (fileName, argument) => {
+module.exports.deploy = async (fileName, arguments) => {
     //
 
     const abi = get_abi_fn(fileName);
@@ -38,14 +38,14 @@ module.exports.deploy = async (fileName, argument) => {
         let contract;
 
 
-        if (!argument) {
+        if (!arguments) {
             contract = await factory.deploy();
             console.log('contract address', contract.address);
         }
 
 
         else {
-            contract = await factory.deploy(argument);
+            contract = await factory.deploy(...arguments);
             console.log('contract address', contract.address);
         }
 
