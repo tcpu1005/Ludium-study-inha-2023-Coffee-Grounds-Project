@@ -2,6 +2,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout_user_fn } from "../../redux/middleware";
 import { useNavigate } from "react-router-dom";
 import { Button_4 } from "../../base_style";
+import {Main_button, Join_button, Login_button,Emission_button, Incentive_button, Token_button, Changetoken_button, Requestcheck_button,
+Myemission_button, Complete_button, Total}
+from "./style";
 
 
 const Gnb_page = () => {
@@ -61,13 +64,14 @@ const Gnb_page = () => {
 
   return (
     <>
+    <Total>
       {/* 1_MAIN */}
-      <Button_4 onClick={() => all_user_page_fn("/")}>메인 페이지로 이동하기</Button_4>
+      <Main_button onClick={() => all_user_page_fn("/")}>메인 페이지로 이동하기</Main_button>
 
 
       {/* 2_JOIN_CHOICE */}
       {!is_login &&
-        <Button_4 onClick={() => nav("/join/choice")}>회원 가입하기</Button_4>
+        <Join_button onClick={() => nav("/join/choice")}>회원 가입하기</Join_button>
       }
 
 
@@ -84,7 +88,7 @@ const Gnb_page = () => {
 
       {/* 5_LOGIN */}
       {!is_login &&
-        <Button_4 onClick={() => nav("/login")}>로그인하기</Button_4>
+        <Login_button onClick={() => nav("/login")}>로그인하기</Login_button>
       }
 
 
@@ -94,7 +98,7 @@ const Gnb_page = () => {
 
 
       {/* 6_MY_PAGE_CAFE_COFFEE */}
-      <Button_4 onClick={() => only_logined_page_fn("/emission", "Cafe")}>나의 배출 목록 및 배출하기</Button_4>
+      <Emission_button onClick={() => only_logined_page_fn("/emission", "Cafe")}>나의 배출 목록 및 배출하기</Emission_button>
 
 
       {/* 7_MY_PAGE_CAFE_COFFEE_INPUT */}
@@ -102,20 +106,20 @@ const Gnb_page = () => {
 
 
       {/* 8_MY_PAGE_CAFE_INSENTIVE */}
-      <Button_4 onClick={() => only_logined_page_fn("/insentive", "Cafe")}>나의 인센티브 확인하기</Button_4>
+      <Incentive_button onClick={() => only_logined_page_fn("/insentive", "Cafe")}>나의 인센티브 확인하기</Incentive_button>
 
 
       {/* 9_MY_PAGE_CAFE_TOKEN */}
-      <Button_4 onClick={() => only_logined_page_fn("/insentive/token", "Cafe")}>나의 토큰 확인하기</Button_4>
+      <Token_button onClick={() => only_logined_page_fn("/insentive/token", "Cafe")}>나의 토큰 확인하기</Token_button>
 
 
       {/* 10_MY_PAGE_CAFE_TOKEN_EXCHANGE */}
-      <Button_4 onClick={() => only_logined_page_fn("/insentive/token/exchange", "Cafe")}>토큰 환전하기</Button_4>
+      <Changetoken_button onClick={() => only_logined_page_fn("/insentive/token/exchange", "Cafe")}>토큰 환전하기</Changetoken_button>
 
 
       {/* 11_MY_PAGE_COLLECTOR */}
       {/* 모든 수거 요청 목록 조회 + 수거자만 수거하기 버튼 접근 가능 */}
-      <Button_4 onClick={() => all_user_page_fn("/collection")}>수거 요청 목록 확인하기</Button_4>
+      <Requestcheck_button onClick={() => all_user_page_fn("/collection")}>수거 요청 목록 확인하기</Requestcheck_button>
 
 
       {/* 12_MY_PAGE_COLLECTOR_INPUT */}
@@ -124,12 +128,13 @@ const Gnb_page = () => {
 
       {/* 13_MY_PAGE_COLLECTOR_CHECK */}
       {/* 나의 수거 완료 목록 조회 + 수정하기 버튼 (준비중) + 검증 완료 버튼 (해당 페이지 수거자만 접근 가능) */}
-      <Button_4 onClick={() => only_logined_page_fn("/collection/check", "Collector")}>나의 수거 목록 확인하기</Button_4>
+      <Myemission_button onClick={() => only_logined_page_fn("/collection/check", "Collector")}>나의 수거 목록 확인하기</Myemission_button>
 
 
       {/* 14_COLLECTION_ONCHAIN */}
       {/* 모든 보상 완료 목록 확인하기 (오라클 문제, 검증자 역할의 수거자에게 책임감을 강화시키기 위한 페이지) */}
-      <Button_4 onClick={() => all_user_page_fn("/collection/onchain")}>보상 완료 목록 확인하기</Button_4>
+      <Complete_button onClick={() => all_user_page_fn("/collection/onchain")}>보상 완료 목록 확인하기</Complete_button>
+    </Total>
     </>
   )
 }
