@@ -1,11 +1,9 @@
 import styled from "styled-components";
 import { WHITEBEIGE_COLOR_1, GREEN_COLOR_1 } from '../../base_style';
 
-export const Total= styled.div`
-position: absolute;
-top: -14vw;
-left; 11vw;
 
+export const Total= styled.div`
+padding-top: 20%;
 `
 
 export const Main_button = styled.button`
