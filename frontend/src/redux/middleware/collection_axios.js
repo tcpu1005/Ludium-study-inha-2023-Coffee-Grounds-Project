@@ -5,18 +5,15 @@ const REACT_APP_BACK_SERVER_PATH =
     process.env.REACT_APP_BACK_SERVER_PATH || "http://localhost:8080";
 
 
-const register_emission_fn = (members_cafe_collection_data) => {
+const register_emission_fn = async (cafe_emission_data) => {
     //
 
-    return async (dispatch, getState) => {
-        const cafe_id = getState().user_reducer.cafe_id;
-        members_cafe_collection_data = { ...members_cafe_collection_data, cafe_id };
-        await axios({
-            url: `${REACT_APP_BACK_SERVER_PATH}/api/v1/members/cafe/collection`,
-            data: members_cafe_collection_data,
-            method: "post",
-        });
-    };
+    const res = await axios({
+        url: `${REACT_APP_BACK_SERVER_PATH}/api/v1/members/cafe/collection`,
+        data: cafe_emission_data,
+        method: "post",
+    });
+    return res.data;
 };
 
 

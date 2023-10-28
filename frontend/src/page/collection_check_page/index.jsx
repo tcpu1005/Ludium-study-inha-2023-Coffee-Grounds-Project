@@ -8,27 +8,35 @@ import List_component from "../../component/list_component";
 import { MAROON_COLOR_1 } from "../../base_style";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
+import { useSelector } from "react-redux";
 
 const Collection_check_page = () => {
   //
 
   const nav = useNavigate();
+  const is_login = useSelector((state) => state.user_reducer.is_login);
 
   // 10개씩 보여주기
   const page_unit = 7;
 
   // 페이지네이션 넘버는 5개만 보여주기
   const page_number_unit = 5;
-
   const [total_page_count, set_total_page_count] = useState(0);
   const [collection_choice, set_collection_choice] = useState();
   const [current_page_number, set_current_page_number] = useState(0);
-
   const [collection_list, set_collection_list] = useState(new Array());
+
 
   // 수거 페이지 접속 시 백과 통신하여 수거 목록 조회
   useEffect(() => {
     //
+
+    if (!is_login) {
+      alert("로그인부터 해주세요!");
+      nav("/login");
+      return;
+    }
+
 
     // 총 페이지 수를 구하는 함수 (데이터가 131개일 경우 14 페이지)
     const get_new_total_page_count_fn = (new_collection_list) => {
@@ -89,6 +97,7 @@ const Collection_check_page = () => {
 
     get_my_collections_fn();
   }, []);
+
 
   const plus_current_page_number_button_fn = () => {
     //

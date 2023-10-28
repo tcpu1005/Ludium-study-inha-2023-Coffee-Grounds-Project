@@ -1,24 +1,34 @@
 // 7_MY_PAGE_CAFE_COFFEE_INPUT
 
+
 import { Entire_container, DivContainer, LabelDiv, InputDiv } from "./style";
 import Big_title_component from "../../component/big_title_component";
 import { register_emission_fn } from "../../redux/middleware";
-import { useDispatch, useSelector } from "react-redux";
 import { Button_2 } from "../../base_style";
+import { useNavigate } from "react-router";
+import { useSelector } from "react-redux";
 import { useRef } from "react";
 
 
 const Emission_input_page = () => {
   //
 
-  const dispatch = useDispatch();
+  const nav = useNavigate();
   const coffee_status_ref = useRef();
   const coffee_amount_ref = useRef();
   const cafe_id = useSelector((state) => state.user_reducer.cafe_id);
+  const is_login = useSelector((state) => state.user_reducer.is_login);
   const cafe_name = useSelector((state) => state.user_reducer.cafe_name);
 
 
-  const emission_button_fn = (e) => {
+  if (!is_login) {
+    alert("로그인부터 해주세요!");
+    nav("/login");
+    return;
+  }
+
+
+  const emission_button_fn = async (e) => {
     //
 
     const coffee_status = coffee_status_ref.current.value;
@@ -46,15 +56,21 @@ const Emission_input_page = () => {
     }
 
 
-    const members_cafe_collection_data = {
+    const cafe_emission_data = {
       coffee_amount,
       coffee_status,
       cafe_name,
       cafe_id,
     };
 
-    // 여기서 디스패치 날리면 됩니다.
-    dispatch(register_emission_fn(members_cafe_collection_data));
+
+    const { success, message } = await register_emission_fn(cafe_emission_data);
+    alert(message);
+
+
+    if (success) {
+      nav("/emission");
+    }
   };
 
 

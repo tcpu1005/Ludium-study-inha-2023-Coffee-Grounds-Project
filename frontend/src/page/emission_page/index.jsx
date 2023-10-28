@@ -29,6 +29,7 @@ const Emission_page = () => {
   const [total_page_count, set_total_page_count] = useState(0);
   const [emission_list, set_emission_list] = useState(new Array());
   const [current_page_number, set_current_page_number] = useState(0);
+  const is_login = useSelector((state) => state.user_reducer.is_login);
 
 
   // 목록 개수가 131개일 경우 14개
@@ -59,6 +60,13 @@ const Emission_page = () => {
     // });
 
 
+    if (!is_login) {
+      alert("로그인부터 해주세요!");
+      nav("/login");
+      return;
+    }
+    
+
     (async () => {
       //
 
@@ -77,7 +85,7 @@ const Emission_page = () => {
         alert(total_emission_data.message);
         return;
       }
-      
+
 
       set_total_amount(total_emission_data.data.total_emission); // 객체 대신 값만 저장
       set_total_page_count(get_new_total_page_count_fn(data));

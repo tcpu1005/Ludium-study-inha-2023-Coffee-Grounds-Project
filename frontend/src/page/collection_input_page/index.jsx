@@ -5,8 +5,8 @@ import {
 } from "./style";
 import Big_title_component from "../../component/big_title_component";
 import { resigter_collection_fn } from "../../redux/middleware";
+import { useLocation, useNavigate } from "react-router";
 import { Button_9 } from "../../base_style";
-import { useLocation } from "react-router";
 import { useSelector } from "react-redux";
 import { useRef } from "react";
 
@@ -14,8 +14,10 @@ import { useRef } from "react";
 const Collection_input_page = () => {
   //
 
+  const nav = useNavigate();
   const location = useLocation();
   const company_name = useSelector((state) => state.user_reducer.company_name);
+  const is_login = useSelector((state) => state.user_reducer.is_login);
 
 
   // 수거 목록 페이지에서 선택한 수거 목록의 데이터가 여기에 들어있다.
@@ -49,6 +51,13 @@ const Collection_input_page = () => {
   const coffee_status_ref = useRef();
   const coffee_amount_ref = useRef();
   const collection_date_ref = useRef();
+
+
+  if (!is_login) {
+    alert("로그인부터 해주세요!");
+    nav("/login");
+    return;
+  }
 
 
   const collection_button_fn = (e) => {

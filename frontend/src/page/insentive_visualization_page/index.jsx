@@ -1,16 +1,26 @@
 // 8_MY_PAGE_CAFE_INSENTIVE
 
+
 import {
     Outcontainer_green1, Outcontainer_beige1, Outcontainer_green2, Outcontainer_beige2, Outcontainer_green3,
     Token_cha, Emission_weight, Decreased_cost, Dec_carbon, Dec_cost, Dec_cost2
 } from "./style";
 import { useNavigate } from "react-router";
+import { useSelector } from "react-redux";
 
 
 const Insentive_visualization_page = () => {
     //
 
     const nav = useNavigate();
+    const is_login = useSelector((state) => state.user_reducer.is_login);
+
+
+    if (!is_login) {
+        alert("로그인부터 해주세요!");
+        nav("/login");
+        return;
+    }
 
 
     // 블록체인 통신 예정

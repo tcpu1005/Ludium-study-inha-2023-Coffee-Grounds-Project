@@ -3,33 +3,18 @@ const { Op } = require("sequelize");
 
 
 module.exports.register_emission_fn = async (req, res) => {
-    const { coffee_amount, coffee_status, cafe_id, cafe_name } = req.body;
-
-    console.log(req.body);
+    //
 
     try {
-        // 유효성 검사
-        if (!coffee_amount || !coffee_status) {
-            console.log("FAIL");
-            console.log("양 혹은 질 중 입력이 되질 않았습니다.");
-            // return res.status(400).json({ message: "" });
-        } else {
-            const created_coffee = await CollectionRecords.create({
-                cafe_id: cafe_id,
-                cafe_name: cafe_name,
-                coffee_amount: coffee_amount,
-                coffee_status: coffee_status,
-                reward_status: "수거요청",
-            });
-            console.log(created_coffee);
-            console.log("배출 입력이 완료되었습니다.");
-        }
-        //커피박 양과 질 CollectionRecords에 생성
+        const created_coffee = await CollectionRecords.create({
+            ...req.body,
+            reward_status: "수거요청",
+        });
+        res.send({ success: true, message: "배출 입력에 성공하였습니다." });
     } catch (error) {
-        console.error(error);
+        console.log(`register_emission_fn : ${error}`);
+        res.send({ success: false, message: "배출 입력에 실패하였습니다." });
     }
-    // 응답 보내기
-    // res.status(200).json({ message: "Data successfully recorded." });
 };
 
 
