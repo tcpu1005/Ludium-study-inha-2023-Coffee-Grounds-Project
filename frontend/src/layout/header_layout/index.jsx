@@ -1,9 +1,10 @@
 // 모든 화면에 보일 Header_layout 컴포넌트
 
 
+import { First_brown, Arrow_button, First_white, Second_brown, Second_white, Toggle_button } from './style';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
-import { First_brown, Brown_title, Arrow_button, First_white, Second_brown, Second_white, Toggle_button } from './style';
+import { useSelector } from "react-redux"
 
 
 const Header_layout = () => {
@@ -13,6 +14,14 @@ const Header_layout = () => {
     const location = useLocation();
     const current_path = location.pathname;
 
+    
+    // 로그인한 유저가 카페일 경우 카페명 표시
+    const cafe_name = useSelector((state) => state.user_reducer.cafe_name);
+    
+    
+    // 수거자일 경우 수거자명 표시
+    const user_name = useSelector((state) => state.user_reducer.user_name);
+    
 
     const get_header_title_fn = () => {
         switch (current_path) {
@@ -82,15 +91,13 @@ const Header_layout = () => {
 
     return (
         <>
-
-            <div style= {{display: 'flex'}}>
-
+            <div style={{ display: 'flex' }}>
                 <Arrow_button onClick={() => nav(-1)}>←</Arrow_button>
                 <First_brown>{get_header_title_fn()}</First_brown>
                 <Toggle_button onClick={() => nav("/gnb")}>☰</Toggle_button>
             </div>
             <First_white></First_white>
-            <Second_brown></Second_brown>
+            <Second_brown>{cafe_name || user_name || "커피박은 가치多!"}</Second_brown>
             <Second_white></Second_white>
 
 
