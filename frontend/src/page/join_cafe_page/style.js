@@ -33,11 +33,11 @@ position: absolute;
     width: 23.75vw;
     height: 7.5vw;
     left: calc(50% - 15.75vw/2 - 34.06vw);
-    top: 37.56vw;
+    top: 56vw;
     font-family: 'Arita-dotum4.0(OTF)';
     font-style: normal;
     font-weight: 500;
-    font-size: 5vw;
+    font-size: 4vw;
     line-height: 5vw;
     display: flex;
     align-items: center;
@@ -53,12 +53,12 @@ position: absolute;
 width: 23.78vw;
 height: 7.5vw;
 left: calc(50% - 23.75vw/2 - 32.19vw);
-top: 59vw;
+top: 72vw;
 
 font-family: 'Arita-dotum4.0(OTF)';
 font-style: normal;
 font-weight: 500;
-font-size: 5vw;
+font-size: 4vw;
 line-height: 5vw;
 display: flex;
 align-items: center;
@@ -75,12 +75,12 @@ position: absolute;
 width: 23.75vw;
 height: 7.5vw;
 left: calc(50% - 8.75vw/2 - 35vw);
-    top: 82vw;
+    top: 88vw;
 
 font-family: 'Arita-dotum4.0(OTF)';
 font-style: normal;
 font-weight: 500;
-font-size: 5vw;
+font-size: 4vw;
 line-height: 5vw;
 display: flex;
 align-items: center;
@@ -102,7 +102,7 @@ top: calc(50% - 29.5vw/2 + 44.06vw);
 font-family: 'Arita-dotum4.0(OTF)';
 font-style: normal;
 font-weight: 500;
-font-size: 5vw;
+font-size: 4vw;
 line-height: 5vw;
 display: flex;
 align-items: center;
@@ -123,7 +123,7 @@ top: 103vw;
 font-family: 'Arita-dotum4.0(OTF)';
 font-style: normal;
 font-weight: 500;
-font-size: 5vw;
+font-size: 4vw;
 line-height: 5vw;
 display: flex;
 align-items: center;
@@ -136,10 +136,10 @@ color: #6F6F4B;
 export const Right_id = styled.input`
 
 position: absolute;
-width: 71.56vw;
-height: 11.56vw;
+width: 70.56vw;
+height: 8.56vw;
 left: 29vw;
-top: 36.19vw;
+top: 56vw;
 background: #E8D4B9;
 border-radius: 60px 0px 0px 60px;
 border: none;
@@ -161,10 +161,10 @@ color: #6F6F4B;
 export const Right_password = styled.input`
 
 position: absolute;
-width: 71.56vw;
-height: 11.56vw;
+width: 70.56vw;
+height: 8.56vw;
 left: 29vw;
-top: 56vw;
+top: 72vw;
 
 background: #E8D4B9;
 border-radius: 60px 0px 0px 60px;
@@ -185,10 +185,10 @@ color: #6F6F4B;
 `
 export const Right_name = styled.input`
 position: absolute;
-width: 72.5vw;
-height: 11.56vw;
+width: 70.56vw;
+height: 8.56vw;
 left: 29vw;
-top: 79vw;
+top: 88vw;
 
 background: #E8D4B9;
 border-radius: 60px 0px 0px 60px;
@@ -210,10 +210,10 @@ color: #6F6F4B;
 export const Right_cafename = styled.input`
 
 position: absolute;
-width: 72.5vw;
-height: 11.56vw;
+width: 70.56vw;
+height: 8.56vw;
 left: 29vw;
-top: 100.19vw;
+top: 104.19vw;
 
 background: #E8D4B9;
 border-radius: 60px 0px 0px 60px;
@@ -307,4 +307,32 @@ text-align: center;
 letter-spacing: 0.11em;
 
 color: #6F6F4B;
+`
+
+export const Adddong_container2 = styled.option`
+background: #E8D4B9;
+border-radius: 60px;
+border:none;
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 500;
+font-size: 3.44vw;
+line-height: 3.44vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.11em;
+
+color: #6F6F4B;
+`
+
+export const Background_image= styled.div`
+background: url('https://i.pinimg.com/originals/b3/a6/26/b3a626dd0b36654c075d8d532e3fe44d.png');
+    position: absolute;
+    width: 115.56vw;
+    height: 126.75vw;
+    left: -16.56vw;
+    top: 32.5vw;
+    
 `

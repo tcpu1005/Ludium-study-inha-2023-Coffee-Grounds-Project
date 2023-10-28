@@ -72,44 +72,93 @@ h6 {
 
 // 회원 유형 선택 버튼 중 위에거
 export const Button_1 = styled.button`
-background-color: #E8D4B9;
-padding: 3.28vw 3.28vw 3.28vw 3.28vw;
-color: #6F6F4B;
-border: none;
-border-radius: 60px;
-font-size: 6.25vw;
-box-shadow: 1.25vw 2.5vw 1.25vw rgba(0, 0, 0, 0.3);
+
+position: absolute;
 width: 33.75vw;
 height: 14.69vw;
-margin:17.69vw 31.88vw 4.69vw 31.88vw;
+left: calc(50% - 33.75vw/2);
+top: calc(50% - 14.69vw/2 - 6.41vw);
+
+background: #E8D4B9;
+box-shadow: 4px 8px 4px rgba(0, 0, 0, 0.3);
+border-radius: 60px;
+
+font-family: 'Gowun Batang';
+font-style: normal;
+font-weight: 700;
+font-size: 6.25vw;
+line-height: 53.5%;
+justify-content: center;
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.03em;
+border: none;
+
+color: #6F6F4B;
 
 `;
 
 //회원 유형 버튼 중 아래거
 export const Button_5 = styled.button`
-background-color: #E8D4B9;
-    padding: 3.28vw 3.28vw 3.28vw 3.28vw;
-    color: #6F6F4B;
-    border-radius: 60px;
-    border: none;
-    font-size: 6.25vw;
-    box-shadow: 1.25vw 2.5vw 1.25vw rgba(0, 0, 0, 0.3);
-    width: 33.75vw;
-    height: 14.69vw;
-    margin: 13.44vw;
+position: absolute;
+width: 33.75vw;
+height: 14.69vw;
+left: calc(50% - 33.75vw/2);
+top: calc(50% - 14.69vw/2 + 21.72vw);
+
+background: #E8D4B9;
+box-shadow: 4px 8px 4px rgba(0, 0, 0, 0.3);
+border-radius: 60px;
+border:none;
+
+font-family: 'Gowun Batang';
+font-style: normal;
+font-weight: 700;
+font-size: 6.25vw;
+line-height: 53.5%;
+/* or 11px */
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.03em;
+border:none;
+justify-content: center;
+
+color: #6F6F4B;
 
 `
 
 
 // 화면 아래에 베이지 버튼이라 가정
 export const Button_2 = styled.button`
-box-shadow: 1.25vw 2.5vw 1.25vw rgba(0, 0, 0, 0.3);
-background-color: ${WHITEBEIGE_COLOR_1};
-color: ${BROWN_COLOR_1};
-padding: 3vw 8.13vw;
+
+position: absolute;
+width: 33.75vw;
+height: 14.69vw;
+left: calc(50% - 33.75vw/2);
+top: calc(50% - 14.69vw/2 + 21.72vw);
+
+background: #E8D4B9;
+box-shadow: 4px 8px 4px rgba(0, 0, 0, 0.3);
 border-radius: 60px;
+border:none;
+
+font-family: 'Gowun Batang';
+font-style: normal;
+font-weight: 700;
 font-size: 6.25vw;
-margin: 5vw;
+line-height: 53.5%;
+/* or 11px */
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.03em;
+border:none;
+
+color: #6F6F4B;
+
 `;
 
 
