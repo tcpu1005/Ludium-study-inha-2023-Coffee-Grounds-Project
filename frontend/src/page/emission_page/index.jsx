@@ -2,6 +2,7 @@
 
 
 import { get_my_emission_list_fn, get_total_emission_fn } from "../../redux/middleware";
+import { get_total_page_count_fn } from "../../function/get_total_page_count_fn";
 import Small_title_component from "../../component/small_title_component";
 import { Span_pageNumDirectionBtn, Span_pageNumBtn } from "./style";
 import List_component from "../../component/list_component";
@@ -32,40 +33,16 @@ const Emission_page = () => {
   const is_login = useSelector((state) => state.user_reducer.is_login);
 
 
-  // 목록 개수가 131개일 경우 14개
-  const get_new_total_page_count_fn = (emission_list) => {
-    //
-
-    const page_count_temp = emission_list.length / page_unit;
-    const is_int = page_count_temp === parseInt(page_count_temp);
-    if (!is_int) {
-      return parseInt(page_count_temp) + 1;
-    }
-    return page_count_temp;
-  };
-
-
   // 배출 페이지 접속 시 백과 통신하여 배출 목록 조회
   useEffect(() => {
     //
-
-    // 더미 데이터
-    // const new_emission_list = Array.from({ length: 131 }, (i, v) => {
-    //   return {
-    //     reward_process: "보상 완료",
-    //     updated_at: Date(),
-    //     coffee_amount: 100,
-    //     token: 100,
-    //   };
-    // });
-
 
     if (!is_login) {
       alert("로그인부터 해주세요!");
       nav("/login");
       return;
     }
-    
+
 
     (async () => {
       //
@@ -88,7 +65,7 @@ const Emission_page = () => {
 
 
       set_total_amount(total_emission_data.data.total_emission); // 객체 대신 값만 저장
-      set_total_page_count(get_new_total_page_count_fn(data));
+      set_total_page_count(get_total_page_count_fn(data, page_unit));
       set_current_page_number(1);
       set_emission_list(data);
     })();
@@ -103,8 +80,6 @@ const Emission_page = () => {
       alert("마지막 페이지입니다.");
       return;
     }
-
-
     set_current_page_number((v) => v + 1);
   };
 
@@ -117,8 +92,6 @@ const Emission_page = () => {
       alert("첫 페이지입니다.");
       return;
     }
-
-
     set_current_page_number((v) => v - 1);
   };
 

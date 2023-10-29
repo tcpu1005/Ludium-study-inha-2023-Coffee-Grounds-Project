@@ -1,5 +1,7 @@
 // 11_MY_PAGE_COLLECTOR
 
+
+import { get_total_page_count_fn } from "../../function/get_total_page_count_fn";
 import Small_title_component from "../../component/small_title_component";
 import { Span_pageNumDirectionBtn, Span_pageNumBtn } from "./style";
 import List_component from "../../component/list_component";
@@ -8,12 +10,14 @@ import { MAROON_COLOR_1 } from "../../base_style";
 import { useState, useEffect } from "react";
 import { Button_3 } from "../../base_style";
 import { useNavigate } from "react-router";
+import { useSelector } from "react-redux";
 
 
 const Collection_page = () => {
   //
 
   const nav = useNavigate();
+  const company_name = useSelector((state) => state.user_reducer.company_name);
 
 
   // 10개씩 보여주기
@@ -32,62 +36,21 @@ const Collection_page = () => {
   useEffect(() => {
     //
 
-    // 총 페이지 수를 구하는 함수 (데이터가 131개일 경우 14 페이지)
-    const get_new_total_page_count_fn = (new_collection_list) => {
-      //
-
-      const page_count_temp = new_collection_list.length / page_unit;
-      const isInt = page_count_temp === parseInt(page_count_temp);
-      if (!isInt) {
-        return parseInt(page_count_temp) + 1;
+    (async () => {
+      const { success, data, message } = await get_collections_fn();
+      if (!success) {
+        alert(message);
+        return;
       }
 
-      return page_count_temp;
-    };
 
-    // 백 연결 전 더미 데이터를 형성하는 함수
-    const use_dummy_data_fn = () => {
-      // 백 응답 결과 (리덕스 X)
-
-      // 여기에 액션 날리면 됩니다.
-      const new_collection_list = Array.from({ length: 131 }, (v, i) => {
-        return {
-          record_id: `UUID_CAFFEINE_ADDICTION_${i}`,
-          reward_status: "수거요청",
-          updated_at: new Date(),
-          coffee_amount: 100,
-          coffee_status: "곰팡이",
-        };
-      });
-
+      set_collection_list(data);
       set_current_page_number(1);
-      set_collection_list(new_collection_list);
-      set_total_page_count(get_new_total_page_count_fn(new_collection_list));
-    };
+      set_total_page_count(get_total_page_count_fn(data, page_unit));
+    })();
 
-    // 백 통신 함수
-
-    const fetch_data = async () => {
-      try {
-        console.log("실행됨1");
-        const result = await get_collections_fn(); // 이 부분에서 백과 통신하고 결과를 가져옵니다.
-
-        if (!result.data) {
-          use_dummy_data_fn();
-          return;
-        }
-
-        set_current_page_number(1);
-        set_collection_list(result.data); // 가져온 결과로 상태를 업데이트합니다.\
-        set_total_page_count(get_new_total_page_count_fn(result.data));
-      } catch (error) {
-        console.error("Error fetching collector collections:", error);
-        use_dummy_data_fn();
-      }
-    };
-
-    fetch_data();
   }, []);
+
 
   const plus_current_page_number_button_fn = () => {
     //
@@ -97,9 +60,9 @@ const Collection_page = () => {
       alert("마지막 페이지입니다.");
       return;
     }
-
     set_current_page_number((v) => v + 1);
   };
+
 
   const minus_current_page_number_button_fn = () => {
     //
@@ -109,9 +72,9 @@ const Collection_page = () => {
       alert("첫 페이지입니다.");
       return;
     }
-
     set_current_page_number((v) => v - 1);
   };
+
 
   return (
     <>
@@ -125,10 +88,12 @@ const Collection_page = () => {
         set_collection_choice={set_collection_choice}
       />
 
+
       <div>
         <Span_pageNumDirectionBtn onClick={minus_current_page_number_button_fn}>
           {"<"}
         </Span_pageNumDirectionBtn>
+
 
         {/* ㅜ total_page_count가 0이 아닐 때 */}
         {total_page_count &&
@@ -178,8 +143,24 @@ const Collection_page = () => {
         </Span_pageNumDirectionBtn>
       </div>
 
+
       <Button_3
-        onClick={() =>
+        onClick={() => {
+          //
+
+          if (!company_name) {
+            alert("수거자만 접근 가능합니다!");
+            return;
+          }
+
+          
+          // 선택해야만 수거 입력 화면으로 이동될 수 있게 하기
+          if (!collection_choice) {
+            alert("입력할 수거 요청 건을 선택해주세요!");
+            return;
+          }
+
+
           nav("/collection/input", {
             state: {
               collection_choice_data: collection_list.find(
@@ -187,6 +168,7 @@ const Collection_page = () => {
               ),
             },
           })
+        }
         }
       >
         수거하기

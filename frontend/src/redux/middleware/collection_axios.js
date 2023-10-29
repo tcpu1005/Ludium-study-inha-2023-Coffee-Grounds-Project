@@ -28,18 +28,14 @@ const get_collections_fn = async () => {
 
 
 const resigter_collection_fn = async (data) => {
-    try {
-        console.log(data)
-        const response = await axios({
-            url: `${REACT_APP_BACK_SERVER_PATH}/api/v1/members/collector/collection`,
-            data: data,
-            method: "put",
-        });
-        return response.data;
-    } catch (error) {
-        console.log(error);
-    }
-};
+    //
+    const res = await axios({
+        url: `${REACT_APP_BACK_SERVER_PATH}/api/v1/members/collector/collection`,
+        method: "put",
+        data: data,
+    });
+    return res.data;
+}
 
 
 const get_my_collections_fn = async () => {

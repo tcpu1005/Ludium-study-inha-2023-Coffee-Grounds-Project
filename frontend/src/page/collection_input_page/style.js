@@ -157,7 +157,7 @@ color: #67493F;
 
 `
 
-export const Coffee_weightcon= styled.div`
+export const Coffee_weightcon= styled.input`
 box-sizing: border-box;
 
 position: absolute;
@@ -242,7 +242,7 @@ border: 2px solid rgba(103, 73, 63, 0.7);
 
 `
 
-export const Cha_month= styled.div`
+export const Cha_month= styled.input`
 
 box-sizing: border-box;
 

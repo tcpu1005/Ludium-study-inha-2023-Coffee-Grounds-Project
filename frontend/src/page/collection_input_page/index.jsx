@@ -16,41 +16,16 @@ const Collection_input_page = () => {
 
   const nav = useNavigate();
   const location = useLocation();
-  const company_name = useSelector((state) => state.user_reducer.company_name);
-  const is_login = useSelector((state) => state.user_reducer.is_login);
-
-
-  // 수거 목록 페이지에서 선택한 수거 목록의 데이터가 여기에 들어있다.
-  // 개발 단계에서 이 페이지로 바로 접속 시 발생하는 에러를 잡기 위해 ?로 예외 처리해주었다.
-  const collection_choice_data = location.state?.collection_choice_data;
-  // const collection_choice_data = { coffee_status: "습기", coffee_amount: 100 };
-
-
-  const get_coffee_status_value_fn = (value) => {
-    switch (value) {
-      case "건조":
-        return "drying";
-      case "습기":
-        return "moisture";
-      case "곰팡이":
-        return "mold";
-      default:
-        return "etc";
-    }
-  };
-
-
-  const coffee_status_value = get_coffee_status_value_fn(
-    collection_choice_data?.coffee_status
-  );
-  const coffee_record_id = collection_choice_data?.record_id;
-  const cafe_id = collection_choice_data?.cafe_id;
-  const coffee_amount_value = collection_choice_data?.coffee_amount;
-
-
   const coffee_status_ref = useRef();
   const coffee_amount_ref = useRef();
   const collection_date_ref = useRef();
+  const is_login = useSelector((state) => state.user_reducer.is_login);
+  const company_name = useSelector((state) => state.user_reducer.company_name);
+
+
+  // 수거 목록 페이지에서 선택한 수거 목록의 데이터가 여기에 들어있다.
+  const { collection_choice_data } = location.state;
+  const { cafe_id, cafe_name, record_id, coffee_status, coffee_amount } = collection_choice_data;
 
 
   if (!is_login) {
@@ -59,8 +34,7 @@ const Collection_input_page = () => {
     return;
   }
 
-
-  const collection_button_fn = (e) => {
+  const collection_button_fn = async (e) => {
     //
 
     const coffee_status = coffee_status_ref.current.value;
@@ -69,12 +43,12 @@ const Collection_input_page = () => {
 
 
     const update_collection_data = {
-      record_id: coffee_record_id,
-      company_name,
-      cafe_id,
-      coffee_amount,
-      coffee_status,
       collection_date,
+      coffee_status,
+      coffee_amount,
+      company_name,
+      record_id,
+      cafe_id,
     };
 
 
@@ -82,7 +56,7 @@ const Collection_input_page = () => {
     // Date(collection_date_ref.current.value)
     // => 아무 것도 입력 안할 경우 현재 시간의 Date 객체가 생성되어 예외 처리는 collection_date_ref.current.value === ""으로 해줘야 함
     if (
-      !company_name ||
+      !cafe_name ||
       !coffee_status ||
       !coffee_amount ||
       !collection_date_ref.current.value
@@ -106,7 +80,13 @@ const Collection_input_page = () => {
     }
 
 
-    resigter_collection_fn(update_collection_data);
+    const { success, message } = await resigter_collection_fn(update_collection_data);
+    alert(message);
+
+    
+    if (success) {
+      nav("/collection");
+    }
   };
 
 
@@ -117,13 +97,13 @@ const Collection_input_page = () => {
 
       <StyledInputContainer>
         <StyledLabel htmlFor="cafe_name">카페명</StyledLabel>
-        <StyledInput id="cafe_name" value={company_name} disabled autoComplete="off" />
+        <StyledInput id="cafe_name" value={cafe_name} disabled autoComplete="off" />
       </StyledInputContainer>
 
 
       <StyledInputContainer>
         <Coffee_Status htmlFor="coffee_status">커피박 상태</Coffee_Status>
-        <Coffee_Statuscon name="" id="" ref={coffee_status_ref} defaultValue={coffee_status_value}>
+        <Coffee_Statuscon name="" id="" ref={coffee_status_ref} defaultValue={coffee_status}>
           <option value="drying">건조</option>
           <option value="moisture">습기</option>
           <option value="mold">곰팡이</option>
@@ -134,7 +114,7 @@ const Collection_input_page = () => {
 
       <StyledInputContainer>
         <Coffee_weight htmlFor="coffee_amount" >커피박 양</Coffee_weight>
-        <Coffee_weightcon id="coffee_amount" ref={coffee_amount_ref} defaultValue={coffee_amount_value} autoComplete="off" />
+        <Coffee_weightcon id="coffee_amount" ref={coffee_amount_ref} defaultValue={coffee_amount} autoComplete="off" />
         <KG htmlFor="coffee_amount" >kg</KG>
       </StyledInputContainer>
 
