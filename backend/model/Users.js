@@ -30,12 +30,12 @@ class Users extends Sequelize.Model {
         wallet_address: {
           type: Sequelize.STRING(255),
           allowNull: true,
-          unique: false, // 임시 false 원래는 true
+          unique: true,
         },
         wallet_privatekey: {
           type: Sequelize.STRING(255),
           allowNull: true,
-          unique: false, // 임시 false 원래는 true
+          unique: true,
         },
         created_at: {
           type: Sequelize.DATE,

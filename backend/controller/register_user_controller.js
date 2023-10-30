@@ -1,4 +1,5 @@
 const { Users, CafeDetails, CollectorDetails } = require("../model");
+const { get_new_wallet_fn, get_infura_provider_fn } = require("../../blockchain/create_wallet_ethers_v5.7.2");
 
 
 // 카페 회원가입
@@ -26,11 +27,13 @@ module.exports.register_cafe_user_controller = async (req, res) => {
     if (existingUser) {
       return res.send({ success: false, message: "이미 존재하는 ID입니다." });
     }
-
-
-    // 블록체인 영역에서 구현 예정
-    const wallet_address = "0x7c564eBD81307509daa2Ea46A64b1F179fe6B1Bc";
-    const wallet_privatekey = "12a3fd1fb9c45b3aef6b37e4d1056d691aeb374b7631487bbc912de68bcec3ce";
+    
+    
+    const api_key = process.env.JIWON_API_KEY;
+    const provider = get_infura_provider_fn(api_key);
+    const wallet = get_new_wallet_fn(provider);
+    const wallet_privateKey = wallet.privateKey;
+    const wallet_address = wallet.address;
 
 
     const created_user = await Users.create({
@@ -39,7 +42,7 @@ module.exports.register_cafe_user_controller = async (req, res) => {
       wallet_address,
       login_password,
       user_type: "Cafe",
-      wallet_privatekey,
+      wallet_privateKey,
     });
 
 

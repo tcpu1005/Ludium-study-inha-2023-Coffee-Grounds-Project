@@ -27,12 +27,7 @@ const { get_infura_provider_fn } = require("../create_wallet_ethers_v5.7.2");
 
 (async () => {
     //
-    const fileName = "Incheon_Coffeebak_Token_flattened_v2.0";
-
-
-    // const read_only_contract = await get_read_only_contract_fn(fileName);
-    // const contract_owner = await read_only_contract.owner();
-    // console.log(contract_owner);
+    const fileName = "Coffeebak_Emission_flattened_v1.1";
 
 
     const api_key = process.env.JIWON_API_KEY;
@@ -46,7 +41,7 @@ const { get_infura_provider_fn } = require("../create_wallet_ethers_v5.7.2");
 
 
     const domain = {
-        name: "Incheon_Coffeebak_Token",
+        name: "Coffeebak_Emission",
         version: "1",
         chainId: 80001,
         verifyingContract: ca,
@@ -62,10 +57,15 @@ const { get_infura_provider_fn } = require("../create_wallet_ethers_v5.7.2");
     ]
 
 
-    const owner = wallet.address;
+    const ict_file_name = "Incheon_Coffeebak_Token_flattened_v2.0";
+    const ict_read_only_contract = await get_read_only_contract_fn(ict_file_name);
+
+
+    const ict_ca = "0x279609ED694c06452992b826C7F4750efE3a4280";
+    const owner = ict_ca;
     const spender = ca;
-    const value = 1;
-    const nonce = await contract.nonces(owner);
+    const value = 30;
+    const nonce = await ict_read_only_contract.nonces(owner);
     const deadline = Math.floor(new Date().getTime() / 1000) + 60 * 60 * 24;
 
 
@@ -80,9 +80,20 @@ const { get_infura_provider_fn } = require("../create_wallet_ethers_v5.7.2");
 
     const signature = await wallet._signTypedData(domain, { Permit: types }, values);
     const { v, r, s } = ethers.utils.splitSignature(signature);
-    const tx = await contract.permit(owner, spender, value, deadline, v, r, s, { gasLimit: 1000000 });
+    // const tx = await contract.permit(owner, spender, value, deadline, v, r, s, { gasLimit: 1000000 });
 
 
+    console.log(deadline);
+    console.log(v);
+    console.log(r);
+    console.log(s);
+
+
+    const cafe_wallet = "0x7d547B43a6514ff4470746312AA87e7cDedB3dF2";
+    // const tx = await contract.add_cafe_emission_data(cafe_wallet, "지원이네", "지원", "2023-10-30", 100, deadline, v, r, s, { gasLimit: 100000 })
+    const tx = await contract.transfer_token(cafe_wallet, 100, deadline, v, r, s, { gasLimit: 100000 })
+
+    
     const receipt = await tx.wait();
     console.log(receipt);
 })();

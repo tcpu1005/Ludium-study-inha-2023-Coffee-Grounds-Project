@@ -26,7 +26,7 @@ const { ethers } = require("ethers");
 // //   }
 
 
-// console.log(Object.keys(wallet));
+// console.log(Object.keys(new_wallet));
 // [
 //     'provider',
 //     'address',

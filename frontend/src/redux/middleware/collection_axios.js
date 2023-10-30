@@ -53,19 +53,15 @@ const get_my_collections_fn = async () => {
 };
 
 
-const resigter_reward_fn = async (data) => {
-    try {
-        const response = await axios({
-            url: `${REACT_APP_BACK_SERVER_PATH}/api/v1/coffeegrounds/reward`,
+const resigter_reward_fn = async (collector_id) => {
+    //
+    const res = await axios({
+        url: `${REACT_APP_BACK_SERVER_PATH}/api/v1/coffeegrounds/reward`,
+        data: { collector_id },
+        method: "put",
+    });
 
-            data: data,
-            method: "put",
-        });
-
-        return response.data;
-    } catch (error) {
-        throw error;
-    }
+    return res.data;
 };
 
 
