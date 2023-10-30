@@ -10,7 +10,7 @@ app.use(express.json());
 
 // ㅜ 시퀄라이즈 테이블 생성 (서버 실행 시마다 초기화됨)
 const { sequelize } = require("./model");
-sequelize.sync({ force: false })
+sequelize.sync({ force: true })
   .then(() => {
     console.log("<<< DB is connected >>>");
   }).catch((err) => {

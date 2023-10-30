@@ -66,6 +66,7 @@ module.exports.register_collection_fn = async (req, res) => {
         collection_date,
         coffee_amount,
         coffee_status,
+        collector_id,
         record_id,
         cafe_name,
         cafe_id,
@@ -76,10 +77,11 @@ module.exports.register_collection_fn = async (req, res) => {
         // 데이터베이스 업데이트 로직
         const records = await CollectionRecords.update(
             {
-                cafe_name: cafe_name,
-                coffee_amount: coffee_amount,
-                coffee_status: coffee_status,
-                collection_date: collection_date,
+                cafe_name,
+                coffee_amount,
+                coffee_status,
+                collection_date,
+                collector_id,
                 reward_status: "수거완료",
             },
             {
@@ -142,7 +144,9 @@ module.exports.get_my_collections_fn = async (req, res) => {
 
 module.exports.register_reward_fn = async (req, res) => {
     //
-console.log( req.body.collector_id)
+    const { collector_id } = req.body;
+
+
     try {
         const records = await CollectionRecords.update(
             {
@@ -153,14 +157,14 @@ console.log( req.body.collector_id)
                 reward_status: "보상완료",
             },
             {
-                where: { collector_id: req.body.collector_id }, // cafe_name을 Primary Key 혹은 Unique Key로 사용하지 않는다면 다른 방법으로 조회 조건을 정해야 합니다.
+                where: { collector_id }
             }
         );
-        console.log(records)
+        
 
         res.send({ success: true, message: "보상 지급에 성공하였습니다." });
     } catch (error) {
-        res.send({ success: false, message: "보상 지급에 실패하였습니다." });
+        res.send({ success: false, message: "보상 지급에 성공하였습니다." });
     }
 };
 

@@ -72,7 +72,7 @@ const Collection_page = () => {
             return;
           }
 
-          
+
           // 선택해야만 수거 입력 화면으로 이동될 수 있게 하기
           if (!collection_choice) {
             alert("입력할 수거 요청 건을 선택해주세요!");

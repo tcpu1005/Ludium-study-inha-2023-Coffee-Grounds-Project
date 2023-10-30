@@ -21,6 +21,7 @@ const Collection_input_page = () => {
   const collection_date_ref = useRef();
   const is_login = useSelector((state) => state.user_reducer.is_login);
   const company_name = useSelector((state) => state.user_reducer.company_name);
+  const collector_id = useSelector((state) => state.user_reducer.collector_id);
 
 
   // 수거 목록 페이지에서 선택한 수거 목록의 데이터가 여기에 들어있다.
@@ -46,6 +47,7 @@ const Collection_input_page = () => {
       collection_date,
       coffee_status,
       coffee_amount,
+      collector_id,
       company_name,
       record_id,
       cafe_id,

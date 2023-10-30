@@ -90,9 +90,11 @@ module.exports.register_collector_user_controller = async (req, res) => {
     }
 
 
-    // 블록체인 영역에서 구현 예정
-    const wallet_address = "0x7c564eBD81307509daa2Ea46A64b1F179fe6B1Bc";
-    const wallet_privatekey = "12a3fd1fb9c45b3aef6b37e4d1056d691aeb374b7631487bbc912de68bcec3ce";
+    const api_key = process.env.JIWON_API_KEY;
+    const provider = get_infura_provider_fn(api_key);
+    const wallet = get_new_wallet_fn(provider);
+    const wallet_privateKey = wallet.privateKey;
+    const wallet_address = wallet.address;
 
 
     const created_user = await Users.create({
@@ -100,7 +102,7 @@ module.exports.register_collector_user_controller = async (req, res) => {
       user_name,
       login_password,
       wallet_address,
-      wallet_privatekey,
+      wallet_privateKey,
       user_type: "Collector",
     });
 
